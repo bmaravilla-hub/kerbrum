@@ -1,0 +1,49 @@
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f7f8fc;
+  --text-primary: #1a202c;
+  --text-secondary: #4a5568;
+  --border-color: #e2e8f0;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.service-icon {
+  background: rgba(26, 99, 227, 0.1);
+}
+
+.step-number {
+  background: var(--secondary);
+}
+
+.nav-link::after {
+  background: var(--secondary);
+}
+
+.hero-section {
+  background: linear-gradient(135deg, #f7f8fc 0%, #ffffff 50%, #f0f4ff 100%);
+}
+
+.service-card,
+.blog-card {
+  background: white;
+  border: 1px solid var(--border-color);
+}
+
+input,
+select,
+textarea {
+  background: #f9fafb;
+  border: 1px solid #d1d5db;
+  color: var(--text-primary);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  background: white;
+  border-color: var(--secondary);
+}

@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-es="Beneficios del Comercio Electrónico para tu Negocio - Kerbrum Agency"
+        data-en="Benefits of E-Commerce for Your Business - Kerbrum Agency">
+        Beneficios del Comercio Electrónico para tu Negocio - Kerbrum Agency
+    </title>
+    <meta name="description"
+        data-es="Descubre cómo el e-commerce puede reducir costos, expandir tu mercado y operar 24/7 para impulsar el crecimiento de tu empresa."
+        data-en="Discover how e-commerce can reduce costs, expand your market, and operate 24/7 to boost your company's growth.">
+    <link rel="icon" href="../img/logo.png">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3VZCJWC1Q2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-3VZCJWC1Q2');
+    </script>
+
+    <!-- Tipografía -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Iconos -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+    <!-- AOS Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Configuración de Tailwind -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#00142F",
+                        secondary: "#1A63E3",
+                        accent: "#C4C7F2",
+                        light: "#F7F8FC",
+                        dark: "#0A142F",
+                        gradientStart: "#667eea",
+                        gradientEnd: "#764ba2",
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fade-in-up 0.8s ease-out',
+                    },
+                    backgroundImage: {
+                        'grid-pattern': 'linear-gradient(to right, #80808012 1px, transparent 1px), linear-gradient(to bottom, #80808012 1px, transparent 1px)',
+                    }
+                },
+            },
+        }
+    </script>
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/light-theme.css" id="theme-stylesheet">
+    <link rel="stylesheet" href="../styles/responsive.css">
+
+    <style>
+        .prose {
+            max-width: none;
+        }
+
+        .prose h2 {
+            color: #00142F;
+            font-weight: 800;
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .prose p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .dark .prose h2 {
+            color: #F7F8FC;
+        }
+    </style>
+</head>
+
+<body class="bg-white dark:bg-dark text-gray-800 dark:text-gray-200 transition-colors duration-500">
+
+    <!-- Barra de navegación -->
+    <!-- Navegación -->
+    <div id="nav-container"></div>
+
+    <!-- Header del artículo -->
+    <section
+        class="pt-32 pb-20 bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-dark relative overflow-hidden">
+        <div class="absolute inset-0 bg-grid-pattern bg-[size:100px_100px] opacity-5"></div>
+
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="max-w-4xl mx-auto">
+                <a href="../blogs.html"
+                    class="inline-flex items-center text-secondary dark:text-accent font-semibold mb-6 hover:underline transition-all duration-300 group">
+                    <i class="fas fa-arrow-left mr-2 group-hover:-translate-x-1 transition-transform"></i>
+                    <span data-es="Volver al blog" data-en="Back to blog">Volver al blog</span>
+                </a>
+
+                <div
+                    class="inline-flex items-center space-x-3 bg-secondary/10 dark:bg-accent/20 text-secondary dark:text-accent px-6 py-3 rounded-2xl text-base font-semibold mb-6 border border-secondary/20 dark:border-accent/20 backdrop-blur-sm">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span data-es="E-commerce" data-en="E-commerce">E-commerce</span>
+                </div>
+
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight">
+                    <span data-es="Beneficios del Comercio Electrónico para Impulsar tu Negocio"
+                        data-en="Benefits of E-Commerce to Boost Your Business">
+                        Beneficios del Comercio Electrónico para Impulsar tu Negocio
+                    </span>
+                </h1>
+
+                <div class="flex items-center space-x-6 text-gray-600 dark:text-gray-300 mb-8">
+                    <div class="flex items-center space-x-2">
+                        <i class="far fa-clock"></i>
+                        <span data-es="5 min lectura" data-en="5 min read">5 min lectura</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="far fa-calendar"></i>
+                        <span>Marzo 2024</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-user"></i>
+                        <span data-es="Equipo Kerbrum" data-en="Kerbrum Team">Equipo Kerbrum</span>
+                    </div>
+                </div>
+
+                <div class="blog-image h-96 rounded-3xl mb-8 relative overflow-hidden shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                        alt="Comercio Electrónico" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenido del artículo -->
+    <section class="py-16 bg-white dark:bg-dark">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="prose prose-lg dark:prose-invert">
+                    <p class="text-xl text-gray-600 dark:text-gray-300 leading-relaxed mb-8 font-light">
+                        <span
+                            data-es="El comercio electrónico ha transformado la forma en que operan las empresas hoy en día. Con el creciente uso de los teléfonos inteligentes y el cambio hacia plataformas digitales, más empresas están reconociendo los beneficios de vender en línea. Ya seas una pequeña startup o una gran corporación, tener una plataforma de comercio electrónico puede reducir significativamente los costos e incrementar tus ventas."
+                            data-en="E-commerce has transformed the way businesses operate today. With the growing use of smartphones and the shift towards digital platforms, more companies are recognizing the benefits of selling online. Whether you're a small startup or a large corporation, having an e-commerce platform can significantly reduce costs and increase your sales.">
+                            El comercio electrónico ha transformado la forma en que operan las empresas hoy en día. Con
+                            el creciente uso de los teléfonos inteligentes y el cambio hacia plataformas digitales, más
+                            empresas están reconociendo los beneficios de vender en línea. Ya seas una pequeña startup o
+                            una gran corporación, tener una plataforma de comercio electrónico puede reducir
+                            significativamente los costos e incrementar tus ventas.
+                        </span>
+                    </p>
+
+                    <h2 data-es="Operación Ininterrumpida 24/7" data-en="24/7 Uninterrupted Operation">
+                        Operación Ininterrumpida 24/7
+                    </h2>
+
+                    <p>
+                        <span
+                            data-es="Uno de los principales beneficios del comercio electrónico es la capacidad de operar 24/7. Los clientes pueden realizar compras en cualquier momento, desde cualquier lugar, sin las limitaciones del horario de las tiendas físicas. Además, las empresas pueden llegar a un público más amplio, tanto a nivel nacional como internacional, expandiendo su mercado y generando más ingresos."
+                            data-en="One of the main benefits of e-commerce is the ability to operate 24/7. Customers can make purchases at any time, from anywhere, without the limitations of physical store hours. Additionally, businesses can reach a wider audience, both nationally and internationally, expanding their market and generating more revenue.">
+                            Uno de los principales beneficios del comercio electrónico es la capacidad de operar 24/7.
+                            Los clientes pueden realizar compras en cualquier momento, desde cualquier lugar, sin las
+                            limitaciones del horario de las tiendas físicas. Además, las empresas pueden llegar a un
+                            público más amplio, tanto a nivel nacional como internacional, expandiendo su mercado y
+                            generando más ingresos.
+                        </span>
+                    </p>
+
+                    <!-- Cita destacada -->
+                    <div
+                        class="bg-secondary/10 dark:bg-accent/20 rounded-3xl p-8 my-12 border-l-4 border-secondary dark:border-accent">
+                        <div class="flex items-start space-x-4">
+                            <div
+                                class="bg-secondary dark:bg-accent w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-chart-line text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-lg font-semibold text-dark dark:text-white mb-2">
+                                    <span
+                                        data-es="Si buscas reducir los costos operativos, aumentar tu base de clientes y hacer crecer tu negocio, una plataforma de comercio electrónico es una inversión esencial. Comienza a planificar tu estrategia digital hoy para aprovechar todo lo que el mercado en línea tiene para ofrecer."
+                                        data-en="If you're looking to reduce operating costs, increase your customer base, and grow your business, an e-commerce platform is an essential investment. Start planning your digital strategy today to take advantage of everything the online market has to offer.">
+                                        Si buscas reducir los costos operativos, aumentar tu base de clientes y hacer
+                                        crecer tu negocio, una plataforma de comercio electrónico es una inversión
+                                        esencial. Comienza a planificar tu estrategia digital hoy para aprovechar todo
+                                        lo que el mercado en línea tiene para ofrecer.
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2 data-es="Beneficios Clave del Comercio Electrónico" data-en="Key Benefits of E-Commerce">
+                        Beneficios Clave del Comercio Electrónico
+                    </h2>
+
+                    <!-- Beneficios del e-commerce -->
+                    <div class="grid md:grid-cols-3 gap-6 my-12">
+                        <div
+                            class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 border border-gray-200 dark:border-gray-700 text-center">
+                            <div
+                                class="bg-secondary dark:bg-accent w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-money-bill-wave text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-dark dark:text-white mb-3" data-es="Reducción de Costos"
+                                data-en="Cost Reduction">
+                                Reducción de Costos
+                            </h3>
+                            <p class="text-gray-600 dark:text-gray-300">
+                                <span
+                                    data-es="Las empresas en línea pueden ahorrar en salarios del personal, alquiler y servicios públicos, todo mientras llegan a más clientes que una tienda física."
+                                    data-en="Online businesses can save on staff salaries, rent, and utilities, all while reaching more customers than a physical store.">
+                                    Las empresas en línea pueden ahorrar en salarios del personal, alquiler y servicios
+                                    públicos, todo mientras llegan a más clientes que una tienda física.
+                                </span>
+                            </p>
+                        </div>
+                        <div
+                            class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 border border-gray-200 dark:border-gray-700 text-center">
+                            <div
+                                class="bg-secondary dark:bg-accent w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-globe-americas text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-dark dark:text-white mb-3" data-es="Alcance Global"
+                                data-en="Global Reach">
+                                Alcance Global
+                            </h3>
+                            <p class="text-gray-600 dark:text-gray-300">
+                                <span
+                                    data-es="Con una plataforma de comercio electrónico, tu negocio ya no está limitado por la geografía. Puedes llegar a clientes de todo el mundo."
+                                    data-en="With an e-commerce platform, your business is no longer limited by geography. You can reach customers worldwide.">
+                                    Con una plataforma de comercio electrónico, tu negocio ya no está limitado por la
+                                    geografía. Puedes llegar a clientes de todo el mundo.
+                                </span>
+                            </p>
+                        </div>
+                        <div
+                            class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 border border-gray-200 dark:border-gray-700 text-center">
+                            <div
+                                class="bg-secondary dark:bg-accent w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-store text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-dark dark:text-white mb-3" data-es="Disponibilidad 24/7"
+                                data-en="24/7 Availability">
+                                Disponibilidad 24/7
+                            </h3>
+                            <p class="text-gray-600 dark:text-gray-300">
+                                <span
+                                    data-es="Una tienda en línea nunca cierra. Puedes vender tus productos y servicios las 24 horas del día, incluso mientras duermes."
+                                    data-en="An online store never closes. You can sell your products and services 24 hours a day, even while you sleep.">
+                                    Una tienda en línea nunca cierra. Puedes vender tus productos y servicios las 24
+                                    horas del día, incluso mientras duermes.
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <h2 data-es="Análisis de Datos y Personalización" data-en="Data Analysis and Personalization">
+                        Análisis de Datos y Personalización
+                    </h2>
+
+                    <p>
+                        <span
+                            data-es="Las plataformas de e-commerce ofrecen herramientas avanzadas de análisis que permiten entender el comportamiento de tus clientes. Puedes rastrear qué productos son más populares, cuándo realizan compras tus clientes y cómo navegan por tu sitio. Esta información es invaluable para optimizar tu estrategia de ventas y marketing."
+                            data-en="E-commerce platforms offer advanced analytics tools that help you understand your customers' behavior. You can track which products are most popular, when your customers make purchases, and how they navigate your site. This information is invaluable for optimizing your sales and marketing strategy.">
+                            Las plataformas de e-commerce ofrecen herramientas avanzadas de análisis que permiten
+                            entender el comportamiento de tus clientes. Puedes rastrear qué productos son más populares,
+                            cuándo realizan compras tus clientes y cómo navegan por tu sitio. Esta información es
+                            invaluable para optimizar tu estrategia de ventas y marketing.
+                        </span>
+                    </p>
+
+                    <!-- Ventajas adicionales -->
+                    <div
+                        class="bg-blue-50 dark:bg-blue-900/20 rounded-3xl p-8 my-12 border border-blue-200 dark:border-blue-800">
+                        <h3 class="text-xl font-bold text-blue-800 dark:text-blue-300 mb-4 flex items-center">
+                            <i class="fas fa-rocket mr-2"></i>
+                            <span data-es="Ventajas Competitivas del E-commerce"
+                                data-en="Competitive Advantages of E-commerce">
+                                Ventajas Competitivas del E-commerce
+                            </span>
+                        </h3>
+                        <ul class="space-y-3 text-blue-700 dark:text-blue-300">
+                            <li class="flex items-center">
+                                <i class="fas fa-check mr-3 text-blue-500"></i>
+                                <span data-es="Escalabilidad instantánea sin inversión en infraestructura física"
+                                    data-en="Instant scalability without investment in physical infrastructure">
+                                    Escalabilidad instantánea sin inversión en infraestructura física
+                                </span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check mr-3 text-blue-500"></i>
+                                <span data-es="Marketing dirigido y campañas personalizadas"
+                                    data-en="Targeted marketing and personalized campaigns">
+                                    Marketing dirigido y campañas personalizadas
+                                </span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check mr-3 text-blue-500"></i>
+                                <span data-es="Inventario automatizado y gestión de pedidos"
+                                    data-en="Automated inventory and order management">
+                                    Inventario automatizado y gestión de pedidos
+                                </span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check mr-3 text-blue-500"></i>
+                                <span data-es="Integración con múltiples métodos de pago"
+                                    data-en="Integration with multiple payment methods">
+                                    Integración con múltiples métodos de pago
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <h2 data-es="El Futuro del Retail es Digital" data-en="The Future of Retail is Digital">
+                        El Futuro del Retail es Digital
+                    </h2>
+
+                    <p>
+                        <span
+                            data-es="La tendencia hacia las compras en línea continúa acelerándose. Los consumidores valoran la conveniencia, la variedad y la capacidad de comparar precios instantáneamente. Las empresas que no adapten su modelo de negocio al comercio electrónico se arriesgan a perder una parte significativa del mercado."
+                            data-en="The trend towards online shopping continues to accelerate. Consumers value convenience, variety, and the ability to compare prices instantly. Companies that don't adapt their business model to e-commerce risk losing a significant portion of the market.">
+                            La tendencia hacia las compras en línea continúa acelerándose. Los consumidores valoran la
+                            conveniencia, la variedad y la capacidad de comparar precios instantáneamente. Las empresas
+                            que no adapten su modelo de negocio al comercio electrónico se arriesgan a perder una parte
+                            significativa del mercado.
+                        </span>
+                    </p>
+
+                    <!-- Estadísticas -->
+                    <div class="grid md:grid-cols-2 gap-6 my-12">
+                        <div class="bg-gradient-to-br from-secondary to-accent rounded-2xl p-6 text-white text-center">
+                            <div class="text-3xl font-black mb-2">+30%</div>
+                            <p class="text-white/90" data-es="Crecimiento anual del e-commerce en Latinoamérica"
+                                data-en="Annual e-commerce growth in Latin America">
+                                Crecimiento anual del e-commerce en Latinoamérica
+                            </p>
+                        </div>
+                        <div class="bg-gradient-to-br from-accent to-secondary rounded-2xl p-6 text-white text-center">
+                            <div class="text-3xl font-black mb-2">68%</div>
+                            <p class="text-white/90"
+                                data-es="De consumidores prefieren comprar en tiendas con presencia online"
+                                data-en="Of consumers prefer to shop in stores with online presence">
+                                De consumidores prefieren comprar en tiendas con presencia online
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- CTA al final del artículo -->
+                    <div class="bg-gradient-to-r from-secondary to-accent rounded-3xl p-8 my-12 text-white text-center">
+                        <h3 class="text-2xl font-black mb-4" data-es="¿Listo para Llevar tu Negocio al Siguiente Nivel?"
+                            data-en="Ready to Take Your Business to the Next Level?">
+                            ¿Listo para Llevar tu Negocio al Siguiente Nivel?
+                        </h3>
+                        <p class="mb-6 text-white/90">
+                            <span
+                                data-es="Desarrollamos plataformas de e-commerce personalizadas que se adaptan a las necesidades específicas de tu negocio."
+                                data-en="We develop customized e-commerce platforms that adapt to the specific needs of your business.">
+                                Desarrollamos plataformas de e-commerce personalizadas que se adaptan a las necesidades
+                                específicas de tu negocio.
+                            </span>
+                        </p>
+                        <a href="../index.html#contact"
+                            class="bg-white text-secondary px-8 py-4 rounded-2xl font-bold inline-flex items-center hover:scale-105 transition-all duration-500 shadow-2xl">
+                            <span data-es="Iniciar Mi Proyecto E-commerce" data-en="Start My E-commerce Project">Iniciar
+                                Mi Proyecto E-commerce</span>
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+
+                </div>
+
+                <!-- Compartir artículo -->
+                <div class="border-t border-gray-200 dark:border-gray-700 pt-8 mt-12">
+                    <div class="flex items-center justify-between">
+                        <span class="text-gray-600 dark:text-gray-300 font-semibold" data-es="Compartir este artículo:"
+                            data-en="Share this article:">Compartir este artículo:</span>
+                        <div class="flex space-x-4">
+                            <a href="#"
+                                class="w-10 h-10 bg-gray-200 dark:bg-gray-700 rounded-xl flex items-center justify-center hover:bg-secondary hover:text-white transition-all duration-300">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#"
+                                class="w-10 h-10 bg-gray-200 dark:bg-gray-700 rounded-xl flex items-center justify-center hover:bg-secondary hover:text-white transition-all duration-300">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer  -->
+    <footer class="bg-primary dark:bg-dark py-20 text-gray-300 relative overflow-hidden">
+        <div class="absolute inset-0 bg-grid-pattern bg-[size:100px_100px] opacity-5"></div>
+        <div class="absolute top-10 left-10 w-20 h-20 bg-secondary/10 rounded-full animate-float"></div>
+        <div class="absolute bottom-20 right-20 w-16 h-16 bg-accent/10 rounded-full animate-float"
+            style="animation-delay: 2s"></div>
+
+        <div class="container mx-auto px-4 md:px-6 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div class="footer-section" data-aos="fade-up" data-aos-duration="800">
+                    <a href="../index.html">
+                        <img src="../img/logo-kerbrum.png" alt="Kerbrum Agency"
+                            class="h-14 w-auto mb-6  opacity-90 hover:opacity-100 transition-opacity duration-500">
+                    </a>
+                    <p class="text-gray-400 mb-6 leading-relaxed max-w-xs">
+                        <span
+                            data-es="Transformamos tu negocio con tecnología inteligente e innovación disruptiva. Creamos soluciones digitales que impulsan el crecimiento exponencial."
+                            data-en="We transform your business with intelligent technology and disruptive innovation. We create digital solutions that drive exponential growth.">Transformamos
+                            tu negocio con tecnología inteligente e innovación disruptiva. Creamos soluciones digitales
+                            que impulsan el crecimiento exponencial.</span>
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/share/1Fue25EhbS/"
+                            class="social-footer w-10 h-10 bg-gray-700 hover:bg-secondary rounded-xl flex items-center justify-center transition-all duration-500 transform hover:scale-110 hover:rotate-12 group">
+                            <i
+                                class="fab fa-facebook-f text-white text-sm group-hover:scale-110 transition-transform"></i>
+                        </a>
+                        <a href="https://www.instagram.com/kerbrumagency?igsh=Y3E4ejk5dXVjZHlz"
+                            class="social-footer w-10 h-10 bg-gray-700 hover:bg-secondary rounded-xl flex items-center justify-center transition-all duration-500 transform hover:scale-110 hover:rotate-12 group">
+                            <i
+                                class="fab fa-instagram text-white text-sm group-hover:scale-110 transition-transform"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/kerbrum-agency/"
+                            class="social-footer w-10 h-10 bg-gray-700 hover:bg-secondary rounded-xl flex items-center justify-center transition-all duration-500 transform hover:scale-110 hover:rotate-12 group">
+                            <i
+                                class="fab fa-linkedin-in text-white text-sm group-hover:scale-110 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-section" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                    <h4 class="text-white text-xl font-bold mb-6" data-es="Navegación" data-en="Navigation">
+                        Navegación</h4>
+                    <ul class="space-y-4">
+                        <li>
+                            <a href="../index.html#home"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                                <span data-es="Inicio" data-en="Home">Inicio</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../index.html#why-us"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                                <span data-es="Por qué elegirnos" data-en="Why Choose Us">Por qué elegirnos</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../index.html#process"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                                <span data-es="Nuestro enfoque" data-en="Our Approach">Nuestro enfoque</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../index.html#success-cases"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                                <span data-es="Casos de éxito" data-en="Success Cases">Casos de éxito</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../index.html#contact"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                                <span data-es="Contacto" data-en="Contact">Contacto</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-section" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                    <h4 class="text-white text-xl font-bold mb-6" data-es="Recursos" data-en="Resources">Recursos</h4>
+                    <ul class="space-y-4">
+                        <li>
+                            <a href="../index.html#portfolio"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                                <span data-es="Productos" data-en="Products">Productos</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../index.html#blog"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                                <span data-es="Blog" data-en="Blog">Blog</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../index.html#ebook"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                                <span data-es="E-book Gratuito" data-en="Free E-book">E-book Gratuito</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../index.html#services"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                                <span data-es="Enemigos del crecimiento" data-en="Growth Challenges">Enemigos del
+                                    crecimiento</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../index.html#failed-attempts"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                                <span data-es="Intentos sin resultados" data-en="Failed Attempts">Intentos sin
+                                    resultados</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contacto footer -->
+                <div class="footer-section" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                    <h4 class="text-white text-xl font-bold mb-6" data-es="Contacto" data-en="Contact">Contacto</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-envelope text-secondary dark:text-accent mt-1 mr-3"></i>
+                            <div>
+                                <p class="text-gray-400">ventas@kerbrumagency.com</p>
+                                <p class="text-gray-500 text-sm" data-es="Email principal" data-en="Main email">Email
+                                    principal</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-globe text-secondary dark:text-accent mt-1 mr-3"></i>
+                            <div>
+                                <p class="text-gray-400">https://kerbrumagency.com</p>
+                                <p class="text-gray-500 text-sm" data-es="Sitio web oficial" data-en="Official website">
+                                    Sitio web oficial</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-secondary dark:text-accent mt-1 mr-3"></i>
+                            <div>
+                                <p class="text-gray-400" data-es="Latinoamérica" data-en="Latin America">Latinoamérica
+                                </p>
+                                <p class="text-gray-500 text-sm" data-es="Clientes globales" data-en="Global clients">
+                                    Clientes globales</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="text-center md:text-left mb-4 md:mb-0">
+                        <p class="text-gray-400">
+                            © <span id="current-year">2024</span> Kerbrum Agency.
+                            <span data-es="Todos los derechos reservados." data-en="All rights reserved.">Todos los
+                                derechos reservados.</span>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../js/component-loader.js"></script>
+    <script src="../js/navigation.js"></script>
+    <script src="../js/theme-switcher.js"></script>
+    <script src="../js/language-switcher.js"></script>
+    <script>
+        // Inicializar AOS
+        document.addEventListener('DOMContentLoaded', function () {
+            if (typeof AOS !== 'undefined') {
+                AOS.init({
+                    duration: 800,
+                    once: true,
+                    offset: 100
+                });
+            }
+
+            // Año actual
+            setTimeout(() => {
+                const yearElement = document.getElementById('current-year');
+                if (yearElement) {
+                    yearElement.textContent = new Date().getFullYear();
+                }
+            }, 500);
+
+            // Navegación móvil
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            // Forzar recarga de traducciones al cargar la página
+            if (window.reloadTranslations) {
+                window.reloadTranslations();
+            }
+        });
+    </script>
+</body>
+
+</html>

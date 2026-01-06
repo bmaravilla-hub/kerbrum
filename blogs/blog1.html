@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-es="¿Es 'caro' digitalizarse? O ¿Es más costoso no hacerlo? - Kerbrum Agency"
+        data-en="Is Digitalization 'Expensive'? Or Is It More Costly Not To Do It? - Kerbrum Agency">
+        ¿Es 'caro' digitalizarse? O ¿Es más costoso no hacerlo? - Kerbrum Agency
+    </title>
+    <meta name="description"
+        data-es="Descubre por qué la transformación digital es una decisión crítica de supervivencia empresarial y cómo implementarla correctamente."
+        data-en="Discover why digital transformation is a critical business survival decision and how to implement it correctly.">
+    <link rel="icon" href="../img/logo.png">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3VZCJWC1Q2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-3VZCJWC1Q2');
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#00142F",
+                        secondary: "#1A63E3",
+                        accent: "#C4C7F2",
+                        light: "#F7F8FC",
+                        dark: "#0A142F",
+                        gradientStart: "#667eea",
+                        gradientEnd: "#764ba2",
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fade-in-up 0.8s ease-out',
+                    },
+                    backgroundImage: {
+                        'grid-pattern': 'linear-gradient(to right, #80808012 1px, transparent 1px), linear-gradient(to bottom, #80808012 1px, transparent 1px)',
+                    }
+                },
+            },
+        }
+    </script>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/light-theme.css" id="theme-stylesheet">
+    <link rel="stylesheet" href="../styles/responsive.css">
+
+    <style>
+        .prose {
+            max-width: none;
+        }
+
+        .prose h2 {
+            color: #00142F;
+            font-weight: 800;
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .prose p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .dark .prose h2 {
+            color: #F7F8FC;
+        }
+    </style>
+</head>
+
+<body class="bg-white dark:bg-dark text-gray-800 dark:text-gray-200 transition-colors duration-500">
+
+    <!-- Barra de navegación -->
+    <!-- Navegación -->
+    <div id="nav-container"></div>
+
+    <!-- Header del artículo -->
+    <section
+        class="pt-32 pb-20 bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-dark relative overflow-hidden">
+        <div class="absolute inset-0 bg-grid-pattern bg-[size:100px_100px] opacity-5"></div>
+
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="max-w-4xl mx-auto">
+                <a href="../blogs.html"
+                    class="inline-flex items-center text-secondary dark:text-accent font-semibold mb-6 hover:underline transition-all duration-300 group">
+                    <i class="fas fa-arrow-left mr-2 group-hover:-translate-x-1 transition-transform"></i>
+                    <span data-es="Volver al blog" data-en="Back to blog">Volver al blog</span>
+                </a>
+
+                <div
+                    class="inline-flex items-center space-x-3 bg-secondary/10 dark:bg-accent/20 text-secondary dark:text-accent px-6 py-3 rounded-2xl text-base font-semibold mb-6 border border-secondary/20 dark:border-accent/20 backdrop-blur-sm">
+                    <i class="fas fa-laptop-code"></i>
+                    <span data-es="Transformación Digital" data-en="Digital Transformation">Transformación
+                        Digital</span>
+                </div>
+
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight">
+                    <span data-es="¿Es 'caro' digitalizarse? O ¿Es más costoso no hacerlo?"
+                        data-en="Is Digitalization 'Expensive'? Or Is It More Costly Not To Do It?">
+                        ¿Es 'caro' digitalizarse? O ¿Es más costoso no hacerlo?
+                    </span>
+                </h1>
+
+                <div class="flex items-center space-x-6 text-gray-600 dark:text-gray-300 mb-8">
+                    <div class="flex items-center space-x-2">
+                        <i class="far fa-clock"></i>
+                        <span data-es="7 min lectura" data-en="7 min read">7 min lectura</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="far fa-calendar"></i>
+                        <span>Marzo 2024</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-user"></i>
+                        <span data-es="Equipo Kerbrum" data-en="Kerbrum Team">Equipo Kerbrum</span>
+                    </div>
+                </div>
+
+                <div class="blog-image h-96 rounded-3xl mb-8 relative overflow-hidden shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80"
+                        alt="Transformación Digital Empresarial" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenido del artículo -->
+    <section class="py-16 bg-white dark:bg-dark">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="prose prose-lg dark:prose-invert">
+                    <p class="text-xl text-gray-600 dark:text-gray-300 leading-relaxed mb-8 font-light">
+                        <span
+                            data-es="En un entorno donde el cliente es cada vez más digital, rápido y exigente, muchas empresas siguen operando con procesos manuales, múltiples planillas, sistemas desconectados y una cultura que evita el cambio. Esto genera cuellos de botella, errores humanos, lentitud para atender a los clientes y falta de visibilidad para tomar decisiones estratégicas. El día a día se convierte en una batalla constante contra el desorden."
+                            data-en="In an environment where customers are increasingly digital, fast, and demanding, many companies continue to operate with manual processes, multiple spreadsheets, disconnected systems, and a culture that resists change. This creates bottlenecks, human errors, slow customer service, and lack of visibility for strategic decision-making. Daily operations become a constant battle against disorder.">
+                            En un entorno donde el cliente es cada vez más digital, rápido y exigente, muchas empresas
+                            siguen operando con procesos manuales, múltiples planillas, sistemas desconectados y una
+                            cultura que evita el cambio. Esto genera cuellos de botella, errores humanos, lentitud para
+                            atender a los clientes y falta de visibilidad para tomar decisiones estratégicas. El día a
+                            día se convierte en una batalla constante contra el desorden.
+                        </span>
+                    </p>
+
+                    <h2 data-es="La verdadera naturaleza de la transformación digital"
+                        data-en="The True Nature of Digital Transformation">
+                        La verdadera naturaleza de la transformación digital
+                    </h2>
+
+                    <p>
+                        <span
+                            data-es="Digitalizar no es una moda, es una decisión crítica de supervivencia. Pero no basta con 'tener un sistema' o 'estar en redes'. La transformación digital implica rediseñar procesos, automatizar tareas, integrar áreas y sobre todo, cambiar la mentalidad. Y aquí surgen los verdaderos retos: miedo al cambio, desconfianza hacia la tecnología, desconocimiento de lo que se necesita y, lo más común, malas experiencias con proveedores que prometen mucho y se desentienden después de cobrar."
+                            data-en="Digitalization is not a trend; it's a critical survival decision. But it's not enough to 'have a system' or 'be on social media.' Digital transformation involves redesigning processes, automating tasks, integrating areas, and most importantly, changing mindsets. And here arise the real challenges: fear of change, distrust of technology, lack of knowledge about what's needed, and most commonly, bad experiences with providers who promise a lot and disengage after getting paid.">
+                            Digitalizar no es una moda, es una decisión crítica de supervivencia. Pero no basta con
+                            'tener un sistema' o 'estar en redes'. La transformación digital implica rediseñar procesos,
+                            automatizar tareas, integrar áreas y sobre todo, cambiar la mentalidad. Y aquí surgen los
+                            verdaderos retos: miedo al cambio, desconfianza hacia la tecnología, desconocimiento de lo
+                            que se necesita y, lo más común, malas experiencias con proveedores que prometen mucho y se
+                            desentienden después de cobrar.
+                        </span>
+                    </p>
+
+                    <!-- Cita destacada -->
+                    <div
+                        class="bg-secondary/10 dark:bg-accent/20 rounded-3xl p-8 my-12 border-l-4 border-secondary dark:border-accent">
+                        <div class="flex items-start space-x-4">
+                            <div
+                                class="bg-secondary dark:bg-accent w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-lightbulb text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-lg font-semibold text-dark dark:text-white mb-2">
+                                    <span
+                                        data-es="El mayor riesgo no está en invertir en transformación. El mayor riesgo está en no hacerlo... o hacerlo mal."
+                                        data-en="The biggest risk is not in investing in transformation. The biggest risk is in not doing it... or doing it wrong.">
+                                        El mayor riesgo no está en invertir en transformación. El mayor riesgo está en
+                                        no hacerlo... o hacerlo mal.
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2 data-es="El aliado tecnológico que tu empresa necesita"
+                        data-en="The Technological Ally Your Company Needs">
+                        El aliado tecnológico que tu empresa necesita
+                    </h2>
+
+                    <p>
+                        <span
+                            data-es="Por eso, hoy más que nunca, las empresas necesitan un aliado tecnológico, no solo un proveedor. Un equipo que entienda su realidad, que escuche, proponga, construya a medida y acompañe durante todo el proceso para que la digitalización tenga impacto real en la operación, en las personas y en el negocio."
+                            data-en="That's why, now more than ever, companies need a technological ally, not just a provider. A team that understands their reality, listens, proposes, builds custom solutions, and accompanies throughout the entire process so that digitalization has real impact on operations, people, and business.">
+                            Por eso, hoy más que nunca, las empresas necesitan un aliado tecnológico, no solo un
+                            proveedor. Un equipo que entienda su realidad, que escuche, proponga, construya a medida y
+                            acompañe durante todo el proceso para que la digitalización tenga impacto real en la
+                            operación, en las personas y en el negocio.
+                        </span>
+                    </p>
+
+                    <!-- Beneficios de la digitalización -->
+                    <div class="grid md:grid-cols-2 gap-6 my-12">
+                        <div
+                            class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 border border-gray-200 dark:border-gray-700">
+                            <div
+                                class="bg-secondary dark:bg-accent w-16 h-16 rounded-2xl flex items-center justify-center mb-4">
+                                <i class="fas fa-chart-line text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-dark dark:text-white mb-3" data-es="Eficiencia Operativa"
+                                data-en="Operational Efficiency">
+                                Eficiencia Operativa
+                            </h3>
+                            <p class="text-gray-600 dark:text-gray-300">
+                                <span
+                                    data-es="Automatización de procesos que elimina tareas repetitivas y reduce errores humanos."
+                                    data-en="Process automation that eliminates repetitive tasks and reduces human errors.">
+                                    Automatización de procesos que elimina tareas repetitivas y reduce errores humanos.
+                                </span>
+                            </p>
+                        </div>
+
+                        <div
+                            class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 border border-gray-200 dark:border-gray-700">
+                            <div
+                                class="bg-secondary dark:bg-accent w-16 h-16 rounded-2xl flex items-center justify-center mb-4">
+                                <i class="fas fa-users text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-dark dark:text-white mb-3"
+                                data-es="Experiencia del Cliente" data-en="Customer Experience">
+                                Experiencia del Cliente
+                            </h3>
+                            <p class="text-gray-600 dark:text-gray-300">
+                                <span
+                                    data-es="Procesos ágiles que mejoran la satisfacción y fidelización de tus clientes."
+                                    data-en="Agile processes that improve customer satisfaction and loyalty.">
+                                    Procesos ágiles que mejoran la satisfacción y fidelización de tus clientes.
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <h2 data-es="El camino hacia una transformación exitosa"
+                        data-en="The Path to Successful Transformation">
+                        El camino hacia una transformación exitosa
+                    </h2>
+
+                    <p>
+                        <span
+                            data-es="La digitalización exitosa no ocurre de la noche a la mañana. Requiere una estrategia clara, implementación gradual y medición constante. Comienza con un diagnóstico honesto de tus procesos actuales, identifica los puntos críticos y prioriza las áreas que generarán mayor impacto en tu negocio."
+                            data-en="Successful digitalization doesn't happen overnight. It requires a clear strategy, gradual implementation, and constant measurement. Start with an honest diagnosis of your current processes, identify critical points, and prioritize areas that will generate the greatest impact on your business.">
+                            La digitalización exitosa no ocurre de la noche a la mañana. Requiere una estrategia clara,
+                            implementación gradual y medición constante. Comienza con un diagnóstico honesto de tus
+                            procesos actuales, identifica los puntos críticos y prioriza las áreas que generarán mayor
+                            impacto en tu negocio.
+                        </span>
+                    </p>
+
+                    <!-- CTA al final del artículo -->
+                    <div class="bg-gradient-to-r from-secondary to-accent rounded-3xl p-8 my-12 text-white text-center">
+                        <h3 class="text-2xl font-black mb-4" data-es="¿Listo para comenzar tu transformación digital?"
+                            data-en="Ready to Start Your Digital Transformation?">
+                            ¿Listo para comenzar tu transformación digital?
+                        </h3>
+                        <p class="mb-6 text-white/90">
+                            <span
+                                data-es="En Kerbrum Agency te acompañamos en cada paso del proceso con soluciones personalizadas."
+                                data-en="At Kerbrum Agency, we accompany you every step of the way with customized solutions.">
+                                En Kerbrum Agency te acompañamos en cada paso del proceso con soluciones personalizadas.
+                            </span>
+                        </p>
+                        <a href="../index.html#contact"
+                            class="bg-white text-secondary px-8 py-4 rounded-2xl font-bold inline-flex items-center hover:scale-105 transition-all duration-500 shadow-2xl">
+                            <span data-es="Contactar ahora" data-en="Contact Now">Contactar ahora</span>
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <!-- Footer -->
+    <!-- Footer  -->
+    <footer class="bg-primary dark:bg-dark py-20 text-gray-300 relative overflow-hidden">
+        <div class="absolute inset-0 bg-grid-pattern bg-[size:100px_100px] opacity-5"></div>
+        <div class="absolute top-10 left-10 w-20 h-20 bg-secondary/10 rounded-full animate-float"></div>
+        <div class="absolute bottom-20 right-20 w-16 h-16 bg-accent/10 rounded-full animate-float"
+            style="animation-delay: 2s"></div>
+
+        <div class="container mx-auto px-4 md:px-6 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div class="footer-section" data-aos="fade-up" data-aos-duration="800">
+                    <a href="../index.html">
+                        <img src="../img/logo-kerbrum.png" alt="Kerbrum Agency"
+                            class="h-14 w-auto mb-6  opacity-90 hover:opacity-100 transition-opacity duration-500">
+                    </a>
+                    <p class="text-gray-400 mb-6 leading-relaxed max-w-xs">
+                        <span
+                            data-es="Transformamos tu negocio con tecnología inteligente e innovación disruptiva. Creamos soluciones digitales que impulsan el crecimiento exponencial."
+                            data-en="We transform your business with intelligent technology and disruptive innovation. We create digital solutions that drive exponential growth.">Transformamos
+                            tu negocio con tecnología inteligente e innovación disruptiva. Creamos soluciones digitales
+                            que impulsan el crecimiento exponencial.</span>
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/share/1Fue25EhbS/"
+                            class="social-footer w-10 h-10 bg-gray-700 hover:bg-secondary rounded-xl flex items-center justify-center transition-all duration-500 transform hover:scale-110 hover:rotate-12 group">
+                            <i
+                                class="fab fa-facebook-f text-white text-sm group-hover:scale-110 transition-transform"></i>
+                        </a>
+                        <a href="https://www.instagram.com/kerbrumagency?igsh=Y3E4ejk5dXVjZHlz"
+                            class="social-footer w-10 h-10 bg-gray-700 hover:bg-secondary rounded-xl flex items-center justify-center transition-all duration-500 transform hover:scale-110 hover:rotate-12 group">
+                            <i
+                                class="fab fa-instagram text-white text-sm group-hover:scale-110 transition-transform"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/kerbrum-agency/"
+                            class="social-footer w-10 h-10 bg-gray-700 hover:bg-secondary rounded-xl flex items-center justify-center transition-all duration-500 transform hover:scale-110 hover:rotate-12 group">
+                            <i
+                                class="fab fa-linkedin-in text-white text-sm group-hover:scale-110 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-section" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                    <h4 class="text-white text-xl font-bold mb-6" data-es="Navegación" data-en="Navigation">
+                        Navegación</h4>
+                    <ul class="space-y-4">
+                        <li>
+                            <a href="../index.html#home"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                                <span data-es="Inicio" data-en="Home">Inicio</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../index.html#why-us"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                                <span data-es="Por qué elegirnos" data-en="Why Choose Us">Por qué elegirnos</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../index.html#process"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                                <span data-es="Nuestro enfoque" data-en="Our Approach">Nuestro enfoque</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../index.html#success-cases"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                                <span data-es="Casos de éxito" data-en="Success Cases">Casos de éxito</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../index.html#contact"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                                <span data-es="Contacto" data-en="Contact">Contacto</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-section" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                    <h4 class="text-white text-xl font-bold mb-6" data-es="Recursos" data-en="Resources">Recursos</h4>
+                    <ul class="space-y-4">
+                        <li>
+                            <a href="../index.html#portfolio"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                                <span data-es="Productos" data-en="Products">Productos</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../index.html#blog"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                                <span data-es="Blog" data-en="Blog">Blog</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../index.html#ebook"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                                <span data-es="E-book Gratuito" data-en="Free E-book">E-book Gratuito</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../index.html#services"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                                <span data-es="Enemigos del crecimiento" data-en="Growth Challenges">Enemigos del
+                                    crecimiento</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../index.html#failed-attempts"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                                <span data-es="Intentos sin resultados" data-en="Failed Attempts">Intentos sin
+                                    resultados</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contacto footer -->
+                <div class="footer-section" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                    <h4 class="text-white text-xl font-bold mb-6" data-es="Contacto" data-en="Contact">Contacto</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-envelope text-secondary dark:text-accent mt-1 mr-3"></i>
+                            <div>
+                                <p class="text-gray-400">ventas@kerbrumagency.com</p>
+                                <p class="text-gray-500 text-sm" data-es="Email principal" data-en="Main email">Email
+                                    principal</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-globe text-secondary dark:text-accent mt-1 mr-3"></i>
+                            <div>
+                                <p class="text-gray-400">https://kerbrumagency.com</p>
+                                <p class="text-gray-500 text-sm" data-es="Sitio web oficial" data-en="Official website">
+                                    Sitio web oficial</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-secondary dark:text-accent mt-1 mr-3"></i>
+                            <div>
+                                <p class="text-gray-400" data-es="Latinoamérica" data-en="Latin America">Latinoamérica
+                                </p>
+                                <p class="text-gray-500 text-sm" data-es="Clientes globales" data-en="Global clients">
+                                    Clientes globales</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="text-center md:text-left mb-4 md:mb-0">
+                        <p class="text-gray-400">
+                            © <span id="current-year">2024</span> Kerbrum Agency.
+                            <span data-es="Todos los derechos reservados." data-en="All rights reserved.">Todos los
+                                derechos reservados.</span>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../js/component-loader.js"></script>
+    <script src="../js/navigation.js"></script>
+    <script src="../js/theme-switcher.js"></script>
+    <script src="../js/language-switcher.js"></script>
+    <script>
+        // Inicializar AOS
+        document.addEventListener('DOMContentLoaded', function () {
+            if (typeof AOS !== 'undefined') {
+                AOS.init({
+                    duration: 800,
+                    once: true,
+                    offset: 100
+                });
+            }
+
+
+            // Año actual - esperar a que el footer se cargue
+            setTimeout(() => {
+                const yearElement = document.getElementById('current-year');
+                if (yearElement) {
+                    yearElement.textContent = new Date().getFullYear();
+                }
+            }, 500);
+
+            // Navegación móvil
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            // Forzar recarga de traducciones al cargar la página
+            if (window.reloadTranslations) {
+                window.reloadTranslations();
+            }
+        });
+    </script>
+</body>
+
+</html>

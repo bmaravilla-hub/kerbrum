@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-es="Adopta el Servicio Digital: La Necesidad de las Empresas - Kerbrum Agency"
+        data-en="Adopt Digital Service: The Necessity for Businesses - Kerbrum Agency">
+        Adopta el Servicio Digital: La Necesidad de las Empresas - Kerbrum Agency
+    </title>
+    <meta name="description"
+        data-es="Descubre por qué digitalizar los canales de servicio al cliente es esencial para la competitividad y satisfacción del cliente moderno."
+        data-en="Discover why digitizing customer service channels is essential for competitiveness and modern customer satisfaction.">
+    <link rel="icon" href="../img/logo.png">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3VZCJWC1Q2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-3VZCJWC1Q2');
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#00142F",
+                        secondary: "#1A63E3",
+                        accent: "#C4C7F2",
+                        light: "#F7F8FC",
+                        dark: "#0A142F",
+                        gradientStart: "#667eea",
+                        gradientEnd: "#764ba2",
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fade-in-up 0.8s ease-out',
+                    },
+                    backgroundImage: {
+                        'grid-pattern': 'linear-gradient(to right, #80808012 1px, transparent 1px), linear-gradient(to bottom, #80808012 1px, transparent 1px)',
+                    }
+                },
+            },
+        }
+    </script>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/light-theme.css" id="theme-stylesheet">
+    <link rel="stylesheet" href="../styles/responsive.css">
+
+    <style>
+        .prose {
+            max-width: none;
+        }
+
+        .prose h2 {
+            color: #00142F;
+            font-weight: 800;
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .prose p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .dark .prose h2 {
+            color: #F7F8FC;
+        }
+
+        .language-switcher {
+            position: relative;
+        }
+
+        .language-dropdown {
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+
+        .language-switcher:hover .language-dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .language-option:hover {
+            background-color: rgba(59, 130, 246, 0.1);
+        }
+
+        .language-switcher-mobile:hover .language-options-mobile {
+            display: flex;
+        }
+    </style>
+</head>
+
+<body class="bg-white dark:bg-dark text-gray-800 dark:text-gray-200 transition-colors duration-500">
+
+    <!-- Barra de navegación -->
+    <!-- Navegación -->
+    <div id="nav-container"></div>
+
+    <!-- Header del artículo -->
+    <section
+        class="pt-32 pb-20 bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-dark relative overflow-hidden">
+        <div class="absolute inset-0 bg-grid-pattern bg-[size:100px_100px] opacity-5"></div>
+
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="max-w-4xl mx-auto">
+                <a href="../blogs.html"
+                    class="inline-flex items-center text-secondary dark:text-accent font-semibold mb-6 hover:underline transition-all duration-300 group">
+                    <i class="fas fa-arrow-left mr-2 group-hover:-translate-x-1 transition-transform"></i>
+                    <span data-es="Volver al blog" data-en="Back to blog">Volver al blog</span>
+                </a>
+
+                <div
+                    class="inline-flex items-center space-x-3 bg-secondary/10 dark:bg-accent/20 text-secondary dark:text-accent px-6 py-3 rounded-2xl text-base font-semibold mb-6 border border-secondary/20 dark:border-accent/20 backdrop-blur-sm">
+                    <i class="fas fa-headset"></i>
+                    <span data-es="Servicio al Cliente" data-en="Customer Service">Servicio al Cliente</span>
+                </div>
+
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight">
+                    <span data-es="Adopta el Servicio Digital: La Poderosa Necesidad de las Empresas"
+                        data-en="Adopt Digital Service: The Powerful Necessity for Businesses">
+                        Adopta el Servicio Digital: La Poderosa Necesidad de las Empresas
+                    </span>
+                </h1>
+
+                <div class="flex items-center space-x-6 text-gray-600 dark:text-gray-300 mb-8">
+                    <div class="flex items-center space-x-2">
+                        <i class="far fa-clock"></i>
+                        <span data-es="6 min lectura" data-en="6 min read">6 min lectura</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="far fa-calendar"></i>
+                        <span>Mayo 2024</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-user"></i>
+                        <span data-es="Equipo Kerbrum" data-en="Kerbrum Team">Equipo Kerbrum</span>
+                    </div>
+                </div>
+
+                <div class="blog-image h-96 rounded-3xl mb-8 relative overflow-hidden shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                        alt="Servicio Digital al Cliente" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenido del artículo -->
+    <section class="py-16 bg-white dark:bg-dark">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="prose prose-lg dark:prose-invert">
+                    <p class="text-xl text-gray-600 dark:text-gray-300 leading-relaxed mb-8 font-light">
+                        <span
+                            data-es="En la era digital, la necesidad de que las industrias digitalicen sus canales de servicio al cliente es más crítica que nunca. Los consumidores modernos esperan interacciones rápidas, eficientes y personalizadas, lo que impulsa a las empresas a repensar sus estrategias de servicio. La digitalización no solo mejora la eficiencia operativa, sino que también proporciona una experiencia más satisfactoria al cliente."
+                            data-en="In the digital age, the need for industries to digitize their customer service channels is more critical than ever. Modern consumers expect fast, efficient, and personalized interactions, driving companies to rethink their service strategies. Digitalization not only improves operational efficiency but also provides a more satisfying customer experience.">
+                            En la era digital, la necesidad de que las industrias digitalicen sus canales de servicio al
+                            cliente es más crítica que nunca. Los consumidores modernos esperan interacciones rápidas,
+                            eficientes y personalizadas, lo que impulsa a las empresas a repensar sus estrategias de
+                            servicio. La digitalización no solo mejora la eficiencia operativa, sino que también
+                            proporciona una experiencia más satisfactoria al cliente.
+                        </span>
+                    </p>
+
+                    <h2 data-es="Soporte 24/7 con Automatización Inteligente"
+                        data-en="24/7 Support with Smart Automation">
+                        Soporte 24/7 con Automatización Inteligente
+                    </h2>
+
+                    <p>
+                        <span
+                            data-es="Uno de los principales beneficios de digitalizar los canales de servicio al cliente es la capacidad de ofrecer soporte 24/7. Con chatbots y sistemas de respuesta automatizados, las empresas pueden gestionar consultas en cualquier momento, mejorando la satisfacción del cliente y reduciendo los tiempos de espera. Además, estas herramientas permiten la recopilación y el análisis de datos de interacción, proporcionando valiosas ideas sobre las necesidades y preferencias de los clientes."
+                            data-en="One of the main benefits of digitizing customer service channels is the ability to offer 24/7 support. With chatbots and automated response systems, companies can manage queries at any time, improving customer satisfaction and reducing wait times. Additionally, these tools enable the collection and analysis of interaction data, providing valuable insights into customer needs and preferences.">
+                            Uno de los principales beneficios de digitalizar los canales de servicio al cliente es la
+                            capacidad de ofrecer soporte 24/7. Con chatbots y sistemas de respuesta automatizados, las
+                            empresas pueden gestionar consultas en cualquier momento, mejorando la satisfacción del
+                            cliente y reduciendo los tiempos de espera. Además, estas herramientas permiten la
+                            recopilación y el análisis de datos de interacción, proporcionando valiosas ideas sobre las
+                            necesidades y preferencias de los clientes.
+                        </span>
+                    </p>
+
+                    <!-- Cita destacada -->
+                    <div
+                        class="bg-secondary/10 dark:bg-accent/20 rounded-3xl p-8 my-12 border-l-4 border-secondary dark:border-accent">
+                        <div class="flex items-start space-x-4">
+                            <div
+                                class="bg-secondary dark:bg-accent w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-bolt text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-lg font-semibold text-dark dark:text-white mb-2">
+                                    <span
+                                        data-es="La digitalización también permite una personalización más efectiva, ya que las empresas pueden adaptar sus respuestas y ofertas en función del historial y comportamiento del cliente. En un mercado cada vez más competitivo, las industrias que no se adapten a estas nuevas expectativas corren el riesgo de quedarse atrás."
+                                        data-en="Digitalization also enables more effective personalization, as companies can adapt their responses and offers based on customer history and behavior. In an increasingly competitive market, industries that don't adapt to these new expectations risk falling behind.">
+                                        La digitalización también permite una personalización más efectiva, ya que las
+                                        empresas pueden adaptar sus respuestas y ofertas en función del historial y
+                                        comportamiento del cliente. En un mercado cada vez más competitivo, las
+                                        industrias que no se adapten a estas nuevas expectativas corren el riesgo de
+                                        quedarse atrás.
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2 data-es="Integración de Múltiples Canales" data-en="Integration of Multiple Channels">
+                        Integración de Múltiples Canales
+                    </h2>
+
+                    <!-- Canales de servicio -->
+                    <div class="grid md:grid-cols-2 gap-6 my-12">
+                        <div
+                            class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 border border-gray-200 dark:border-gray-700">
+                            <div
+                                class="bg-secondary dark:bg-accent w-16 h-16 rounded-2xl flex items-center justify-center mb-4">
+                                <i class="fab fa-whatsapp text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-dark dark:text-white mb-3"
+                                data-es="Mensajería Instantánea" data-en="Instant Messaging">
+                                Mensajería Instantánea
+                            </h3>
+                            <p class="text-gray-600 dark:text-gray-300">
+                                <span
+                                    data-es="Integración con WhatsApp Business, Messenger y otros canales de mensajería para respuestas inmediatas."
+                                    data-en="Integration with WhatsApp Business, Messenger, and other messaging channels for immediate responses.">
+                                    Integración con WhatsApp Business, Messenger y otros canales de mensajería para
+                                    respuestas inmediatas.
+                                </span>
+                            </p>
+                        </div>
+                        <div
+                            class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 border border-gray-200 dark:border-gray-700">
+                            <div
+                                class="bg-secondary dark:bg-accent w-16 h-16 rounded-2xl flex items-center justify-center mb-4">
+                                <i class="fas fa-mobile-alt text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-dark dark:text-white mb-3" data-es="Aplicaciones Móviles"
+                                data-en="Mobile Applications">
+                                Aplicaciones Móviles
+                            </h3>
+                            <p class="text-gray-600 dark:text-gray-300">
+                                <span data-es="Desarrollo de apps nativas que ofrecen autoservicio y soporte integrado."
+                                    data-en="Development of native apps that offer self-service and integrated support.">
+                                    Desarrollo de apps nativas que ofrecen autoservicio y soporte integrado.
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <h2 data-es="Personalización Basada en Datos" data-en="Data-Based Personalization">
+                        Personalización Basada en Datos
+                    </h2>
+
+                    <p>
+                        <span
+                            data-es="Otro aspecto crucial es la integración de múltiples canales, como las redes sociales, el correo electrónico y las aplicaciones móviles. Esto facilita que los clientes se comuniquen a través de su método preferido, mejorando la experiencia general y fortaleciendo la relación entre la marca y el consumidor."
+                            data-en="Another crucial aspect is the integration of multiple channels, such as social media, email, and mobile applications. This makes it easier for customers to communicate through their preferred method, improving the overall experience and strengthening the relationship between the brand and the consumer.">
+                            Otro aspecto crucial es la integración de múltiples canales, como las redes sociales, el
+                            correo electrónico y las aplicaciones móviles. Esto facilita que los clientes se comuniquen
+                            a través de su método preferido, mejorando la experiencia general y fortaleciendo la
+                            relación entre la marca y el consumidor.
+                        </span>
+                    </p>
+
+                    <!-- Beneficios de la personalización -->
+                    <div
+                        class="bg-purple-50 dark:bg-purple-900/20 rounded-3xl p-8 my-12 border border-purple-200 dark:border-purple-800">
+                        <h3 class="text-xl font-bold text-purple-800 dark:text-purple-300 mb-4 flex items-center">
+                            <i class="fas fa-user-cog mr-2"></i>
+                            <span data-es="Ventajas del Servicio Digital Personalizado"
+                                data-en="Advantages of Personalized Digital Service">
+                                Ventajas del Servicio Digital Personalizado
+                            </span>
+                        </h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-semibold text-purple-700 dark:text-purple-300 mb-3"
+                                    data-es="Para el Cliente" data-en="For the Customer">
+                                    Para el Cliente
+                                </h4>
+                                <ul class="space-y-2 text-purple-600 dark:text-purple-400">
+                                    <li class="flex items-center">
+                                        <i class="fas fa-check mr-2 text-green-500"></i>
+                                        <span data-es="Respuestas inmediatas 24/7" data-en="Immediate responses 24/7">
+                                            Respuestas inmediatas 24/7
+                                        </span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-check mr-2 text-green-500"></i>
+                                        <span data-es="Experiencias personalizadas" data-en="Personalized experiences">
+                                            Experiencias personalizadas
+                                        </span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-check mr-2 text-green-500"></i>
+                                        <span data-es="Múltiples canales de contacto"
+                                            data-en="Multiple contact channels">
+                                            Múltiples canales de contacto
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-purple-700 dark:text-purple-300 mb-3"
+                                    data-es="Para la Empresa" data-en="For the Company">
+                                    Para la Empresa
+                                </h4>
+                                <ul class="space-y-2 text-purple-600 dark:text-purple-400">
+                                    <li class="flex items-center">
+                                        <i class="fas fa-check mr-2 text-green-500"></i>
+                                        <span data-es="Insights valiosos de clientes"
+                                            data-en="Valuable customer insights">
+                                            Insights valiosos de clientes
+                                        </span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-check mr-2 text-green-500"></i>
+                                        <span data-es="Escalabilidad del servicio" data-en="Service scalability">
+                                            Escalabilidad del servicio
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2 data-es="Implementación Estratégica" data-en="Strategic Implementation">
+                        Implementación Estratégica
+                    </h2>
+
+                    <p>
+                        <span
+                            data-es="La transición hacia el servicio digital requiere una estrategia bien planificada. No se trata simplemente de agregar tecnología, sino de rediseñar procesos completos para centrarse en la experiencia del cliente. Esto incluye la capacitación del personal, la integración de sistemas y la medición continua del desempeño."
+                            data-en="The transition to digital service requires a well-planned strategy. It's not just about adding technology, but about redesigning complete processes to focus on the customer experience. This includes staff training, system integration, and continuous performance measurement.">
+                            La transición hacia el servicio digital requiere una estrategia bien planificada. No se
+                            trata simplemente de agregar tecnología, sino de rediseñar procesos completos para centrarse
+                            en la experiencia del cliente. Esto incluye la capacitación del personal, la integración de
+                            sistemas y la medición continua del desempeño.
+                        </span>
+                    </p>
+
+                    <!-- Pasos de implementación -->
+                    <div class="space-y-4 my-12">
+                        <div
+                            class="flex items-center space-x-4 bg-white dark:bg-gray-800 p-6 rounded-2xl border border-gray-200 dark:border-gray-700">
+                            <div
+                                class="bg-secondary text-white w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0 font-bold text-lg">
+                                1</div>
+                            <div>
+                                <h4 class="font-bold text-dark dark:text-white mb-1"
+                                    data-es="Diagnóstico y Planificación" data-en="Diagnosis and Planning">
+                                    Diagnóstico y Planificación
+                                </h4>
+                                <p class="text-gray-600 dark:text-gray-300">
+                                    <span
+                                        data-es="Análisis de canales existentes y definición de objetivos de digitalización."
+                                        data-en="Analysis of existing channels and definition of digitalization objectives.">
+                                        Análisis de canales existentes y definición de objetivos de digitalización.
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                        <div
+                            class="flex items-center space-x-4 bg-white dark:bg-gray-800 p-6 rounded-2xl border border-gray-200 dark:border-gray-700">
+                            <div
+                                class="bg-secondary text-white w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0 font-bold text-lg">
+                                2</div>
+                            <div>
+                                <h4 class="font-bold text-dark dark:text-white mb-1" data-es="Selección de Tecnología"
+                                    data-en="Technology Selection">
+                                    Selección de Tecnología
+                                </h4>
+                                <p class="text-gray-600 dark:text-gray-300">
+                                    <span
+                                        data-es="Elección de herramientas y plataformas que se alineen con los objetivos."
+                                        data-en="Selection of tools and platforms that align with objectives.">
+                                        Elección de herramientas y plataformas que se alineen con los objetivos.
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                        <div
+                            class="flex items-center space-x-4 bg-white dark:bg-gray-800 p-6 rounded-2xl border border-gray-200 dark:border-gray-700">
+                            <div
+                                class="bg-secondary text-white w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0 font-bold text-lg">
+                                3</div>
+                            <div>
+                                <h4 class="font-bold text-dark dark:text-white mb-1"
+                                    data-es="Integración y Capacitación" data-en="Integration and Training">
+                                    Integración y Capacitación
+                                </h4>
+                                <p class="text-gray-600 dark:text-gray-300">
+                                    <span data-es="Implementación técnica y preparación del equipo para el cambio."
+                                        data-en="Technical implementation and team preparation for change.">
+                                        Implementación técnica y preparación del equipo para el cambio.
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Estadísticas impactantes -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 my-12">
+                        <div class="bg-gradient-to-br from-secondary to-accent rounded-2xl p-4 text-white text-center">
+                            <div class="text-2xl font-black mb-1">89%</div>
+                            <div class="text-white/80 text-sm" data-es="de clientes prefieren servicio digital"
+                                data-en="of customers prefer digital service">de clientes prefieren servicio digital
+                            </div>
+                        </div>
+                        <div class="bg-gradient-to-br from-accent to-secondary rounded-2xl p-4 text-white text-center">
+                            <div class="text-2xl font-black mb-1">67%</div>
+                            <div class="text-white/80 text-sm" data-es="reducción en tiempos de espera"
+                                data-en="reduction in wait times">reducción en tiempos de espera</div>
+                        </div>
+                        <div class="bg-gradient-to-br from-secondary to-accent rounded-2xl p-4 text-white text-center">
+                            <div class="text-2xl font-black mb-1">45%</div>
+                            <div class="text-white/80 text-sm" data-es="aumento en satisfacción"
+                                data-en="increase in satisfaction">aumento en satisfacción</div>
+                        </div>
+                        <div class="bg-gradient-to-br from-accent to-secondary rounded-2xl p-4 text-white text-center">
+                            <div class="text-2xl font-black mb-1">3.2x</div>
+                            <div class="text-white/80 text-sm" data-es="más eficiencia operativa"
+                                data-en="more operational efficiency">más eficiencia operativa</div>
+                        </div>
+                    </div>
+
+                    <!-- CTA al final del artículo -->
+                    <div class="bg-gradient-to-r from-secondary to-accent rounded-3xl p-8 my-12 text-white text-center">
+                        <h3 class="text-2xl font-black mb-4" data-es="¿Listo para Transformar tu Servicio al Cliente?"
+                            data-en="Ready to Transform Your Customer Service?">
+                            ¿Listo para Transformar tu Servicio al Cliente?
+                        </h3>
+                        <p class="mb-6 text-white/90">
+                            <span
+                                data-es="Implementamos soluciones digitales que mejoran la experiencia del cliente y optimizan tus operaciones."
+                                data-en="We implement digital solutions that improve customer experience and optimize your operations.">
+                                Implementamos soluciones digitales que mejoran la experiencia del cliente y optimizan
+                                tus operaciones.
+                            </span>
+                        </p>
+                        <a href="../index.html#contact"
+                            class="bg-white text-secondary px-8 py-4 rounded-2xl font-bold inline-flex items-center hover:scale-105 transition-all duration-500 shadow-2xl">
+                            <span data-es="Digitalizar Mi Servicio" data-en="Digitize My Service">Digitalizar Mi
+                                Servicio</span>
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer  -->
+    <footer class="bg-primary dark:bg-dark py-20 text-gray-300 relative overflow-hidden">
+        <div class="absolute inset-0 bg-grid-pattern bg-[size:100px_100px] opacity-5"></div>
+        <div class="absolute top-10 left-10 w-20 h-20 bg-secondary/10 rounded-full animate-float"></div>
+        <div class="absolute bottom-20 right-20 w-16 h-16 bg-accent/10 rounded-full animate-float"
+            style="animation-delay: 2s"></div>
+
+        <div class="container mx-auto px-4 md:px-6 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div class="footer-section" data-aos="fade-up" data-aos-duration="800">
+                    <a href="../index.html">
+                        <img src="../img/logo-kerbrum.png" alt="Kerbrum Agency"
+                            class="h-14 w-auto mb-6  opacity-90 hover:opacity-100 transition-opacity duration-500">
+                    </a>
+                    <p class="text-gray-400 mb-6 leading-relaxed max-w-xs">
+                        <span
+                            data-es="Transformamos tu negocio con tecnología inteligente e innovación disruptiva. Creamos soluciones digitales que impulsan el crecimiento exponencial."
+                            data-en="We transform your business with intelligent technology and disruptive innovation. We create digital solutions that drive exponential growth.">Transformamos
+                            tu negocio con tecnología inteligente e innovación disruptiva. Creamos soluciones digitales
+                            que impulsan el crecimiento exponencial.</span>
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/share/1Fue25EhbS/"
+                            class="social-footer w-10 h-10 bg-gray-700 hover:bg-secondary rounded-xl flex items-center justify-center transition-all duration-500 transform hover:scale-110 hover:rotate-12 group">
+                            <i
+                                class="fab fa-facebook-f text-white text-sm group-hover:scale-110 transition-transform"></i>
+                        </a>
+                        <a href="https://www.instagram.com/kerbrumagency?igsh=Y3E4ejk5dXVjZHlz"
+                            class="social-footer w-10 h-10 bg-gray-700 hover:bg-secondary rounded-xl flex items-center justify-center transition-all duration-500 transform hover:scale-110 hover:rotate-12 group">
+                            <i
+                                class="fab fa-instagram text-white text-sm group-hover:scale-110 transition-transform"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/kerbrum-agency/"
+                            class="social-footer w-10 h-10 bg-gray-700 hover:bg-secondary rounded-xl flex items-center justify-center transition-all duration-500 transform hover:scale-110 hover:rotate-12 group">
+                            <i
+                                class="fab fa-linkedin-in text-white text-sm group-hover:scale-110 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-section" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                    <h4 class="text-white text-xl font-bold mb-6" data-es="Navegación" data-en="Navigation">
+                        Navegación</h4>
+                    <ul class="space-y-4">
+                        <li>
+                            <a href="../index.html#home"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                                <span data-es="Inicio" data-en="Home">Inicio</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../index.html#why-us"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                                <span data-es="Por qué elegirnos" data-en="Why Choose Us">Por qué elegirnos</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../index.html#process"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                                <span data-es="Nuestro enfoque" data-en="Our Approach">Nuestro enfoque</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../index.html#success-cases"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                                <span data-es="Casos de éxito" data-en="Success Cases">Casos de éxito</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../index.html#contact"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                                <span data-es="Contacto" data-en="Contact">Contacto</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-section" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                    <h4 class="text-white text-xl font-bold mb-6" data-es="Recursos" data-en="Resources">Recursos</h4>
+                    <ul class="space-y-4">
+                        <li>
+                            <a href="../index.html#portfolio"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                                <span data-es="Productos" data-en="Products">Productos</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../index.html#blog"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                                <span data-es="Blog" data-en="Blog">Blog</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../index.html#ebook"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                                <span data-es="E-book Gratuito" data-en="Free E-book">E-book Gratuito</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../index.html#services"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                                <span data-es="Enemigos del crecimiento" data-en="Growth Challenges">Enemigos del
+                                    crecimiento</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../index.html#failed-attempts"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                                <span data-es="Intentos sin resultados" data-en="Failed Attempts">Intentos sin
+                                    resultados</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contacto footer -->
+                <div class="footer-section" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                    <h4 class="text-white text-xl font-bold mb-6" data-es="Contacto" data-en="Contact">Contacto</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-envelope text-secondary dark:text-accent mt-1 mr-3"></i>
+                            <div>
+                                <p class="text-gray-400">ventas@kerbrumagency.com</p>
+                                <p class="text-gray-500 text-sm" data-es="Email principal" data-en="Main email">Email
+                                    principal</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-globe text-secondary dark:text-accent mt-1 mr-3"></i>
+                            <div>
+                                <p class="text-gray-400">https://kerbrumagency.com</p>
+                                <p class="text-gray-500 text-sm" data-es="Sitio web oficial" data-en="Official website">
+                                    Sitio web oficial</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-secondary dark:text-accent mt-1 mr-3"></i>
+                            <div>
+                                <p class="text-gray-400" data-es="Latinoamérica" data-en="Latin America">Latinoamérica
+                                </p>
+                                <p class="text-gray-500 text-sm" data-es="Clientes globales" data-en="Global clients">
+                                    Clientes globales</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="text-center md:text-left mb-4 md:mb-0">
+                        <p class="text-gray-400">
+                            © <span id="current-year">2024</span> Kerbrum Agency.
+                            <span data-es="Todos los derechos reservados." data-en="All rights reserved.">Todos los
+                                derechos reservados.</span>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../js/component-loader.js"></script>
+    <script src="../js/navigation.js"></script>
+    <script src="../js/theme-switcher.js"></script>
+    <script>
+        // Sistema de traducción
+        document.addEventListener('DOMContentLoaded', function () {
+            // Inicializar AOS
+            if (typeof AOS !== 'undefined') {
+                AOS.init({
+                    duration: 800,
+                    once: true,
+                    offset: 100
+                });
+            }
+
+            // Año actual
+            setTimeout(() => {
+                const yearElement = document.getElementById('current-year');
+                if (yearElement) {
+                    yearElement.textContent = new Date().getFullYear();
+                }
+            }, 500);
+
+            // Navegación móvil
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            // Sistema de traducción
+            let currentLang = localStorage.getItem('language') || 'es';
+
+            // Función para cambiar idioma
+            function changeLanguage(lang) {
+                currentLang = lang;
+                localStorage.setItem('language', lang);
+                updateLanguage();
+            }
+
+            // Función para actualizar todos los textos
+            function updateLanguage() {
+                // Actualizar elementos con data attributes
+                document.querySelectorAll('[data-es]').forEach(element => {
+                    if (currentLang === 'es') {
+                        element.textContent = element.getAttribute('data-es');
+                    } else {
+                        element.textContent = element.getAttribute('data-en');
+                    }
+                });
+
+                // Actualizar etiquetas de idioma
+                document.querySelectorAll('.language-label').forEach(element => {
+                    if (currentLang === 'es') {
+                        element.textContent = 'ES';
+                    } else {
+                        element.textContent = 'EN';
+                    }
+                });
+
+                // Actualizar título y descripción
+                const titleElement = document.querySelector('title');
+                if (currentLang === 'es') {
+                    document.title = titleElement.getAttribute('data-es');
+                    document.querySelector('meta[name="description"]').setAttribute('content', document.querySelector('meta[name="description"]').getAttribute('data-es'));
+                } else {
+                    document.title = titleElement.getAttribute('data-en');
+                    document.querySelector('meta[name="description"]').setAttribute('content', document.querySelector('meta[name="description"]').getAttribute('data-en'));
+                }
+            }
+
+            // Event listeners para botones de idioma
+            document.querySelectorAll('.language-option').forEach(button => {
+                button.addEventListener('click', function () {
+                    const lang = this.getAttribute('data-lang');
+                    changeLanguage(lang);
+                });
+            });
+
+            // Inicializar con el idioma guardado
+            updateLanguage();
+
+            // Hacer la función disponible globalmente
+            window.reloadTranslations = updateLanguage;
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-es="Todos los Artículos - Kerbrum Agency" data-en="All Articles - Kerbrum Agency">Todos los Artículos -
+        Kerbrum Agency</title>
+    <meta name="description"
+        data-es="Explora todos nuestros artículos sobre transformación digital, IA, fintech y más en Kerbrum Agency."
+        data-en="Explore all our articles about digital transformation, AI, fintech and more at Kerbrum Agency.">
+    <link rel="icon" href="img/logo.png">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3VZCJWC1Q2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-3VZCJWC1Q2');
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#00142F",
+                        secondary: "#1A63E3",
+                        accent: "#C4C7F2",
+                        light: "#F7F8FC",
+                        dark: "#0A142F",
+                        gradientStart: "#667eea",
+                        gradientEnd: "#764ba2",
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'fade-in-up': 'fade-in-up 0.8s ease-out',
+                    },
+                    backgroundImage: {
+                        'grid-pattern': 'linear-gradient(to right, #80808012 1px, transparent 1px), linear-gradient(to bottom, #80808012 1px, transparent 1px)',
+                    }
+                },
+            },
+        }
+    </script>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/light-theme.css" id="theme-stylesheet">
+    <link rel="stylesheet" href="styles/responsive.css">
+
+    <style>
+        .filter-btn.active {
+            background-color: #1A63E3;
+            color: white;
+        }
+
+        .blog-card {
+            transition: all 0.5s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .blog-card:hover {
+            transform: scale(1.05);
+        }
+
+        .blog-content {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .blog-content h3 {
+            min-height: 4rem;
+            display: flex;
+            align-items: start;
+        }
+
+        .blog-content p {
+            flex-grow: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-content>div:last-child {
+            margin-top: auto;
+        }
+
+        .category-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            z-index: 10;
+        }
+    </style>
+</head>
+
+<body class="bg-white dark:bg-dark text-gray-800 dark:text-gray-200 transition-colors duration-500">
+
+    <!-- Navegación -->
+    <div id="nav-container"></div>
+    <section
+        class="pt-32 pb-20 bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-dark relative overflow-hidden">
+        <div class="absolute inset-0 bg-grid-pattern bg-[size:100px_100px] opacity-5"></div>
+
+        <div class="container mx-auto px-4 md:px-6 relative z-10">
+            <div class="text-center max-w-4xl mx-auto" data-aos="fade-up" data-aos-duration="800">
+                <div
+                    class="inline-flex items-center space-x-3 bg-secondary/10 dark:bg-accent/20 text-secondary dark:text-accent px-6 py-3 rounded-2xl text-base font-semibold mb-6 border border-secondary/20 dark:border-accent/20 backdrop-blur-sm">
+                    <i class="fas fa-newspaper"></i>
+                    <span data-es="Biblioteca de Conocimiento" data-en="Knowledge Library">Biblioteca de
+                        Conocimiento</span>
+                </div>
+
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight">
+                    <span data-es="Nuestro" data-en="Our">Nuestro</span> <span
+                        class="text-gradient bg-gradient-to-r from-secondary to-accent dark:from-accent dark:to-secondary bg-clip-text text-transparent">
+                        <span data-es="Blog" data-en="Blog">Blog</span>
+                    </span>
+                </h1>
+
+                <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 leading-relaxed font-light">
+                    <span
+                        data-es="Explora todos nuestros artículos sobre transformación digital, inteligencia artificial, fintech y tendencias tecnológicas"
+                        data-en="Explore all our articles about digital transformation, artificial intelligence, fintech and technology trends">
+                        Explora todos nuestros artículos sobre transformación digital, inteligencia artificial, fintech
+                        y tendencias tecnológicas
+                    </span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de todos los artículos -->
+    <section class="py-16 bg-white dark:bg-dark relative overflow-hidden">
+        <div class="absolute inset-0 bg-grid-pattern bg-[size:100px_100px] opacity-5"></div>
+        <div class="container mx-auto px-4 md:px-6 relative z-10">
+            <!-- Filtros de categorías -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12" data-aos="fade-up" data-aos-duration="800">
+                <button
+                    class="filter-btn active bg-secondary text-white px-6 py-3 rounded-2xl font-semibold transition-all duration-500 hover:scale-105"
+                    data-category="all">
+                    <span data-es="Todos los Artículos" data-en="All Articles">Todos los Artículos</span>
+                </button>
+                <button
+                    class="filter-btn bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-6 py-3 rounded-2xl font-semibold transition-all duration-500 hover:scale-105"
+                    data-category="transformacion">
+                    <span data-es="Transformación Digital" data-en="Digital Transformation">Transformación
+                        Digital</span>
+                </button>
+                <button
+                    class="filter-btn bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-6 py-3 rounded-2xl font-semibold transition-all duration-500 hover:scale-105"
+                    data-category="ia">
+                    <span data-es="IA y Automatización" data-en="AI and Automation">IA y Automatización</span>
+                </button>
+                <button
+                    class="filter-btn bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-6 py-3 rounded-2xl font-semibold transition-all duration-500 hover:scale-105"
+                    data-category="fintech">
+                    <span data-es="Fintech" data-en="Fintech">Fintech</span>
+                </button>
+                <button
+                    class="filter-btn bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-6 py-3 rounded-2xl font-semibold transition-all duration-500 hover:scale-105"
+                    data-category="marketing">
+                    <span data-es="Marketing Digital" data-en="Digital Marketing">Marketing Digital</span>
+                </button>
+            </div>
+
+            <!-- Grid de artículos -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="articles-grid">
+
+                <!-- Artículo 1 - Digitalización -->
+                <div class="blog-card group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl border border-gray-200 dark:border-gray-700 transition-all duration-500 backdrop-blur-sm relative overflow-hidden"
+                    data-aos="fade-up" data-aos-duration="800" data-category="transformacion">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-secondary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    </div>
+
+                    <div class="blog-image h-48 rounded-2xl mb-6 relative overflow-hidden">
+                        <img src="img/digital-transformation-hero.jpg" alt="Transformación Digital Empresarial"
+                            class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div class="category-badge bg-accent text-white">
+                            <span data-es="Transformación Digital" data-en="Digital Transformation">Transformación
+                                Digital</span>
+                        </div>
+                    </div>
+
+                    <div class="blog-content">
+                        <h3
+                            class="text-2xl font-black text-dark dark:text-white mb-4 group-hover:text-secondary dark:group-hover:text-accent transition-colors duration-300">
+                            <span data-es="¿Es 'caro' digitalizarse? O ¿Es más costoso no hacerlo?"
+                                data-en="Is Digitalization 'Expensive'? Or Is It More Costly Not To Do It?">
+                                ¿Es 'caro' digitalizarse? O ¿Es más costoso no hacerlo?
+                            </span>
+                        </h3>
+
+                        <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                            <span
+                                data-es="En un entorno donde el cliente es cada vez más digital, muchas empresas siguen operando con procesos manuales y sistemas desconectados que generan cuellos de botella y errores costosos."
+                                data-en="In an environment where customers are increasingly digital, many companies continue to operate with manual processes and disconnected systems that create bottlenecks and costly errors.">
+                                En un entorno donde el cliente es cada vez más digital, muchas empresas siguen operando
+                                con procesos manuales y sistemas desconectados que generan cuellos de botella y errores
+                                costosos.
+                            </span>
+                        </p>
+
+                        <div class="flex items-center justify-between">
+                            <div class="text-sm text-gray-500 dark:text-gray-400">
+                                <i class="far fa-clock mr-1"></i>
+                                <span data-es="7 min lectura" data-en="7 min read">7 min lectura</span>
+                            </div>
+                            <a href="blogs/blog1.html"
+                                class="text-secondary dark:text-accent font-bold flex items-center group-hover:space-x-3 transition-all duration-300">
+                                <span data-es="Leer más" data-en="Read more">Leer más</span>
+                                <i
+                                    class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform duration-300"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Artículo 2 - Fintech -->
+                <div class="blog-card group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl border border-gray-200 dark:border-gray-700 transition-all duration-500 backdrop-blur-sm relative overflow-hidden"
+                    data-aos="fade-up" data-aos-duration="800" data-aos-delay="100" data-category="fintech">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-secondary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    </div>
+
+                    <div class="blog-image h-48 rounded-2xl mb-6 relative overflow-hidden">
+                        <img src="img/fintech-evolution.jpg" alt="Evolución Fintech en Centroamérica"
+                            class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div class="category-badge bg-primary text-white">
+                            <span data-es="Fintech" data-en="Fintech">Fintech</span>
+                        </div>
+                    </div>
+
+                    <div class="blog-content">
+                        <h3
+                            class="text-2xl font-black text-dark dark:text-white mb-4 group-hover:text-secondary dark:group-hover:text-accent transition-colors duration-300">
+                            <span
+                                data-es="Las fintechs no van a destruir la banca en Centroamérica… la van a obligar a evolucionar"
+                                data-en="Fintechs Won't Destroy Banking in Central America... They Will Force It to Evolve">
+                                Las fintechs no van a destruir la banca en Centroamérica… la van a obligar a evolucionar
+                            </span>
+                        </h3>
+
+                        <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                            <span
+                                data-es="La región centroamericana enfrenta un momento clave para el sector financiero. Mientras los clientes exigen procesos digitales, muchas entidades siguen operando con plataformas rígidas."
+                                data-en="The Central American region faces a key moment for the financial sector. While customers demand digital processes, many institutions continue to operate with rigid platforms.">
+                                La región centroamericana enfrenta un momento clave para el sector financiero. Mientras
+                                los clientes exigen procesos digitales, muchas entidades siguen operando con plataformas
+                                rígidas.
+                            </span>
+                        </p>
+
+                        <div class="flex items-center justify-between">
+                            <div class="text-sm text-gray-500 dark:text-gray-400">
+                                <i class="far fa-clock mr-1"></i>
+                                <span data-es="6 min lectura" data-en="6 min read">6 min lectura</span>
+                            </div>
+                            <a href="blogs/blog2.html"
+                                class="text-secondary dark:text-accent font-bold flex items-center group-hover:space-x-3 transition-all duration-300">
+                                <span data-es="Leer más" data-en="Read more">Leer más</span>
+                                <i
+                                    class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform duration-300"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Artículo 3 - Redes Sociales -->
+                <div class="blog-card group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl border border-gray-200 dark:border-gray-700 transition-all duration-500 backdrop-blur-sm relative overflow-hidden"
+                    data-aos="fade-up" data-aos-duration="800" data-aos-delay="200" data-category="marketing">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-secondary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    </div>
+
+                    <div class="blog-image h-48 rounded-2xl mb-6 relative overflow-hidden">
+                        <img src="img/social-media-strategy.jpg" alt="Estrategia en Redes Sociales"
+                            class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div class="category-badge bg-secondary text-white">
+                            <span data-es="Marketing Digital" data-en="Digital Marketing">Marketing Digital</span>
+                        </div>
+                    </div>
+
+                    <div class="blog-content">
+                        <h3
+                            class="text-2xl font-black text-dark dark:text-white mb-4 group-hover:text-secondary dark:group-hover:text-accent transition-colors duration-300">
+                            <span data-es="Publicás todos los días en redes, ganas likes, pero pierdes clientes"
+                                data-en="You Post Every Day on Social Media, Get Likes, But Lose Customers">
+                                Publicás todos los días en redes, ganas likes, pero pierdes clientes
+                            </span>
+                        </h3>
+
+                        <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                            <span
+                                data-es="Muchas empresas creen que tener redes sociales activas es suficiente para decir que están 'digitalizadas'. Pero detrás de esa fachada digital, los procesos siguen siendo manuales."
+                                data-en="Many companies believe that having active social media is enough to say they are 'digitalized'. But behind that digital facade, processes remain manual.">
+                                Muchas empresas creen que tener redes sociales activas es suficiente para decir que
+                                están 'digitalizadas'. Pero detrás de esa fachada digital, los procesos siguen siendo
+                                manuales.
+                            </span>
+                        </p>
+
+                        <div class="flex items-center justify-between">
+                            <div class="text-sm text-gray-500 dark:text-gray-400">
+                                <i class="far fa-clock mr-1"></i>
+                                <span data-es="5 min lectura" data-en="5 min read">5 min lectura</span>
+                            </div>
+                            <a href="blogs/blog3.html"
+                                class="text-secondary dark:text-accent font-bold flex items-center group-hover:space-x-3 transition-all duration-300">
+                                <span data-es="Leer más" data-en="Read more">Leer más</span>
+                                <i
+                                    class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform duration-300"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Artículo 4 - Chatbots -->
+                <div class="blog-card group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl border border-gray-200 dark:border-gray-700 transition-all duration-500 backdrop-blur-sm relative overflow-hidden"
+                    data-aos="fade-up" data-aos-duration="800" data-aos-delay="300" data-category="ia">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-secondary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    </div>
+
+                    <div class="blog-image h-48 rounded-2xl mb-6 relative overflow-hidden">
+                        <img src="img/ai-chatbots-modern.jpg" alt="Chatbots de IA Modernos"
+                            class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div class="category-badge bg-gradient-to-r from-secondary to-accent text-white">
+                            <span data-es="IA y Automatización" data-en="AI and Automation">IA y Automatización</span>
+                        </div>
+                    </div>
+
+                    <div class="blog-content">
+                        <h3
+                            class="text-2xl font-black text-dark dark:text-white mb-4 group-hover:text-secondary dark:group-hover:text-accent transition-colors duration-300">
+                            <span data-es="Cómo los Chatbots Están Revolucionando la Comunicación con los Clientes"
+                                data-en="How Chatbots Are Revolutionizing Customer Communication">
+                                Cómo los Chatbots Están Revolucionando la Comunicación con los Clientes
+                            </span>
+                        </h3>
+
+                        <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                            <span
+                                data-es="Los chatbots, impulsados por la IA, han transformado la forma en que las empresas interactúan con sus clientes. Estos asistentes virtuales pueden proporcionar respuestas inmediatas y soporte 24/7."
+                                data-en="AI-powered chatbots have transformed how businesses interact with their customers. These virtual assistants can provide immediate responses and 24/7 support.">
+                                Los chatbots, impulsados por la IA, han transformado la forma en que las empresas
+                                interactúan con sus clientes. Estos asistentes virtuales pueden proporcionar respuestas
+                                inmediatas y soporte 24/7.
+                            </span>
+                        </p>
+
+                        <div class="flex items-center justify-between">
+                            <div class="text-sm text-gray-500 dark:text-gray-400">
+                                <i class="far fa-clock mr-1"></i>
+                                <span data-es="5 min lectura" data-en="5 min read">5 min lectura</span>
+                            </div>
+                            <a href="blogs/blog4.html"
+                                class="text-secondary dark:text-accent font-bold flex items-center group-hover:space-x-3 transition-all duration-300">
+                                <span data-es="Leer más" data-en="Read more">Leer más</span>
+                                <i
+                                    class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform duration-300"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Artículo 5 - E-commerce -->
+                <div class="blog-card group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl border border-gray-200 dark:border-gray-700 transition-all duration-500 backdrop-blur-sm relative overflow-hidden"
+                    data-aos="fade-up" data-aos-duration="800" data-aos-delay="400" data-category="transformacion">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-secondary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    </div>
+
+                    <div class="blog-image h-48 rounded-2xl mb-6 relative overflow-hidden">
+                        <img src="img/ecommerce-platform.jpg" alt="Plataforma E-commerce Moderna"
+                            class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div class="category-badge bg-accent text-white">
+                            <span data-es="Transformación Digital" data-en="Digital Transformation">Transformación
+                                Digital</span>
+                        </div>
+                    </div>
+
+                    <div class="blog-content">
+                        <h3
+                            class="text-2xl font-black text-dark dark:text-white mb-4 group-hover:text-secondary dark:group-hover:text-accent transition-colors duration-300">
+                            <span data-es="¿Necesitas una Plataforma de Comercio Electrónico?"
+                                data-en="Do You Need an E-commerce Platform?">
+                                ¿Necesitas una Plataforma de Comercio Electrónico?
+                            </span>
+                        </h3>
+
+                        <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                            <span
+                                data-es="El comercio electrónico ha transformado la forma en que operan las empresas. Si necesitas reducir costos, aumentar las ventas y operar 24/7, entonces una tienda en línea es esencial."
+                                data-en="E-commerce has transformed how businesses operate. If you need to reduce costs, increase sales and operate 24/7, then an online store is essential.">
+                                El comercio electrónico ha transformado la forma en que operan las empresas. Si
+                                necesitas reducir costos, aumentar las ventas y operar 24/7, entonces una tienda en
+                                línea es esencial.
+                            </span>
+                        </p>
+
+                        <div class="flex items-center justify-between">
+                            <div class="text-sm text-gray-500 dark:text-gray-400">
+                                <i class="far fa-clock mr-1"></i>
+                                <span data-es="6 min lectura" data-en="6 min read">6 min lectura</span>
+                            </div>
+                            <a href="blogs/blog5.html"
+                                class="text-secondary dark:text-accent font-bold flex items-center group-hover:space-x-3 transition-all duration-300">
+                                <span data-es="Leer más" data-en="Read more">Leer más</span>
+                                <i
+                                    class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform duration-300"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Artículo 6 - IA Generativa -->
+                <div class="blog-card group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl border border-gray-200 dark:border-gray-700 transition-all duration-500 backdrop-blur-sm relative overflow-hidden"
+                    data-aos="fade-up" data-aos-duration="800" data-aos-delay="500" data-category="ia">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-secondary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    </div>
+
+                    <div class="blog-image h-48 rounded-2xl mb-6 relative overflow-hidden">
+                        <img src="img/generative-ai-pricing.jpg" alt="IA Generativa para Precios"
+                            class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div class="category-badge bg-gradient-to-r from-primary to-accent text-white">
+                            <span data-es="IA y Automatización" data-en="AI and Automation">IA y Automatización</span>
+                        </div>
+                    </div>
+
+                    <div class="blog-content">
+                        <h3
+                            class="text-2xl font-black text-dark dark:text-white mb-4 group-hover:text-secondary dark:group-hover:text-accent transition-colors duration-300">
+                            <span data-es="IA generativa para optimizar precios en el E-Commerce B2B"
+                                data-en="Generative AI to Optimize Pricing in B2B E-Commerce">
+                                IA generativa para optimizar precios en el E-Commerce B2B
+                            </span>
+                        </h3>
+
+                        <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                            <span
+                                data-es="La estrategia de precios es un desafío significativo en cada negocio, pero en el B2B es mucho mayor, ya que los precios son inestables debido a los grandes volúmenes de productos."
+                                data-en="Pricing strategy is a significant challenge in every business, but in B2B it's much greater, as prices are unstable due to large product volumes.">
+                                La estrategia de precios es un desafío significativo en cada negocio, pero en el B2B es
+                                mucho mayor, ya que los precios son inestables debido a los grandes volúmenes de
+                                productos.
+                            </span>
+                        </p>
+
+                        <div class="flex items-center justify-between">
+                            <div class="text-sm text-gray-500 dark:text-gray-400">
+                                <i class="far fa-clock mr-1"></i>
+                                <span data-es="8 min lectura" data-en="8 min read">8 min lectura</span>
+                            </div>
+                            <a href="blogs/blog6.html"
+                                class="text-secondary dark:text-accent font-bold flex items-center group-hover:space-x-3 transition-all duration-300">
+                                <span data-es="Leer más" data-en="Read more">Leer más</span>
+                                <i
+                                    class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform duration-300"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Artículo 7 - Servicio Digital -->
+                <div class="blog-card group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl border border-gray-200 dark:border-gray-700 transition-all duration-500 backdrop-blur-sm relative overflow-hidden"
+                    data-aos="fade-up" data-aos-duration="800" data-aos-delay="600" data-category="transformacion">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-secondary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    </div>
+
+                    <div class="blog-image h-48 rounded-2xl mb-6 relative overflow-hidden">
+                        <img src="img/digital-service-embrace.jpg" alt="Servicio Digital Empresarial"
+                            class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div class="category-badge bg-secondary text-white">
+                            <span data-es="Transformación Digital" data-en="Digital Transformation">Transformación
+                                Digital</span>
+                        </div>
+                    </div>
+
+                    <div class="blog-content">
+                        <h3
+                            class="text-2xl font-black text-dark dark:text-white mb-4 group-hover:text-secondary dark:group-hover:text-accent transition-colors duration-300">
+                            <span data-es="Adopta el Servicio Digital: La poderosa necesidad de las empresas"
+                                data-en="Embrace Digital Service: The Powerful Need of Companies">
+                                Adopta el Servicio Digital: La poderosa necesidad de las empresas
+                            </span>
+                        </h3>
+
+                        <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                            <span
+                                data-es="En la era digital, la necesidad de que las industrias digitalicen sus canales de servicio al cliente es más crítica que nunca. Los consumidores modernos esperan interacciones rápidas y personalizadas."
+                                data-en="In the digital age, the need for industries to digitize their customer service channels is more critical than ever. Modern consumers expect fast and personalized interactions.">
+                                En la era digital, la necesidad de que las industrias digitalicen sus canales de
+                                servicio al cliente es más crítica que nunca. Los consumidores modernos esperan
+                                interacciones rápidas y personalizadas.
+                            </span>
+                        </p>
+
+                        <div class="flex items-center justify-between">
+                            <div class="text-sm text-gray-500 dark:text-gray-400">
+                                <i class="far fa-clock mr-1"></i>
+                                <span data-es="7 min lectura" data-en="7 min read">7 min lectura</span>
+                            </div>
+                            <a href="blogs/blog7.html" class=" text-secondary dark:text-accent font-bold flex
+                                items-center group-hover:space-x-3 transition-all duration-300">
+                                <span data-es="Leer más" data-en="Read more">Leer más</span>
+                                <i
+                                    class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform duration-300"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Artículo 8 - Tradicional vs Fintech -->
+                <div class="blog-card group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl border border-gray-200 dark:border-gray-700 transition-all duration-500 backdrop-blur-sm relative overflow-hidden"
+                    data-aos="fade-up" data-aos-duration="800" data-aos-delay="700" data-category="fintech">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-secondary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    </div>
+
+                    <div class="blog-image h-48 rounded-2xl mb-6 relative overflow-hidden">
+                        <img src="img/traditional-banking-vs-fintech.jpg" alt="Banca Tradicional vs Fintech"
+                            class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div class="category-badge bg-primary text-white">
+                            <span data-es="Fintech" data-en="Fintech">Fintech</span>
+                        </div>
+                    </div>
+
+                    <div class="blog-content">
+                        <h3
+                            class="text-2xl font-black text-dark dark:text-white mb-4 group-hover:text-secondary dark:group-hover:text-accent transition-colors duration-300">
+                            <span
+                                data-es="Apegarse a lo tradicional podría significar un desastre para las instituciones financieras"
+                                data-en="Sticking to Tradition Could Mean Disaster for Financial Institutions">
+                                Apegarse a lo tradicional podría significar un desastre para las instituciones
+                                financieras
+                            </span>
+                        </h3>
+
+                        <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                            <span
+                                data-es="En la industria financiera, que cambia rápidamente, no innovar los procesos y no adoptar herramientas tecnológicas plantea riesgos significativos frente a las fintech ágiles."
+                                data-en="In the rapidly changing financial industry, not innovating processes and not adopting technological tools poses significant risks against agile fintechs.">
+                                En la industria financiera, que cambia rápidamente, no innovar los procesos y no adoptar
+                                herramientas tecnológicas plantea riesgos significativos frente a las fintech ágiles.
+                            </span>
+                        </p>
+
+                        <div class="flex items-center justify-between">
+                            <div class="text-sm text-gray-500 dark:text-gray-400">
+                                <i class="far fa-clock mr-1"></i>
+                                <span data-es="6 min lectura" data-en="6 min read">6 min lectura</span>
+                            </div>
+                            <a href="blogs/blog8.html"
+                                class="text-secondary dark:text-accent font-bold flex items-center group-hover:space-x-3 transition-all duration-300">
+                                <span data-es="Leer más" data-en="Read more">Leer más</span>
+                                <i
+                                    class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform duration-300"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Artículo 9 - Redes Sociales Inversión -->
+                <div class="blog-card group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl border border-gray-200 dark:border-gray-700 transition-all duration-500 backdrop-blur-sm relative overflow-hidden"
+                    data-aos="fade-up" data-aos-duration="800" data-aos-delay="800" data-category="marketing">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-secondary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    </div>
+
+                    <div class="blog-image h-48 rounded-2xl mb-6 relative overflow-hidden">
+                        <img src="img/social-media-investment.jpg" alt="Inversión en Redes Sociales"
+                            class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div class="category-badge bg-secondary text-white">
+                            <span data-es="Marketing Digital" data-en="Digital Marketing">Marketing Digital</span>
+                        </div>
+                    </div>
+
+                    <div class="blog-content">
+                        <h3
+                            class="text-2xl font-black text-dark dark:text-white mb-4 group-hover:text-secondary dark:group-hover:text-accent transition-colors duration-300">
+                            <span data-es="¿Sigue siendo una gran inversión usar las redes sociales para vender más?"
+                                data-en="Is It Still a Great Investment to Use Social Media to Sell More?">
+                                ¿Sigue siendo una gran inversión usar las redes sociales para vender más?
+                            </span>
+                        </h3>
+
+                        <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                            <span
+                                data-es="A medida que las redes sociales evolucionan, muchos usuarios expresan escepticismo sobre su fiabilidad. Sin embargo, comprender estos desafíos presenta una oportunidad única."
+                                data-en="As social media evolves, many users express skepticism about their reliability. However, understanding these challenges presents a unique opportunity.">
+                                A medida que las redes sociales evolucionan, muchos usuarios expresan escepticismo sobre
+                                su fiabilidad. Sin embargo, comprender estos desafíos presenta una oportunidad única.
+                            </span>
+                        </p>
+
+                        <div class="flex items-center justify-between">
+                            <div class="text-sm text-gray-500 dark:text-gray-400">
+                                <i class="far fa-clock mr-1"></i>
+                                <span data-es="5 min lectura" data-en="5 min read">5 min lectura</span>
+                            </div>
+                            <a href="blogs/blog9.html"
+                                class="text-secondary dark:text-accent font-bold flex items-center group-hover:space-x-3 transition-all duration-300">
+                                <span data-es="Leer más" data-en="Read more">Leer más</span>
+                                <i
+                                    class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform duration-300"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <br>
+    <br>
+
+    <!-- Footer  -->
+    <footer class="bg-primary dark:bg-dark py-20 text-gray-300 relative overflow-hidden">
+        <div class="absolute inset-0 bg-grid-pattern bg-[size:100px_100px] opacity-5"></div>
+        <div class="absolute top-10 left-10 w-20 h-20 bg-secondary/10 rounded-full animate-float"></div>
+        <div class="absolute bottom-20 right-20 w-16 h-16 bg-accent/10 rounded-full animate-float"
+            style="animation-delay: 2s"></div>
+
+        <div class="container mx-auto px-4 md:px-6 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div class="footer-section" data-aos="fade-up" data-aos-duration="800">
+                    <a href="index.html">
+                        <img src="img/logo-kerbrum.png" alt="Kerbrum Agency"
+                            class="h-14 w-auto mb-6  opacity-90 hover:opacity-100 transition-opacity duration-500">
+                    </a>
+                    <p class="text-gray-400 mb-6 leading-relaxed max-w-xs">
+                        <span
+                            data-es="Transformamos tu negocio con tecnología inteligente e innovación disruptiva. Creamos soluciones digitales que impulsan el crecimiento exponencial."
+                            data-en="We transform your business with intelligent technology and disruptive innovation. We create digital solutions that drive exponential growth.">Transformamos
+                            tu negocio con tecnología inteligente e innovación disruptiva. Creamos soluciones digitales
+                            que impulsan el crecimiento exponencial.</span>
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/share/1Fue25EhbS/"
+                            class="social-footer w-10 h-10 bg-gray-700 hover:bg-secondary rounded-xl flex items-center justify-center transition-all duration-500 transform hover:scale-110 hover:rotate-12 group">
+                            <i
+                                class="fab fa-facebook-f text-white text-sm group-hover:scale-110 transition-transform"></i>
+                        </a>
+                        <a href="https://www.instagram.com/kerbrumagency?igsh=Y3E4ejk5dXVjZHlz"
+                            class="social-footer w-10 h-10 bg-gray-700 hover:bg-secondary rounded-xl flex items-center justify-center transition-all duration-500 transform hover:scale-110 hover:rotate-12 group">
+                            <i
+                                class="fab fa-instagram text-white text-sm group-hover:scale-110 transition-transform"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/kerbrum-agency/"
+                            class="social-footer w-10 h-10 bg-gray-700 hover:bg-secondary rounded-xl flex items-center justify-center transition-all duration-500 transform hover:scale-110 hover:rotate-12 group">
+                            <i
+                                class="fab fa-linkedin-in text-white text-sm group-hover:scale-110 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-section" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                    <h4 class="text-white text-xl font-bold mb-6" data-es="Navegación" data-en="Navigation">
+                        Navegación</h4>
+                    <ul class="space-y-4">
+                        <li>
+                            <a href="index.html#home"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                                <span data-es="Inicio" data-en="Home">Inicio</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html#why-us"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                                <span data-es="Por qué elegirnos" data-en="Why Choose Us">Por qué elegirnos</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html#process"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                                <span data-es="Nuestro enfoque" data-en="Our Approach">Nuestro enfoque</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html#success-cases"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                                <span data-es="Casos de éxito" data-en="Success Cases">Casos de éxito</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html#contact"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                                <span data-es="Contacto" data-en="Contact">Contacto</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-section" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                    <h4 class="text-white text-xl font-bold mb-6" data-es="Recursos" data-en="Resources">Recursos</h4>
+                    <ul class="space-y-4">
+                        <li>
+                            <a href="index.html#portfolio"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                                <span data-es="Productos" data-en="Products">Productos</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html#blog"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                                <span data-es="Blog" data-en="Blog">Blog</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html#ebook"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                                <span data-es="E-book Gratuito" data-en="Free E-book">E-book Gratuito</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html#services"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                                <span data-es="Enemigos del crecimiento" data-en="Growth Challenges">Enemigos del
+                                    crecimiento</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html#failed-attempts"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                                <span data-es="Intentos sin resultados" data-en="Failed Attempts">Intentos sin
+                                    resultados</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contacto footer -->
+                <div class="footer-section" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                    <h4 class="text-white text-xl font-bold mb-6" data-es="Contacto" data-en="Contact">Contacto</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-envelope text-secondary dark:text-accent mt-1 mr-3"></i>
+                            <div>
+                                <p class="text-gray-400">ventas@kerbrumagency.com</p>
+                                <p class="text-gray-500 text-sm" data-es="Email principal" data-en="Main email">Email
+                                    principal</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-globe text-secondary dark:text-accent mt-1 mr-3"></i>
+                            <div>
+                                <p class="text-gray-400">https://kerbrumagency.com</p>
+                                <p class="text-gray-500 text-sm" data-es="Sitio web oficial" data-en="Official website">
+                                    Sitio web oficial</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-secondary dark:text-accent mt-1 mr-3"></i>
+                            <div>
+                                <p class="text-gray-400" data-es="Latinoamérica" data-en="Latin America">Latinoamérica
+                                </p>
+                                <p class="text-gray-500 text-sm" data-es="Clientes globales" data-en="Global clients">
+                                    Clientes globales</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="text-center md:text-left mb-4 md:mb-0">
+                        <p class="text-gray-400">
+                            © <span id="current-year">2024</span> Kerbrum Agency.
+                            <span data-es="Todos los derechos reservados." data-en="All rights reserved.">Todos los
+                                derechos reservados.</span>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/component-loader.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/theme-switcher.js"></script>
+    <script src="js/language-switcher.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            if (typeof AOS !== 'undefined') {
+                AOS.init({
+                    duration: 800,
+                    once: true,
+                    offset: 100
+                });
+            }
+
+            // Filtros de categorías 
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const articles = document.querySelectorAll('.blog-card');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove('active', 'bg-secondary', 'text-white');
+                        btn.classList.add('bg-gray-200', 'dark:bg-gray-700', 'text-gray-700', 'dark:text-gray-300');
+                    });
+
+                    button.classList.add('active', 'bg-secondary', 'text-white');
+                    button.classList.remove('bg-gray-200', 'dark:bg-gray-700', 'text-gray-700', 'dark:text-gray-300');
+
+                    const category = button.getAttribute('data-category');
+
+                    articles.forEach(article => {
+                        if (category === 'all' || article.getAttribute('data-category') === category) {
+                            article.style.display = 'block';
+                        } else {
+                            article.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            // Forzar recarga de traducciones al cargar la página
+            if (window.reloadTranslations) {
+                window.reloadTranslations();
+            }
+        });
+    </script>
+
+    <!-- Botón de Scroll to Top -->
+    <button id="scroll-to-top"
+        class="fixed bottom-8 right-8 w-14 h-14 bg-secondary hover:bg-accent text-white rounded-2xl shadow-2xl transition-all duration-500 opacity-100 visible hover:scale-110 hover:rotate-12 z-50 flex items-center justify-center group border-2 border-white/20">
+        <i class="fas fa-chevron-up text-xl group-hover:-translate-y-1 transition-transform duration-300"></i>
+    </button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const scrollToTopBtn = document.getElementById('scroll-to-top');
+            scrollToTopBtn.classList.add('opacity-0', 'invisible');
+
+            function toggleScrollButton() {
+                if (window.scrollY > 300) {
+                    scrollToTopBtn.classList.remove('opacity-0', 'invisible');
+                    scrollToTopBtn.classList.add('opacity-100', 'visible');
+                } else {
+                    scrollToTopBtn.classList.remove('opacity-100', 'visible');
+                    scrollToTopBtn.classList.add('opacity-0', 'invisible');
+                }
+            }
+
+            window.addEventListener('scroll', toggleScrollButton);
+            scrollToTopBtn.addEventListener('click', function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            toggleScrollButton();
+        });
+    </script>
+
+    <style>
+        #scroll-to-top {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 25px rgba(26, 99, 227, 0.3);
+        }
+
+        #scroll-to-top.visible {
+            opacity: 1 !important;
+            visibility: visible !important;
+            transform: translateY(0) !important;
+        }
+
+        #scroll-to-top:not(.visible) {
+            opacity: 0 !important;
+            visibility: hidden !important;
+            transform: translateY(20px) !important;
+        }
+
+        #scroll-to-top:hover {
+            box-shadow: 0 12px 35px rgba(26, 99, 227, 0.5);
+            transform: scale(1.1) rotate(12deg) !important;
+        }
+
+        #scroll-to-top {
+            z-index: 9999 !important;
+        }
+    </style>
+
+</body>
+
+</html>

@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-es="IA Generativa para Optimizar Precios en el E-Commerce B2B - Kerbrum Agency"
+        data-en="Generative AI to Optimize Prices in B2B E-Commerce - Kerbrum Agency">
+        IA Generativa para Optimizar Precios en el E-Commerce B2B - Kerbrum Agency
+    </title>
+    <meta name="description"
+        data-es="Descubre cómo la IA generativa está revolucionando las estrategias de precios en el comercio B2B con análisis predictivo y precios dinámicos."
+        data-en="Discover how generative AI is revolutionizing pricing strategies in B2B commerce with predictive analytics and dynamic pricing.">
+    <link rel="icon" href="../img/logo.png">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3VZCJWC1Q2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-3VZCJWC1Q2');
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#00142F",
+                        secondary: "#1A63E3",
+                        accent: "#C4C7F2",
+                        light: "#F7F8FC",
+                        dark: "#0A142F",
+                        gradientStart: "#667eea",
+                        gradientEnd: "#764ba2",
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fade-in-up 0.8s ease-out',
+                    },
+                    backgroundImage: {
+                        'grid-pattern': 'linear-gradient(to right, #80808012 1px, transparent 1px), linear-gradient(to bottom, #80808012 1px, transparent 1px)',
+                    }
+                },
+            },
+        }
+    </script>
+
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/light-theme.css" id="theme-stylesheet">
+    <link rel="stylesheet" href="../styles/responsive.css">
+
+    <style>
+        .prose {
+            max-width: none;
+        }
+
+        .prose h2 {
+            color: #00142F;
+            font-weight: 800;
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .prose p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .dark .prose h2 {
+            color: #F7F8FC;
+        }
+
+        .language-switcher {
+            position: relative;
+        }
+
+        .language-dropdown {
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+
+        .language-switcher:hover .language-dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .language-option:hover {
+            background-color: rgba(59, 130, 246, 0.1);
+        }
+
+        .language-switcher-mobile:hover .language-options-mobile {
+            display: flex;
+        }
+    </style>
+</head>
+
+<body class="bg-white dark:bg-dark text-gray-800 dark:text-gray-200 transition-colors duration-500">
+
+    <!-- Barra de navegación -->
+    <!-- Navegación -->
+    <div id="nav-container"></div>
+
+    <!-- Header del artículo -->
+    <section
+        class="pt-32 pb-20 bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-dark relative overflow-hidden">
+        <div class="absolute inset-0 bg-grid-pattern bg-[size:100px_100px] opacity-5"></div>
+
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="max-w-4xl mx-auto">
+                <a href="../blogs.html"
+                    class="inline-flex items-center text-secondary dark:text-accent font-semibold mb-6 hover:underline transition-all duration-300 group">
+                    <i class="fas fa-arrow-left mr-2 group-hover:-translate-x-1 transition-transform"></i>
+                    <span data-es="Volver al blog" data-en="Back to blog">Volver al blog</span>
+                </a>
+
+                <div
+                    class="inline-flex items-center space-x-3 bg-secondary/10 dark:bg-accent/20 text-secondary dark:text-accent px-6 py-3 rounded-2xl text-base font-semibold mb-6 border border-secondary/20 dark:border-accent/20 backdrop-blur-sm">
+                    <i class="fas fa-robot"></i>
+                    <span data-es="IA Generativa" data-en="Generative AI">IA Generativa</span>
+                </div>
+
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight">
+                    <span data-es="IA Generativa para Optimizar Precios en el E-Commerce B2B"
+                        data-en="Generative AI to Optimize Prices in B2B E-Commerce">
+                        IA Generativa para Optimizar Precios en el E-Commerce B2B
+                    </span>
+                </h1>
+
+                <div class="flex items-center space-x-6 text-gray-600 dark:text-gray-300 mb-8">
+                    <div class="flex items-center space-x-2">
+                        <i class="far fa-clock"></i>
+                        <span data-es="7 min lectura" data-en="7 min read">7 min lectura</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="far fa-calendar"></i>
+                        <span>Abril 2024</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-user"></i>
+                        <span data-es="Equipo Kerbrum" data-en="Kerbrum Team">Equipo Kerbrum</span>
+                    </div>
+                </div>
+
+                <div class="blog-image h-96 rounded-3xl mb-8 relative overflow-hidden shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                        alt="IA Generativa en E-commerce B2B" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenido del artículo -->
+    <section class="py-16 bg-white dark:bg-dark">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="prose prose-lg dark:prose-invert">
+                    <p class="text-xl text-gray-600 dark:text-gray-300 leading-relaxed mb-8 font-light">
+                        <span
+                            data-es="La estrategia de precios es un desafío significativo en cada negocio, pero en el B2B es mucho mayor, ya que los precios son inestables debido a los grandes volúmenes de productos y los compradores recurrentes. Entonces, ¿cómo pueden las empresas B2B optimizar sus beneficios mientras se mantienen competitivas?"
+                            data-en="Pricing strategy is a significant challenge in every business, but in B2B it's much greater, as prices are unstable due to large product volumes and recurring buyers. So how can B2B companies optimize their profits while remaining competitive?">
+                            La estrategia de precios es un desafío significativo en cada negocio, pero en el B2B es
+                            mucho mayor, ya que los precios son inestables debido a los grandes volúmenes de productos y
+                            los compradores recurrentes. Entonces, ¿cómo pueden las empresas B2B optimizar sus
+                            beneficios mientras se mantienen competitivas?
+                        </span>
+                    </p>
+
+                    <h2 data-es="La Revolución de la IA Generativa en Precios"
+                        data-en="The Generative AI Revolution in Pricing">
+                        La Revolución de la IA Generativa en Precios
+                    </h2>
+
+                    <p>
+                        <span
+                            data-es="La IA generativa está revolucionando las estrategias de precios en los negocios B2B al proporcionar herramientas avanzadas para el análisis de datos y la toma de decisiones. En el complejo panorama del comercio B2B, donde los precios deben adaptarse frecuentemente a las condiciones cambiantes del mercado, las demandas de los clientes y las presiones competitivas, los métodos tradicionales de fijación de precios suelen quedarse cortos."
+                            data-en="Generative AI is revolutionizing pricing strategies in B2B businesses by providing advanced tools for data analysis and decision-making. In the complex B2B commerce landscape, where prices must frequently adapt to changing market conditions, customer demands, and competitive pressures, traditional pricing methods often fall short.">
+                            La IA generativa está revolucionando las estrategias de precios en los negocios B2B al
+                            proporcionar herramientas avanzadas para el análisis de datos y la toma de decisiones. En el
+                            complejo panorama del comercio B2B, donde los precios deben adaptarse frecuentemente a las
+                            condiciones cambiantes del mercado, las demandas de los clientes y las presiones
+                            competitivas, los métodos tradicionales de fijación de precios suelen quedarse cortos.
+                        </span>
+                    </p>
+
+                    <!-- Cita destacada -->
+                    <div
+                        class="bg-secondary/10 dark:bg-accent/20 rounded-3xl p-8 my-12 border-l-4 border-secondary dark:border-accent">
+                        <div class="flex items-start space-x-4">
+                            <div
+                                class="bg-secondary dark:bg-accent w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-brain text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-lg font-semibold text-dark dark:text-white mb-2">
+                                    <span
+                                        data-es="La IA generativa permite a las empresas analizar grandes conjuntos de datos, identificando patrones y tendencias que los analistas humanos podrían pasar por alto. Al aprovechar esta tecnología, las empresas B2B pueden ajustar dinámicamente sus estrategias de precios en tiempo real."
+                                        data-en="Generative AI allows companies to analyze large datasets, identifying patterns and trends that human analysts might overlook. By leveraging this technology, B2B companies can dynamically adjust their pricing strategies in real-time.">
+                                        La IA generativa permite a las empresas analizar grandes conjuntos de datos,
+                                        identificando patrones y tendencias que los analistas humanos podrían pasar por
+                                        alto. Al aprovechar esta tecnología, las empresas B2B pueden ajustar
+                                        dinámicamente sus estrategias de precios en tiempo real.
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2 data-es="¿Cómo Pueden Lograr Esto las Empresas B2B?"
+                        data-en="How Can B2B Companies Achieve This?">
+                        ¿Cómo Pueden Lograr Esto las Empresas B2B?
+                    </h2>
+
+                    <!-- Beneficios de IA en precios -->
+                    <div class="grid md:grid-cols-3 gap-6 my-12">
+                        <div
+                            class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 border border-gray-200 dark:border-gray-700 text-center">
+                            <div
+                                class="bg-secondary dark:bg-accent w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-sync-alt text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-dark dark:text-white mb-3" data-es="Adaptación Rápida"
+                                data-en="Quick Adaptation">
+                                Adaptación Rápida
+                            </h3>
+                            <p class="text-gray-600 dark:text-gray-300">
+                                <span
+                                    data-es="Adaptar los precios en tiempo real para seguir siendo competitivos y enfrentar la volatilidad, manteniendo estabilidad en la estrategia."
+                                    data-en="Adapt prices in real-time to remain competitive and face volatility, maintaining strategy stability.">
+                                    Adaptar los precios en tiempo real para seguir siendo competitivos y enfrentar la
+                                    volatilidad, manteniendo estabilidad en la estrategia.
+                                </span>
+                            </p>
+                        </div>
+                        <div
+                            class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 border border-gray-200 dark:border-gray-700 text-center">
+                            <div
+                                class="bg-secondary dark:bg-accent w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-chart-line text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-dark dark:text-white mb-3" data-es="Precios Dinámicos"
+                                data-en="Dynamic Pricing">
+                                Precios Dinámicos
+                            </h3>
+                            <p class="text-gray-600 dark:text-gray-300">
+                                <span
+                                    data-es="Capacidad de generar precios dinámicos promoviendo ofertas personalizadas basadas en necesidades específicas del comprador."
+                                    data-en="Ability to generate dynamic prices promoting personalized offers based on specific buyer needs.">
+                                    Capacidad de generar precios dinámicos promoviendo ofertas personalizadas basadas en
+                                    necesidades específicas del comprador.
+                                </span>
+                            </p>
+                        </div>
+                        <div
+                            class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 border border-gray-200 dark:border-gray-700 text-center">
+                            <div
+                                class="bg-secondary dark:bg-accent w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-database text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-dark dark:text-white mb-3"
+                                data-es="Análisis en Tiempo Real" data-en="Real-time Analysis">
+                                Análisis en Tiempo Real
+                            </h3>
+                            <p class="text-gray-600 dark:text-gray-300">
+                                <span
+                                    data-es="Para ajustar automáticamente los precios y mejorar el margen basado en oferta y demanda, maximizando ventas."
+                                    data-en="To automatically adjust prices and improve margin based on supply and demand, maximizing sales.">
+                                    Para ajustar automáticamente los precios y mejorar el margen basado en oferta y
+                                    demanda, maximizando ventas.
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <h2 data-es="Casos de Éxito en la Implementación" data-en="Success Cases in Implementation">
+                        Casos de Éxito en la Implementación
+                    </h2>
+
+                    <p>
+                        <span
+                            data-es="Empresas líderes en distribución B2B han implementado sistemas de IA generativa para precios, logrando incrementos del 15-25% en márgenes de beneficio mientras mantienen o incluso mejoran su competitividad en el mercado. La clave está en la capacidad de la IA para procesar millones de puntos de datos simultáneamente."
+                            data-en="Leading B2B distribution companies have implemented generative AI systems for pricing, achieving 15-25% increases in profit margins while maintaining or even improving their market competitiveness. The key lies in AI's ability to process millions of data points simultaneously.">
+                            Empresas líderes en distribución B2B han implementado sistemas de IA generativa para
+                            precios, logrando incrementos del 15-25% en márgenes de beneficio mientras mantienen o
+                            incluso mejoran su competitividad en el mercado. La clave está en la capacidad de la IA para
+                            procesar millones de puntos de datos simultáneamente.
+                        </span>
+                    </p>
+
+                    <!-- Ejemplo de implementación -->
+                    <div
+                        class="bg-green-50 dark:bg-green-900/20 rounded-3xl p-8 my-12 border border-green-200 dark:border-green-800">
+                        <h3 class="text-xl font-bold text-green-800 dark:text-green-300 mb-4 flex items-center">
+                            <i class="fas fa-chart-bar mr-2"></i>
+                            <span data-es="Resultados Tangibles con IA Generativa"
+                                data-en="Tangible Results with Generative AI">
+                                Resultados Tangibles con IA Generativa
+                            </span>
+                        </h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-semibold text-green-700 dark:text-green-300 mb-2"
+                                    data-es="Antes de la IA" data-en="Before AI">
+                                    Antes de la IA
+                                </h4>
+                                <ul class="space-y-2 text-green-600 dark:text-green-400">
+                                    <li class="flex items-center">
+                                        <i class="fas fa-times mr-2 text-red-500"></i>
+                                        <span data-es="Precios estáticos por meses" data-en="Static prices for months">
+                                            Precios estáticos por meses
+                                        </span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-times mr-2 text-red-500"></i>
+                                        <span data-es="Decisiones basadas en intuición"
+                                            data-en="Decisions based on intuition">
+                                            Decisiones basadas en intuición
+                                        </span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-times mr-2 text-red-500"></i>
+                                        <span data-es="Pérdida de oportunidades" data-en="Loss of opportunities">
+                                            Pérdida de oportunidades
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-green-700 dark:text-green-300 mb-2"
+                                    data-es="Después de la IA" data-en="After AI">
+                                    Después de la IA
+                                </h4>
+                                <ul class="space-y-2 text-green-600 dark:text-green-400">
+                                    <li class="flex items-center">
+                                        <i class="fas fa-check mr-2 text-green-500"></i>
+                                        <span data-es="Precios dinámicos en tiempo real"
+                                            data-en="Dynamic prices in real-time">
+                                            Precios dinámicos en tiempo real
+                                        </span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-check mr-2 text-green-500"></i>
+                                        <span data-es="Decisiones basadas en datos" data-en="Data-driven decisions">
+                                            Decisiones basadas en datos
+                                        </span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-check mr-2 text-green-500"></i>
+                                        <span data-es="Optimización automática" data-en="Automatic optimization">
+                                            Optimización automática
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2 data-es="Implementación Paso a Paso" data-en="Step-by-Step Implementation">
+                        Implementación Paso a Paso
+                    </h2>
+
+                    <p>
+                        <span
+                            data-es="La implementación exitosa de IA generativa para precios requiere una estrategia estructurada. Comienza con la recopilación y limpieza de datos históricos, seguida del entrenamiento de modelos predictivos y finalmente la integración con sistemas existentes de gestión de precios."
+                            data-en="Successful implementation of generative AI for pricing requires a structured strategy. It begins with collecting and cleaning historical data, followed by training predictive models, and finally integration with existing pricing management systems.">
+                            La implementación exitosa de IA generativa para precios requiere una estrategia
+                            estructurada. Comienza con la recopilación y limpieza de datos históricos, seguida del
+                            entrenamiento de modelos predictivos y finalmente la integración con sistemas existentes de
+                            gestión de precios.
+                        </span>
+                    </p>
+
+                    <!-- Pasos de implementación -->
+                    <div class="space-y-6 my-12">
+                        <div class="flex items-start space-x-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-2xl">
+                            <div
+                                class="bg-blue-500 text-white w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 font-bold">
+                                1</div>
+                            <div>
+                                <h4 class="font-bold text-dark dark:text-white mb-2"
+                                    data-es="Análisis de Datos Históricos" data-en="Historical Data Analysis">
+                                    Análisis de Datos Históricos
+                                </h4>
+                                <p class="text-gray-600 dark:text-gray-300">
+                                    <span
+                                        data-es="Recopilación y procesamiento de datos de ventas, competencia y comportamiento del cliente."
+                                        data-en="Collection and processing of sales data, competition, and customer behavior.">
+                                        Recopilación y procesamiento de datos de ventas, competencia y comportamiento
+                                        del cliente.
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4 bg-green-50 dark:bg-green-900/20 p-6 rounded-2xl">
+                            <div
+                                class="bg-green-500 text-white w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 font-bold">
+                                2</div>
+                            <div>
+                                <h4 class="font-bold text-dark dark:text-white mb-2"
+                                    data-es="Desarrollo de Modelos Predictivos" data-en="Predictive Model Development">
+                                    Desarrollo de Modelos Predictivos
+                                </h4>
+                                <p class="text-gray-600 dark:text-gray-300">
+                                    <span
+                                        data-es="Creación de algoritmos de IA que anticipan cambios en demanda y precios óptimos."
+                                        data-en="Creation of AI algorithms that anticipate demand changes and optimal prices.">
+                                        Creación de algoritmos de IA que anticipan cambios en demanda y precios óptimos.
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4 bg-purple-50 dark:bg-purple-900/20 p-6 rounded-2xl">
+                            <div
+                                class="bg-purple-500 text-white w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 font-bold">
+                                3</div>
+                            <div>
+                                <h4 class="font-bold text-dark dark:text-white mb-2"
+                                    data-es="Integración y Automatización" data-en="Integration and Automation">
+                                    Integración y Automatización
+                                </h4>
+                                <p class="text-gray-600 dark:text-gray-300">
+                                    <span
+                                        data-es="Conectar el sistema de IA con plataformas de e-commerce y ERP existentes."
+                                        data-en="Connect the AI system with existing e-commerce platforms and ERP.">
+                                        Conectar el sistema de IA con plataformas de e-commerce y ERP existentes.
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CTA al final del artículo -->
+                    <div class="bg-gradient-to-r from-secondary to-accent rounded-3xl p-8 my-12 text-white text-center">
+                        <h3 class="text-2xl font-black mb-4"
+                            data-es="¿Listo para Revolucionar tu Estrategia de Precios?"
+                            data-en="Ready to Revolutionize Your Pricing Strategy?">
+                            ¿Listo para Revolucionar tu Estrategia de Precios?
+                        </h3>
+                        <p class="mb-6 text-white/90">
+                            <span
+                                data-es="Implementamos soluciones de IA generativa personalizadas para optimizar tus precios y maximizar rentabilidad."
+                                data-en="We implement customized generative AI solutions to optimize your prices and maximize profitability.">
+                                Implementamos soluciones de IA generativa personalizadas para optimizar tus precios y
+                                maximizar rentabilidad.
+                            </span>
+                        </p>
+                        <a href="../index.html#contact"
+                            class="bg-white text-secondary px-8 py-4 rounded-2xl font-bold inline-flex items-center hover:scale-105 transition-all duration-500 shadow-2xl">
+                            <span data-es="Optimizar Mis Precios con IA" data-en="Optimize My Prices with AI">Optimizar
+                                Mis Precios con IA</span>
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer  -->
+    <footer class="bg-primary dark:bg-dark py-20 text-gray-300 relative overflow-hidden">
+        <div class="absolute inset-0 bg-grid-pattern bg-[size:100px_100px] opacity-5"></div>
+        <div class="absolute top-10 left-10 w-20 h-20 bg-secondary/10 rounded-full animate-float"></div>
+        <div class="absolute bottom-20 right-20 w-16 h-16 bg-accent/10 rounded-full animate-float"
+            style="animation-delay: 2s"></div>
+
+        <div class="container mx-auto px-4 md:px-6 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div class="footer-section" data-aos="fade-up" data-aos-duration="800">
+                    <a href="../index.html">
+                        <img src="../img/logo-kerbrum.png" alt="Kerbrum Agency"
+                            class="h-14 w-auto mb-6  opacity-90 hover:opacity-100 transition-opacity duration-500">
+                    </a>
+                    <p class="text-gray-400 mb-6 leading-relaxed max-w-xs">
+                        <span
+                            data-es="Transformamos tu negocio con tecnología inteligente e innovación disruptiva. Creamos soluciones digitales que impulsan el crecimiento exponencial."
+                            data-en="We transform your business with intelligent technology and disruptive innovation. We create digital solutions that drive exponential growth.">Transformamos
+                            tu negocio con tecnología inteligente e innovación disruptiva. Creamos soluciones digitales
+                            que impulsan el crecimiento exponencial.</span>
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/share/1Fue25EhbS/"
+                            class="social-footer w-10 h-10 bg-gray-700 hover:bg-secondary rounded-xl flex items-center justify-center transition-all duration-500 transform hover:scale-110 hover:rotate-12 group">
+                            <i
+                                class="fab fa-facebook-f text-white text-sm group-hover:scale-110 transition-transform"></i>
+                        </a>
+                        <a href="https://www.instagram.com/kerbrumagency?igsh=Y3E4ejk5dXVjZHlz"
+                            class="social-footer w-10 h-10 bg-gray-700 hover:bg-secondary rounded-xl flex items-center justify-center transition-all duration-500 transform hover:scale-110 hover:rotate-12 group">
+                            <i
+                                class="fab fa-instagram text-white text-sm group-hover:scale-110 transition-transform"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/kerbrum-agency/"
+                            class="social-footer w-10 h-10 bg-gray-700 hover:bg-secondary rounded-xl flex items-center justify-center transition-all duration-500 transform hover:scale-110 hover:rotate-12 group">
+                            <i
+                                class="fab fa-linkedin-in text-white text-sm group-hover:scale-110 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-section" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                    <h4 class="text-white text-xl font-bold mb-6" data-es="Navegación" data-en="Navigation">
+                        Navegación</h4>
+                    <ul class="space-y-4">
+                        <li>
+                            <a href="../index.html#home"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                                <span data-es="Inicio" data-en="Home">Inicio</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../index.html#why-us"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                                <span data-es="Por qué elegirnos" data-en="Why Choose Us">Por qué elegirnos</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../index.html#process"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                                <span data-es="Nuestro enfoque" data-en="Our Approach">Nuestro enfoque</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../index.html#success-cases"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                                <span data-es="Casos de éxito" data-en="Success Cases">Casos de éxito</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../index.html#contact"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                                <span data-es="Contacto" data-en="Contact">Contacto</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-section" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                    <h4 class="text-white text-xl font-bold mb-6" data-es="Recursos" data-en="Resources">Recursos</h4>
+                    <ul class="space-y-4">
+                        <li>
+                            <a href="../index.html#portfolio"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                                <span data-es="Productos" data-en="Products">Productos</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../index.html#blog"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                                <span data-es="Blog" data-en="Blog">Blog</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../index.html#ebook"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                                <span data-es="E-book Gratuito" data-en="Free E-book">E-book Gratuito</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../index.html#services"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                                <span data-es="Enemigos del crecimiento" data-en="Growth Challenges">Enemigos del
+                                    crecimiento</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../index.html#failed-attempts"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                                <span data-es="Intentos sin resultados" data-en="Failed Attempts">Intentos sin
+                                    resultados</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contacto footer -->
+                <div class="footer-section" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                    <h4 class="text-white text-xl font-bold mb-6" data-es="Contacto" data-en="Contact">Contacto</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-envelope text-secondary dark:text-accent mt-1 mr-3"></i>
+                            <div>
+                                <p class="text-gray-400">ventas@kerbrumagency.com</p>
+                                <p class="text-gray-500 text-sm" data-es="Email principal" data-en="Main email">Email
+                                    principal</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-globe text-secondary dark:text-accent mt-1 mr-3"></i>
+                            <div>
+                                <p class="text-gray-400">https://kerbrumagency.com</p>
+                                <p class="text-gray-500 text-sm" data-es="Sitio web oficial" data-en="Official website">
+                                    Sitio web oficial</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-secondary dark:text-accent mt-1 mr-3"></i>
+                            <div>
+                                <p class="text-gray-400" data-es="Latinoamérica" data-en="Latin America">Latinoamérica
+                                </p>
+                                <p class="text-gray-500 text-sm" data-es="Clientes globales" data-en="Global clients">
+                                    Clientes globales</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="text-center md:text-left mb-4 md:mb-0">
+                        <p class="text-gray-400">
+                            © <span id="current-year">2024</span> Kerbrum Agency.
+                            <span data-es="Todos los derechos reservados." data-en="All rights reserved.">Todos los
+                                derechos reservados.</span>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../js/component-loader.js"></script>
+    <script src="../js/navigation.js"></script>
+    <script src="../js/theme-switcher.js"></script>
+    <script>
+        // Sistema de traducción
+        document.addEventListener('DOMContentLoaded', function () {
+            // Inicializar AOS
+            if (typeof AOS !== 'undefined') {
+                AOS.init({
+                    duration: 800,
+                    once: true,
+                    offset: 100
+                });
+            }
+
+            // Año actual
+            setTimeout(() => {
+                const yearElement = document.getElementById('current-year');
+                if (yearElement) {
+                    yearElement.textContent = new Date().getFullYear();
+                }
+            }, 500);
+
+            // Navegación móvil
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            // Sistema de traducción
+            let currentLang = localStorage.getItem('language') || 'es';
+
+            // Función para cambiar idioma
+            function changeLanguage(lang) {
+                currentLang = lang;
+                localStorage.setItem('language', lang);
+                updateLanguage();
+            }
+
+            // Función para actualizar todos los textos
+            function updateLanguage() {
+                // Actualizar elementos con data attributes
+                document.querySelectorAll('[data-es]').forEach(element => {
+                    if (currentLang === 'es') {
+                        element.textContent = element.getAttribute('data-es');
+                    } else {
+                        element.textContent = element.getAttribute('data-en');
+                    }
+                });
+
+                // Actualizar etiquetas de idioma
+                document.querySelectorAll('.language-label').forEach(element => {
+                    if (currentLang === 'es') {
+                        element.textContent = 'ES';
+                    } else {
+                        element.textContent = 'EN';
+                    }
+                });
+
+                // Actualizar título y descripción
+                const titleElement = document.querySelector('title');
+                if (currentLang === 'es') {
+                    document.title = titleElement.getAttribute('data-es');
+                    document.querySelector('meta[name="description"]').setAttribute('content', document.querySelector('meta[name="description"]').getAttribute('data-es'));
+                } else {
+                    document.title = titleElement.getAttribute('data-en');
+                    document.querySelector('meta[name="description"]').setAttribute('content', document.querySelector('meta[name="description"]').getAttribute('data-en'));
+                }
+            }
+
+            // Event listeners para botones de idioma
+            document.querySelectorAll('.language-option').forEach(button => {
+                button.addEventListener('click', function () {
+                    const lang = this.getAttribute('data-lang');
+                    changeLanguage(lang);
+                });
+            });
+
+            // Inicializar con el idioma guardado
+            updateLanguage();
+
+            // Hacer la función disponible globalmente
+            window.reloadTranslations = updateLanguage;
+        });
+    </script>
+</body>
+
+</html>
