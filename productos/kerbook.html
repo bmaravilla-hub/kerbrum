@@ -1,813 +1,755 @@
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title
-      data-es="KERBOOK - Sistema de Agendamiento de Citas | Kerbrum Agency"
-      data-en="KERBOOK - Appointment Scheduling System | Kerbrum Agency"
-    >
-      KERBOOK - Sistema de Agendamiento de Citas | Kerbrum Agency
-    </title>
-    <meta
-      name="description"
-      data-es="KERBOOK: Plataforma de agendamiento de citas online para empresas, profesionales y servicios. Optimiza tu tiempo y atención al cliente."
-      data-en="KERBOOK: Online appointment scheduling platform for businesses, professionals and services. Optimize your time and customer service."
-    />
-    <link rel="icon" href="../img/logo.png" />
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-3VZCJWC1Q2"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-3VZCJWC1Q2");
-    </script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      rel="stylesheet"
-    />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              primary: "#00142F",
-              secondary: "#1A63E3",
-              accent: "#C4C7F2",
-              light: "#F7F8FC",
-              dark: "#0A142F",
-              gradientStart: "#667eea",
-              gradientEnd: "#764ba2",
-            },
-            fontFamily: {
-              sans: ["Inter", "system-ui", "sans-serif"],
-            },
-            animation: {
-              "fade-in-up": "fade-in-up 0.8s ease-out",
-              float: "float 6s ease-in-out infinite",
-            },
-            backgroundImage: {
-              "grid-pattern":
-                "linear-gradient(to right, #80808012 1px, transparent 1px), linear-gradient(to bottom, #80808012 1px, transparent 1px)",
-            },
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-es="KERBOOK - Sistema de Agendamiento de Citas | Kerbrum Agency"
+    data-en="KERBOOK - Appointment Scheduling System | Kerbrum Agency">
+    KERBOOK - Sistema de Agendamiento de Citas | Kerbrum Agency
+  </title>
+  <meta name="description"
+    data-es="KERBOOK: Plataforma de agendamiento de citas online para empresas, profesionales y servicios. Optimiza tu tiempo y atención al cliente."
+    data-en="KERBOOK: Online appointment scheduling platform for businesses, professionals and services. Optimize your time and customer service." />
+  <link rel="icon" href="../img/logo.png" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3VZCJWC1Q2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "G-3VZCJWC1Q2");
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#00142F",
+            secondary: "#1A63E3",
+            accent: "#C4C7F2",
+            light: "#F7F8FC",
+            dark: "#0A142F",
+            gradientStart: "#667eea",
+            gradientEnd: "#764ba2",
+          },
+          fontFamily: {
+            sans: ["Inter", "system-ui", "sans-serif"],
+          },
+          animation: {
+            "fade-in-up": "fade-in-up 0.8s ease-out",
+            float: "float 6s ease-in-out infinite",
+          },
+          backgroundImage: {
+            "grid-pattern":
+              "linear-gradient(to right, #80808012 1px, transparent 1px), linear-gradient(to bottom, #80808012 1px, transparent 1px)",
           },
         },
-      };
-    </script>
+      },
+    };
+  </script>
 
-    <link rel="stylesheet" href="../styles/main.css" />
-    <link
-      rel="stylesheet"
-      href="../styles/light-theme.css"
-      id="theme-stylesheet"
-    />
-    <link rel="stylesheet" href="../styles/responsive.css" />
+  <link rel="stylesheet" href="../styles/main.css" />
+  <link rel="stylesheet" href="../styles/light-theme.css" id="theme-stylesheet" />
+  <link rel="stylesheet" href="../styles/responsive.css" />
 
-    <style>
-      @keyframes float {
-        0%,
-        100% {
-          transform: translateY(0px);
-        }
+  <style>
+    @keyframes float {
 
-        50% {
-          transform: translateY(-20px);
-        }
+      0%,
+      100% {
+        transform: translateY(0px);
       }
-    </style>
-  </head>
 
-  <body
-    class="bg-white dark:bg-dark text-gray-800 dark:text-gray-200 transition-colors duration-500"
-  >
-    <!-- Barra de navegación -->
-    <!-- Navegación -->
-    <div id="nav-container"></div>
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+  </style>
+</head>
 
-    <!-- Hero Section KERBOOK -->
-    <section
-      class="pt-32 pb-20 bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-dark relative overflow-hidden"
-    >
-      <div
-        class="absolute inset-0 bg-grid-pattern bg-[size:100px_100px] opacity-5"
-      ></div>
-      <div
-        class="absolute top-20 right-10 w-16 h-16 bg-secondary/10 rounded-full animate-float"
-      ></div>
-      <div
-        class="absolute bottom-32 left-20 w-12 h-12 bg-accent/10 rounded-full animate-float"
-        style="animation-delay: 2s"
-      ></div>
+<body class="bg-white dark:bg-dark text-gray-800 dark:text-gray-200 transition-colors duration-500">
+  <!-- Barra de navegación -->
+  <!-- Navegación -->
+  <div id="nav-container"></div>
 
-      <div class="container mx-auto px-4 md:px-6">
-        <div class="max-w-6xl mx-auto">
-          <a
-            href="../index.html#portfolio"
-            class="inline-flex items-center text-secondary dark:text-accent font-semibold mb-6 hover:underline transition-all duration-300 group"
-          >
-            <i
-              class="fas fa-arrow-left mr-2 group-hover:-translate-x-1 transition-transform"
-            ></i>
-            <span data-es="Volver a productos" data-en="Back to products"
-              >Volver a productos</span
-            >
-          </a>
+  <!-- Hero Section KERBOOK -->
+  <section
+    class="pt-32 pb-20 bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-dark relative overflow-hidden">
+    <div class="absolute inset-0 bg-grid-pattern bg-[size:100px_100px] opacity-5"></div>
+    <div class="absolute top-20 right-10 w-16 h-16 bg-secondary/10 rounded-full animate-float"></div>
+    <div class="absolute bottom-32 left-20 w-12 h-12 bg-accent/10 rounded-full animate-float"
+      style="animation-delay: 2s"></div>
 
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div data-aos="fade-right" data-aos-duration="800">
-              <div
-                class="inline-flex items-center space-x-3 bg-secondary/10 dark:bg-accent/20 text-secondary dark:text-accent px-6 py-3 rounded-2xl text-base font-semibold mb-6 border border-secondary/20 dark:border-accent/20 backdrop-blur-sm"
-              >
-                <i class="fas fa-calendar-alt"></i>
-                <span
-                  data-es="Agendamiento de Citas"
-                  data-en="Appointment Scheduling"
-                  >Agendamiento de Citas</span
-                >
-              </div>
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="max-w-6xl mx-auto">
+        <a href="../index.html#portfolio"
+          class="inline-flex items-center text-secondary dark:text-accent font-semibold mb-6 hover:underline transition-all duration-300 group">
+          <i class="fas fa-arrow-left mr-2 group-hover:-translate-x-1 transition-transform"></i>
+          <span data-es="Volver a productos" data-en="Back to products">Volver a productos</span>
+        </a>
 
-              <h1
-                class="text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight"
-              >
-                <span class="text-dark dark:text-white block mb-4"
-                  >KERBOOK</span
-                >
-                <span
-                  class="text-gradient bg-gradient-to-r from-secondary to-accent dark:from-accent dark:to-secondary bg-clip-text text-transparent"
-                >
-                  <span data-es="Sistema de Citas" data-en="Appointment System"
-                    >Sistema de Citas</span
-                  >
-                </span>
-              </h1>
-
-              <p
-                class="text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed font-light"
-              >
-                <span
-                  data-es="Plataforma de agendamiento de citas online que optimiza la gestión de tiempo y mejora la experiencia del cliente para empresas y profesionales."
-                  data-en="Online appointment scheduling platform that optimizes time management and improves customer experience for businesses and professionals."
-                >
-                  Plataforma de agendamiento de citas online que optimiza la
-                  gestión de tiempo y mejora la experiencia del cliente para
-                  empresas y profesionales.
-                </span>
-              </p>
-
-              <div
-                class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6"
-              >
-                <a
-                  href="http://kerbook-website.s3-website-us-east-1.amazonaws.com/"
-                  target="_blank"
-                  class="bg-secondary hover:bg-primary dark:bg-accent dark:hover:bg-secondary text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-500 hover:scale-105 hover:shadow-2xl flex items-center justify-center space-x-3 shadow-lg"
-                >
-                  <i class="fas fa-external-link-alt"></i>
-                  <span data-es="Ver Sitio Web" data-en="View Website"
-                    >Ver Sitio Web</span
-                  >
-                </a>
-                <a
-                  href="#contact"
-                  class="border-2 border-secondary dark:border-accent text-secondary dark:text-accent px-8 py-4 rounded-2xl font-bold text-lg hover:bg-secondary dark:hover:bg-accent hover:text-white transition-all duration-500 hover:scale-105 hover:shadow-2xl flex items-center justify-center space-x-3 shadow-lg"
-                >
-                  <i class="fas fa-calendar-check"></i>
-                  <span data-es="Solicitar Demo" data-en="Request Demo"
-                    >Solicitar Demo</span
-                  >
-                </a>
-              </div>
-            </div>
-
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div data-aos="fade-right" data-aos-duration="800">
             <div
-              class="flex justify-center"
-              data-aos="fade-left"
-              data-aos-duration="800"
-              data-aos-delay="200"
-            >
-              <div class="relative">
-                <div
-                  class="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-2xl border border-gray-200 dark:border-gray-700 transform hover:scale-105 transition-all duration-700 backdrop-blur-sm relative overflow-hidden"
-                >
-                  <div class="text-center">
-                    <img src="../img/kerbook-logo.png" alt="KERBOOK" />
-                  </div>
-                  <div
-                    class="absolute -top-4 -right-4 bg-accent text-white p-4 rounded-2xl shadow-2xl animate-float"
-                  >
-                    <i class="fas fa-clock text-xl"></i>
-                  </div>
-                  <div
-                    class="absolute -bottom-4 -left-4 bg-secondary text-white p-4 rounded-2xl shadow-2xl animate-float"
-                    style="animation-delay: 1s"
-                  >
-                    <i class="fas fa-mobile-alt text-xl"></i>
-                  </div>
-                </div>
-              </div>
+              class="inline-flex items-center space-x-3 bg-secondary/10 dark:bg-accent/20 text-secondary dark:text-accent px-6 py-3 rounded-2xl text-base font-semibold mb-6 border border-secondary/20 dark:border-accent/20 backdrop-blur-sm">
+              <i class="fas fa-calendar-alt"></i>
+              <span data-es="Agendamiento de Citas" data-en="Appointment Scheduling">Agendamiento de Citas</span>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- Características Principales -->
-    <section class="py-20 bg-white dark:bg-dark relative overflow-hidden">
-      <div
-        class="absolute inset-0 bg-grid-pattern bg-[size:100px_100px] opacity-5"
-      ></div>
-      <div class="container mx-auto px-4 md:px-6">
-        <div class="max-w-6xl mx-auto">
-          <div
-            class="text-center mb-16"
-            data-aos="fade-up"
-            data-aos-duration="800"
-          >
-            <h2
-              class="text-3xl md:text-4xl lg:text-5xl font-black mb-6 leading-tight"
-            >
-              <span data-es="Características" data-en="Key"
-                >Características</span
-              >
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight">
+              <span class="text-dark dark:text-white block mb-4">KERBOOK</span>
               <span
-                class="text-secondary dark:text-accent"
-                data-es="Principales"
-                data-en="Features"
-                >Principales</span
-              >
-            </h2>
-            <p
-              class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed"
-            >
-              <span
-                data-es="Descubre cómo KERBOOK optimiza la gestión de citas y mejora la experiencia del cliente"
-                data-en="Discover how KERBOOK optimizes appointment management and improves customer experience"
-              >
-                Descubre cómo KERBOOK optimiza la gestión de citas y mejora la
-                experiencia del cliente
+                class="text-gradient bg-gradient-to-r from-secondary to-accent dark:from-accent dark:to-secondary bg-clip-text text-transparent">
+                <span data-es="Sistema de Citas" data-en="Appointment System">Sistema de Citas</span>
               </span>
-            </p>
-          </div>
+            </h1>
 
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div
-              class="feature-card bg-gray-50 dark:bg-gray-800 rounded-3xl p-8 border border-gray-200 dark:border-gray-700 transform hover:scale-105 transition-all duration-500"
-              data-aos="fade-up"
-              data-aos-duration="800"
-              data-aos-delay="100"
-            >
-              <div
-                class="bg-secondary dark:bg-accent w-16 h-16 rounded-2xl flex items-center justify-center mb-6"
-              >
-                <i class="fas fa-calendar-check text-white text-2xl"></i>
-              </div>
-              <h3
-                class="text-2xl font-black text-dark dark:text-white mb-4"
-                data-es="Agendamiento 24/7"
-                data-en="24/7 Scheduling"
-              >
-                Agendamiento 24/7
-              </h3>
-              <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-                <span
-                  data-es="Tus clientes pueden agendar citas en cualquier momento, incluso fuera del horario laboral."
-                  data-en="Your clients can schedule appointments at any time, even outside business hours."
-                >
-                  Tus clientes pueden agendar citas en cualquier momento,
-                  incluso fuera del horario laboral.
-                </span>
-              </p>
-            </div>
-
-            <div
-              class="feature-card bg-gray-50 dark:bg-gray-800 rounded-3xl p-8 border border-gray-200 dark:border-gray-700 transform hover:scale-105 transition-all duration-500"
-              data-aos="fade-up"
-              data-aos-duration="800"
-              data-aos-delay="200"
-            >
-              <div
-                class="bg-secondary dark:bg-accent w-16 h-16 rounded-2xl flex items-center justify-center mb-6"
-              >
-                <i class="fas fa-sync text-white text-2xl"></i>
-              </div>
-              <h3
-                class="text-2xl font-black text-dark dark:text-white mb-4"
-                data-es="Sincronización Automática"
-                data-en="Automatic Synchronization"
-              >
-                Sincronización Automática
-              </h3>
-              <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-                <span
-                  data-es="Integración con calendarios populares y sincronización en tiempo real."
-                  data-en="Integration with popular calendars and real-time synchronization."
-                >
-                  Integración con calendarios populares y sincronización en
-                  tiempo real.
-                </span>
-              </p>
-            </div>
-
-            <div
-              class="feature-card bg-gray-50 dark:bg-gray-800 rounded-3xl p-8 border border-gray-200 dark:border-gray-700 transform hover:scale-105 transition-all duration-500"
-              data-aos="fade-up"
-              data-aos-duration="800"
-              data-aos-delay="300"
-            >
-              <div
-                class="bg-secondary dark:bg-accent w-16 h-16 rounded-2xl flex items-center justify-center mb-6"
-              >
-                <i class="fas fa-bell text-white text-2xl"></i>
-              </div>
-              <h3
-                class="text-2xl font-black text-dark dark:text-white mb-4"
-                data-es="Recordatorios Automáticos"
-                data-en="Automatic Reminders"
-              >
-                Recordatorios Automáticos
-              </h3>
-              <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-                <span
-                  data-es="Reduce las inasistencias con recordatorios por SMS y email programables."
-                  data-en="Reduce no-shows with programmable SMS and email reminders."
-                >
-                  Reduce las inasistencias con recordatorios por SMS y email
-                  programables.
-                </span>
-              </p>
-            </div>
-          </div>
-
-          <!-- Características adicionales -->
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-            <div
-              class="bg-gradient-to-br from-secondary to-accent rounded-3xl p-8 text-white"
-              data-aos="fade-right"
-              data-aos-duration="800"
-            >
-              <h3
-                class="text-2xl font-black mb-6"
-                data-es="Beneficios para tu Negocio"
-                data-en="Benefits for Your Business"
-              >
-                Beneficios para tu Negocio
-              </h3>
-              <ul class="space-y-4">
-                <li class="flex items-center">
-                  <i class="fas fa-check-circle mr-3 text-green-300"></i>
-                  <span
-                    data-es="Reducción de inasistencias hasta 80%"
-                    data-en="Reduction of no-shows up to 80%"
-                    >Reducción de inasistencias hasta 80%</span
-                  >
-                </li>
-                <li class="flex items-center">
-                  <i class="fas fa-check-circle mr-3 text-green-300"></i>
-                  <span
-                    data-es="Ahorro de tiempo en gestión telefónica"
-                    data-en="Time savings in phone management"
-                    >Ahorro de tiempo en gestión telefónica</span
-                  >
-                </li>
-                <li class="flex items-center">
-                  <i class="fas fa-check-circle mr-3 text-green-300"></i>
-                  <span
-                    data-es="Experiencia del cliente mejorada"
-                    data-en="Improved customer experience"
-                    >Experiencia del cliente mejorada</span
-                  >
-                </li>
-                <li class="flex items-center">
-                  <i class="fas fa-check-circle mr-3 text-green-300"></i>
-                  <span
-                    data-es="Optimización de recursos y horarios"
-                    data-en="Optimization of resources and schedules"
-                    >Optimización de recursos y horarios</span
-                  >
-                </li>
-              </ul>
-            </div>
-
-            <div
-              class="bg-gray-50 dark:bg-gray-800 rounded-3xl p-8 border border-gray-200 dark:border-gray-700"
-              data-aos="fade-left"
-              data-aos-duration="800"
-            >
-              <h3
-                class="text-2xl font-black text-dark dark:text-white mb-6"
-                data-es="Funcionalidades Avanzadas"
-                data-en="Advanced Features"
-              >
-                Funcionalidades Avanzadas
-              </h3>
-              <div class="grid grid-cols-2 gap-4">
-                <div class="text-center">
-                  <div
-                    class="bg-secondary/20 dark:bg-accent/20 w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-2"
-                  >
-                    <i
-                      class="fas fa-mobile text-secondary dark:text-accent"
-                    ></i>
-                  </div>
-                  <span
-                    class="text-sm font-semibold"
-                    data-es="App Móvil"
-                    data-en="Mobile App"
-                    >App Móvil</span
-                  >
-                </div>
-                <div class="text-center">
-                  <div
-                    class="bg-secondary/20 dark:bg-accent/20 w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-2"
-                  >
-                    <i
-                      class="fas fa-calendar-plus text-secondary dark:text-accent"
-                    ></i>
-                  </div>
-                  <span
-                    class="text-sm font-semibold"
-                    data-es="Múltiples Servicios"
-                    data-en="Multiple Services"
-                    >Múltiples Servicios</span
-                  >
-                </div>
-                <div class="text-center">
-                  <div
-                    class="bg-secondary/20 dark:bg-accent/20 w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-2"
-                  >
-                    <i
-                      class="fas fa-chart-bar text-secondary dark:text-accent"
-                    ></i>
-                  </div>
-                  <span
-                    class="text-sm font-semibold"
-                    data-es="Reportes"
-                    data-en="Reports"
-                    >Reportes</span
-                  >
-                </div>
-                <div class="text-center">
-                  <div
-                    class="bg-secondary/20 dark:bg-accent/20 w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-2"
-                  >
-                    <i
-                      class="fas fa-payment text-secondary dark:text-accent"
-                    ></i>
-                  </div>
-                  <span
-                    class="text-sm font-semibold"
-                    data-es="Pagos Online"
-                    data-en="Online Payments"
-                    >Pagos Online</span
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Demo Section -->
-    <section
-      id="demo"
-      class="py-20 bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-dark relative overflow-hidden"
-    >
-      <div
-        class="absolute inset-0 bg-grid-pattern bg-[size:100px_100px] opacity-5"
-      ></div>
-      <div class="container mx-auto px-4 md:px-6">
-        <div class="max-w-6xl mx-auto">
-          <div
-            class="text-center mb-16"
-            data-aos="fade-up"
-            data-aos-duration="800"
-          >
-            <h2
-              class="text-3xl md:text-4xl lg:text-5xl font-black mb-6 leading-tight"
-            >
-              <span data-es="Demo" data-en="Interactive">Demo</span>
+            <p class="text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed font-light">
               <span
-                class="text-secondary dark:text-accent"
-                data-es="Interactiva"
-                data-en="Demo"
-                >Interactiva</span
-              >
-            </h2>
-            <p
-              class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed"
-            >
-              <span
-                data-es="Explora las funcionalidades de KERBOOK en acción"
-                data-en="Explore KERBOOK functionalities in action"
-              >
-                Explora las funcionalidades de KERBOOK en acción
-              </span>
-            </p>
-          </div>
-
-          <div
-            class="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-2xl border border-gray-200 dark:border-gray-700"
-            data-aos="fade-up"
-            data-aos-duration="800"
-          >
-            <div
-              class="aspect-w-16 aspect-h-9 bg-gray-200 dark:bg-gray-700 rounded-2xl flex items-center justify-center min-h-[400px]"
-            >
-              <div class="text-center p-8">
-                <video autoplay muted>
-                  <source src="../img/kerbook.mov" type="video/mp4" />
-                  Tu navegador no soporta la etiqueta de video.
-                </video>
-                <br />
-                <a
-                  href="http://kerbook-website.s3-website-us-east-1.amazonaws.com/"
-                  target="_blank"
-                  class="bg-secondary hover:bg-primary dark:bg-accent dark:hover:bg-secondary text-white px-6 py-3 rounded-2xl font-bold transition-all duration-500 hover:scale-105 inline-flex items-center space-x-2"
-                >
-                  <i class="fas fa-external-link-alt"></i>
-                  <span data-es="Ir al Sitio Web" data-en="Go to Website"
-                    >Ir al Sitio Web</span
-                  >
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Mini características de la demo -->
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-            <div
-              class="text-center"
-              data-aos="fade-up"
-              data-aos-duration="800"
-              data-aos-delay="100"
-            >
-              <div
-                class="bg-secondary/10 dark:bg-accent/10 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4"
-              >
-                <i
-                  class="fas fa-user-clock text-secondary dark:text-accent text-xl"
-                ></i>
-              </div>
-              <h4
-                class="font-bold text-dark dark:text-white mb-2"
-                data-es="Gestión de Tiempo"
-                data-en="Time Management"
-              >
-                Gestión de Tiempo
-              </h4>
-              <p
-                class="text-gray-600 dark:text-gray-300 text-sm"
-                data-es="Optimiza horarios"
-                data-en="Optimize schedules"
-              >
-                Optimiza horarios
-              </p>
-            </div>
-            <div
-              class="text-center"
-              data-aos="fade-up"
-              data-aos-duration="800"
-              data-aos-delay="200"
-            >
-              <div
-                class="bg-secondary/10 dark:bg-accent/10 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4"
-              >
-                <i
-                  class="fas fa-sms text-secondary dark:text-accent text-xl"
-                ></i>
-              </div>
-              <h4
-                class="font-bold text-dark dark:text-white mb-2"
-                data-es="Recordatorios"
-                data-en="Reminders"
-              >
-                Recordatorios
-              </h4>
-              <p
-                class="text-gray-600 dark:text-gray-300 text-sm"
-                data-es="SMS y email automáticos"
-                data-en="Automatic SMS and email"
-              >
-                SMS y email automáticos
-              </p>
-            </div>
-            <div
-              class="text-center"
-              data-aos="fade-up"
-              data-aos-duration="800"
-              data-aos-delay="300"
-            >
-              <div
-                class="bg-secondary/10 dark:bg-accent/10 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4"
-              >
-                <i
-                  class="fas fa-chart-pie text-secondary dark:text-accent text-xl"
-                ></i>
-              </div>
-              <h4
-                class="font-bold text-dark dark:text-white mb-2"
-                data-es="Analytics"
-                data-en="Analytics"
-              >
-                Analytics
-              </h4>
-              <p
-                class="text-gray-600 dark:text-gray-300 text-sm"
-                data-es="Métricas de rendimiento"
-                data-en="Performance metrics"
-              >
-                Métricas de rendimiento
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section
-      id="contact"
-      class="py-20 bg-white dark:bg-dark relative overflow-hidden"
-    >
-      <div
-        class="absolute inset-0 bg-grid-pattern bg-[size:100px_100px] opacity-5"
-      ></div>
-      <div class="container mx-auto px-4 md:px-6">
-        <div class="max-w-4xl mx-auto text-center">
-          <div data-aos="fade-up" data-aos-duration="800">
-            <h2
-              class="text-3xl md:text-4xl lg:text-5xl font-black mb-6 leading-tight"
-            >
-              <span data-es="¿Listo para" data-en="Ready to">¿Listo para</span>
-              <span
-                class="text-secondary dark:text-accent"
-                data-es="Optimizar"
-                data-en="Optimize"
-                >Optimizar</span
-              >
-              <span data-es="tus Citas?" data-en="Your Appointments?"
-                >tus Citas?</span
-              >
-            </h2>
-            <p
-              class="text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed"
-            >
-              <span
-                data-es="Agenda una demostración personalizada y descubre cómo KERBOOK puede transformar la gestión de citas de tu negocio"
-                data-en="Schedule a personalized demonstration and discover how KERBOOK can transform your business appointment management"
-              >
-                Agenda una demostración personalizada y descubre cómo KERBOOK
-                puede transformar la gestión de citas de tu negocio
+                data-es="Plataforma de agendamiento de citas online que optimiza la gestión de tiempo y mejora la experiencia del cliente para empresas y profesionales."
+                data-en="Online appointment scheduling platform that optimizes time management and improves customer experience for businesses and professionals.">
+                Plataforma de agendamiento de citas online que optimiza la
+                gestión de tiempo y mejora la experiencia del cliente para
+                empresas y profesionales.
               </span>
             </p>
 
-            <div
-              class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6"
-            >
-              <a
-                href="../index.html#contact"
-                class="bg-secondary hover:bg-primary dark:bg-accent dark:hover:bg-secondary text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-500 hover:scale-105 hover:shadow-2xl flex items-center justify-center space-x-3 shadow-lg"
-              >
+            <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
+              <a href="http://kerbook-website.s3-website-us-east-1.amazonaws.com/" target="_blank"
+                class="bg-secondary hover:bg-primary dark:bg-accent dark:hover:bg-secondary text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-500 hover:scale-105 hover:shadow-2xl flex items-center justify-center space-x-3 shadow-lg">
+                <i class="fas fa-external-link-alt"></i>
+                <span data-es="Ver Sitio Web" data-en="View Website">Ver Sitio Web</span>
+              </a>
+              <a href="#contact"
+                class="border-2 border-secondary dark:border-accent text-secondary dark:text-accent px-8 py-4 rounded-2xl font-bold text-lg hover:bg-secondary dark:hover:bg-accent hover:text-white transition-all duration-500 hover:scale-105 hover:shadow-2xl flex items-center justify-center space-x-3 shadow-lg">
                 <i class="fas fa-calendar-check"></i>
-                <span data-es="Agendar Demo" data-en="Schedule Demo"
-                  >Agendar Demo</span
-                >
-              </a>
-              <a
-                href="https://wa.me/50233022019"
-                class="border-2 border-green-500 text-green-600 dark:text-green-400 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-green-500 hover:text-white transition-all duration-500 hover:scale-105 hover:shadow-2xl flex items-center justify-center space-x-3 shadow-lg"
-              >
-                <i class="fab fa-whatsapp"></i>
-                <span data-es="Chat WhatsApp" data-en="WhatsApp Chat"
-                  >Chat WhatsApp</span
-                >
+                <span data-es="Solicitar Demo" data-en="Request Demo">Solicitar Demo</span>
               </a>
             </div>
+          </div>
 
-            <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-              <div>
-                <div
-                  class="text-2xl font-black text-secondary dark:text-accent mb-2"
-                >
-                  80%
+          <div class="flex justify-center" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
+            <div class="relative">
+              <div
+                class="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-2xl border border-gray-200 dark:border-gray-700 transform hover:scale-105 transition-all duration-700 backdrop-blur-sm relative overflow-hidden">
+                <div class="text-center">
+                  <img src="../img/kerbook-logo.png" alt="KERBOOK" />
                 </div>
-                <div
-                  class="text-gray-600 dark:text-gray-300 text-sm"
-                  data-es="Menos Inasistencias"
-                  data-en="Fewer No-shows"
-                >
-                  Menos Inasistencias
+                <div class="absolute -top-4 -right-4 bg-accent text-white p-4 rounded-2xl shadow-2xl animate-float">
+                  <i class="fas fa-clock text-xl"></i>
                 </div>
-              </div>
-              <div>
-                <div
-                  class="text-2xl font-black text-secondary dark:text-accent mb-2"
-                >
-                  24/7
-                </div>
-                <div
-                  class="text-gray-600 dark:text-gray-300 text-sm"
-                  data-es="Disponibilidad"
-                  data-en="Availability"
-                >
-                  Disponibilidad
-                </div>
-              </div>
-              <div>
-                <div
-                  class="text-2xl font-black text-secondary dark:text-accent mb-2"
-                >
-                  50%
-                </div>
-                <div
-                  class="text-gray-600 dark:text-gray-300 text-sm"
-                  data-es="Menos Tiempo Gestión"
-                  data-en="Less Management Time"
-                >
-                  Menos Tiempo Gestión
+                <div class="absolute -bottom-4 -left-4 bg-secondary text-white p-4 rounded-2xl shadow-2xl animate-float"
+                  style="animation-delay: 1s">
+                  <i class="fas fa-mobile-alt text-xl"></i>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <!-- Footer -->
-    <div id="footer-container"></div>
+  <!-- Características Principales -->
+  <section class="py-20 bg-white dark:bg-dark relative overflow-hidden">
+    <div class="absolute inset-0 bg-grid-pattern bg-[size:100px_100px] opacity-5"></div>
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16" data-aos="fade-up" data-aos-duration="800">
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-black mb-6 leading-tight">
+            <span data-es="Características" data-en="Key">Características</span>
+            <span class="text-secondary dark:text-accent" data-es="Principales" data-en="Features">Principales</span>
+          </h2>
+          <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed">
+            <span data-es="Descubre cómo KERBOOK optimiza la gestión de citas y mejora la experiencia del cliente"
+              data-en="Discover how KERBOOK optimizes appointment management and improves customer experience">
+              Descubre cómo KERBOOK optimiza la gestión de citas y mejora la
+              experiencia del cliente
+            </span>
+          </p>
+        </div>
 
-    <!-- Scripts -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="../js/component-loader.js"></script>
-    <script src="../js/navigation.js"></script>
-    <script src="../js/theme-switcher.js"></script>
-    <script src="../js/language-switcher.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        if (typeof AOS !== "undefined") {
-          AOS.init({
-            duration: 800,
-            once: true,
-            offset: 100,
-          });
-        }
-      });
-    </script>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div
+            class="feature-card bg-gray-50 dark:bg-gray-800 rounded-3xl p-8 border border-gray-200 dark:border-gray-700 transform hover:scale-105 transition-all duration-500"
+            data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+            <div class="bg-secondary dark:bg-accent w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
+              <i class="fas fa-calendar-check text-white text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-black text-dark dark:text-white mb-4" data-es="Agendamiento 24/7"
+              data-en="24/7 Scheduling">
+              Agendamiento 24/7
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+              <span data-es="Tus clientes pueden agendar citas en cualquier momento, incluso fuera del horario laboral."
+                data-en="Your clients can schedule appointments at any time, even outside business hours.">
+                Tus clientes pueden agendar citas en cualquier momento,
+                incluso fuera del horario laboral.
+              </span>
+            </p>
+          </div>
 
-    <!-- Botón de Scroll to Top -->
-    <button
-      id="scroll-to-top"
-      class="fixed bottom-8 right-8 w-14 h-14 bg-secondary hover:bg-accent text-white rounded-2xl shadow-2xl transition-all duration-500 opacity-100 visible hover:scale-110 hover:rotate-12 z-50 flex items-center justify-center group border-2 border-white/20"
-    >
-      <i
-        class="fas fa-chevron-up text-xl group-hover:-translate-y-1 transition-transform duration-300"
-      ></i>
-    </button>
+          <div
+            class="feature-card bg-gray-50 dark:bg-gray-800 rounded-3xl p-8 border border-gray-200 dark:border-gray-700 transform hover:scale-105 transition-all duration-500"
+            data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+            <div class="bg-secondary dark:bg-accent w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
+              <i class="fas fa-sync text-white text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-black text-dark dark:text-white mb-4" data-es="Sincronización Automática"
+              data-en="Automatic Synchronization">
+              Sincronización Automática
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+              <span data-es="Integración con calendarios populares y sincronización en tiempo real."
+                data-en="Integration with popular calendars and real-time synchronization.">
+                Integración con calendarios populares y sincronización en
+                tiempo real.
+              </span>
+            </p>
+          </div>
 
-    <style>
-      #scroll-to-top {
-        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        backdrop-filter: blur(10px);
-        box-shadow: 0 8px 25px rgba(26, 99, 227, 0.3);
+          <div
+            class="feature-card bg-gray-50 dark:bg-gray-800 rounded-3xl p-8 border border-gray-200 dark:border-gray-700 transform hover:scale-105 transition-all duration-500"
+            data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+            <div class="bg-secondary dark:bg-accent w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
+              <i class="fas fa-bell text-white text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-black text-dark dark:text-white mb-4" data-es="Recordatorios Automáticos"
+              data-en="Automatic Reminders">
+              Recordatorios Automáticos
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+              <span data-es="Reduce las inasistencias con recordatorios por SMS y email programables."
+                data-en="Reduce no-shows with programmable SMS and email reminders.">
+                Reduce las inasistencias con recordatorios por SMS y email
+                programables.
+              </span>
+            </p>
+          </div>
+        </div>
+
+        <!-- Características adicionales -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+          <div class="bg-gradient-to-br from-secondary to-accent rounded-3xl p-8 text-white" data-aos="fade-right"
+            data-aos-duration="800">
+            <h3 class="text-2xl font-black mb-6" data-es="Beneficios para tu Negocio"
+              data-en="Benefits for Your Business">
+              Beneficios para tu Negocio
+            </h3>
+            <ul class="space-y-4">
+              <li class="flex items-center">
+                <i class="fas fa-check-circle mr-3 text-green-300"></i>
+                <span data-es="Reducción de inasistencias hasta 80%" data-en="Reduction of no-shows up to 80%">Reducción
+                  de inasistencias hasta 80%</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle mr-3 text-green-300"></i>
+                <span data-es="Ahorro de tiempo en gestión telefónica" data-en="Time savings in phone management">Ahorro
+                  de tiempo en gestión telefónica</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle mr-3 text-green-300"></i>
+                <span data-es="Experiencia del cliente mejorada" data-en="Improved customer experience">Experiencia del
+                  cliente mejorada</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle mr-3 text-green-300"></i>
+                <span data-es="Optimización de recursos y horarios"
+                  data-en="Optimization of resources and schedules">Optimización de recursos y horarios</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-gray-50 dark:bg-gray-800 rounded-3xl p-8 border border-gray-200 dark:border-gray-700"
+            data-aos="fade-left" data-aos-duration="800">
+            <h3 class="text-2xl font-black text-dark dark:text-white mb-6" data-es="Funcionalidades Avanzadas"
+              data-en="Advanced Features">
+              Funcionalidades Avanzadas
+            </h3>
+            <div class="grid grid-cols-2 gap-4">
+              <div class="text-center">
+                <div
+                  class="bg-secondary/20 dark:bg-accent/20 w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-2">
+                  <i class="fas fa-mobile text-secondary dark:text-accent"></i>
+                </div>
+                <span class="text-sm font-semibold" data-es="App Móvil" data-en="Mobile App">App Móvil</span>
+              </div>
+              <div class="text-center">
+                <div
+                  class="bg-secondary/20 dark:bg-accent/20 w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-2">
+                  <i class="fas fa-calendar-plus text-secondary dark:text-accent"></i>
+                </div>
+                <span class="text-sm font-semibold" data-es="Múltiples Servicios" data-en="Multiple Services">Múltiples
+                  Servicios</span>
+              </div>
+              <div class="text-center">
+                <div
+                  class="bg-secondary/20 dark:bg-accent/20 w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-2">
+                  <i class="fas fa-chart-bar text-secondary dark:text-accent"></i>
+                </div>
+                <span class="text-sm font-semibold" data-es="Reportes" data-en="Reports">Reportes</span>
+              </div>
+              <div class="text-center">
+                <div
+                  class="bg-secondary/20 dark:bg-accent/20 w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-2">
+                  <i class="fas fa-payment text-secondary dark:text-accent"></i>
+                </div>
+                <span class="text-sm font-semibold" data-es="Pagos Online" data-en="Online Payments">Pagos Online</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Demo Section -->
+  <section id="demo"
+    class="py-20 bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-dark relative overflow-hidden">
+    <div class="absolute inset-0 bg-grid-pattern bg-[size:100px_100px] opacity-5"></div>
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16" data-aos="fade-up" data-aos-duration="800">
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-black mb-6 leading-tight">
+            <span data-es="Demo" data-en="Interactive">Demo</span>
+            <span class="text-secondary dark:text-accent" data-es="Interactiva" data-en="Demo">Interactiva</span>
+          </h2>
+          <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed">
+            <span data-es="Explora las funcionalidades de KERBOOK en acción"
+              data-en="Explore KERBOOK functionalities in action">
+              Explora las funcionalidades de KERBOOK en acción
+            </span>
+          </p>
+        </div>
+
+        <div class="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-2xl border border-gray-200 dark:border-gray-700"
+          data-aos="fade-up" data-aos-duration="800">
+          <div
+            class="aspect-w-16 aspect-h-9 bg-gray-200 dark:bg-gray-700 rounded-2xl flex items-center justify-center min-h-[400px]">
+            <div class="text-center p-8">
+              <video autoplay muted>
+                <source src="../img/kerbook.mov" type="video/mp4" />
+                Tu navegador no soporta la etiqueta de video.
+              </video>
+              <br />
+              <a href="http://kerbook-website.s3-website-us-east-1.amazonaws.com/" target="_blank"
+                class="bg-secondary hover:bg-primary dark:bg-accent dark:hover:bg-secondary text-white px-6 py-3 rounded-2xl font-bold transition-all duration-500 hover:scale-105 inline-flex items-center space-x-2">
+                <i class="fas fa-external-link-alt"></i>
+                <span data-es="Ir al Sitio Web" data-en="Go to Website">Ir al Sitio Web</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mini características de la demo -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+          <div class="text-center" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+            <div
+              class="bg-secondary/10 dark:bg-accent/10 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <i class="fas fa-user-clock text-secondary dark:text-accent text-xl"></i>
+            </div>
+            <h4 class="font-bold text-dark dark:text-white mb-2" data-es="Gestión de Tiempo" data-en="Time Management">
+              Gestión de Tiempo
+            </h4>
+            <p class="text-gray-600 dark:text-gray-300 text-sm" data-es="Optimiza horarios"
+              data-en="Optimize schedules">
+              Optimiza horarios
+            </p>
+          </div>
+          <div class="text-center" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+            <div
+              class="bg-secondary/10 dark:bg-accent/10 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <i class="fas fa-sms text-secondary dark:text-accent text-xl"></i>
+            </div>
+            <h4 class="font-bold text-dark dark:text-white mb-2" data-es="Recordatorios" data-en="Reminders">
+              Recordatorios
+            </h4>
+            <p class="text-gray-600 dark:text-gray-300 text-sm" data-es="SMS y email automáticos"
+              data-en="Automatic SMS and email">
+              SMS y email automáticos
+            </p>
+          </div>
+          <div class="text-center" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+            <div
+              class="bg-secondary/10 dark:bg-accent/10 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <i class="fas fa-chart-pie text-secondary dark:text-accent text-xl"></i>
+            </div>
+            <h4 class="font-bold text-dark dark:text-white mb-2" data-es="Analytics" data-en="Analytics">
+              Analytics
+            </h4>
+            <p class="text-gray-600 dark:text-gray-300 text-sm" data-es="Métricas de rendimiento"
+              data-en="Performance metrics">
+              Métricas de rendimiento
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section id="contact" class="py-20 bg-white dark:bg-dark relative overflow-hidden">
+    <div class="absolute inset-0 bg-grid-pattern bg-[size:100px_100px] opacity-5"></div>
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="max-w-4xl mx-auto text-center">
+        <div data-aos="fade-up" data-aos-duration="800">
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-black mb-6 leading-tight">
+            <span data-es="¿Listo para" data-en="Ready to">¿Listo para</span>
+            <span class="text-secondary dark:text-accent" data-es="Optimizar" data-en="Optimize">Optimizar</span>
+            <span data-es="tus Citas?" data-en="Your Appointments?">tus Citas?</span>
+          </h2>
+          <p class="text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
+            <span
+              data-es="Agenda una demostración personalizada y descubre cómo KERBOOK puede transformar la gestión de citas de tu negocio"
+              data-en="Schedule a personalized demonstration and discover how KERBOOK can transform your business appointment management">
+              Agenda una demostración personalizada y descubre cómo KERBOOK
+              puede transformar la gestión de citas de tu negocio
+            </span>
+          </p>
+
+          <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+            <a href="../index.html#contact"
+              class="bg-secondary hover:bg-primary dark:bg-accent dark:hover:bg-secondary text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-500 hover:scale-105 hover:shadow-2xl flex items-center justify-center space-x-3 shadow-lg">
+              <i class="fas fa-calendar-check"></i>
+              <span data-es="Agendar Demo" data-en="Schedule Demo">Agendar Demo</span>
+            </a>
+            <a href="https://wa.me/50233022019"
+              class="border-2 border-green-500 text-green-600 dark:text-green-400 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-green-500 hover:text-white transition-all duration-500 hover:scale-105 hover:shadow-2xl flex items-center justify-center space-x-3 shadow-lg">
+              <i class="fab fa-whatsapp"></i>
+              <span data-es="Chat WhatsApp" data-en="WhatsApp Chat">Chat WhatsApp</span>
+            </a>
+          </div>
+
+          <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+            <div>
+              <div class="text-2xl font-black text-secondary dark:text-accent mb-2">
+                80%
+              </div>
+              <div class="text-gray-600 dark:text-gray-300 text-sm" data-es="Menos Inasistencias"
+                data-en="Fewer No-shows">
+                Menos Inasistencias
+              </div>
+            </div>
+            <div>
+              <div class="text-2xl font-black text-secondary dark:text-accent mb-2">
+                24/7
+              </div>
+              <div class="text-gray-600 dark:text-gray-300 text-sm" data-es="Disponibilidad" data-en="Availability">
+                Disponibilidad
+              </div>
+            </div>
+            <div>
+              <div class="text-2xl font-black text-secondary dark:text-accent mb-2">
+                50%
+              </div>
+              <div class="text-gray-600 dark:text-gray-300 text-sm" data-es="Menos Tiempo Gestión"
+                data-en="Less Management Time">
+                Menos Tiempo Gestión
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <!-- Footer -->
+  <!-- Footer -->
+  <style>
+    footer * {
+      color: #d1d5db !important;
+    }
+
+    footer a {
+      color: #d1d5db !important;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #1a63e3 !important;
+    }
+
+    footer h4 {
+      color: #ffffff !important;
+      font-weight: 700;
+    }
+
+    footer h4 * {
+      color: #ffffff !important;
+    }
+
+    footer p {
+      color: #d1d5db !important;
+    }
+
+    footer p * {
+      color: #d1d5db !important;
+    }
+
+    footer span {
+      color: #d1d5db !important;
+    }
+
+    footer .text-gray-400 {
+      color: #d1d5db !important;
+    }
+
+    footer .text-white {
+      color: #ffffff !important;
+    }
+
+    footer .text-gray-500 {
+      color: #9ca3af !important;
+    }
+
+    footer i {
+      color: inherit !important;
+    }
+
+    footer img {
+      opacity: 0.9;
+    }
+  </style>
+  <footer class="bg-primary dark:bg-dark py-20 text-gray-300 relative overflow-hidden"
+    style="background-color: #00142f">
+    <div class="absolute inset-0 bg-grid-pattern bg-[size:100px_100px] opacity-5"></div>
+    <div class="absolute top-10 left-10 w-20 h-20 bg-secondary/10 rounded-full animate-float"></div>
+    <div class="absolute bottom-20 right-20 w-16 h-16 bg-accent/10 rounded-full animate-float"
+      style="animation-delay: 2s"></div>
+
+    <div class="container mx-auto px-4 md:px-6 relative z-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <div class="footer-section" data-aos="fade-up" data-aos-duration="800">
+          <a href="../index.html">
+            <img src="../img/logo-kerbrum.png" alt="Kerbrum Agency"
+              class="h-14 w-auto mb-6 opacity-90 hover:opacity-100 transition-opacity duration-500" />
+          </a>
+          <p class="text-gray-400 mb-6 leading-relaxed max-w-xs">
+            <span
+              data-es="Transformamos tu negocio con tecnología inteligente e innovación disruptiva. Creamos soluciones digitales que impulsan el crecimiento exponencial."
+              data-en="We transform your business with intelligent technology and disruptive innovation. We create digital solutions that drive exponential growth.">Transformamos
+              tu negocio con tecnología inteligente e
+              innovación disruptiva. Creamos soluciones digitales que impulsan
+              el crecimiento exponencial.</span>
+          </p>
+          <div class="flex space-x-4">
+            <a href="https://www.facebook.com/share/1Fue25EhbS/"
+              class="social-footer w-10 h-10 bg-gray-700 hover:bg-secondary rounded-xl flex items-center justify-center transition-all duration-500 transform hover:scale-110 hover:rotate-12 group">
+              <i class="fab fa-facebook-f text-white text-sm group-hover:scale-110 transition-transform"></i>
+            </a>
+            <a href="https://www.instagram.com/kerbrumagency?igsh=Y3E4ejk5dXVjZHlz"
+              class="social-footer w-10 h-10 bg-gray-700 hover:bg-secondary rounded-xl flex items-center justify-center transition-all duration-500 transform hover:scale-110 hover:rotate-12 group">
+              <i class="fab fa-instagram text-white text-sm group-hover:scale-110 transition-transform"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/kerbrum-agency/"
+              class="social-footer w-10 h-10 bg-gray-700 hover:bg-secondary rounded-xl flex items-center justify-center transition-all duration-500 transform hover:scale-110 hover:rotate-12 group">
+              <i class="fab fa-linkedin-in text-white text-sm group-hover:scale-110 transition-transform"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-section" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+          <h4 class="text-white text-xl font-bold mb-6" data-es="Navegación" data-en="Navigation">
+            Navegación
+          </h4>
+          <ul class="space-y-4">
+            <li>
+              <a href="../index.html#home"
+                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                <i class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                <span data-es="Inicio" data-en="Home">Inicio</span>
+              </a>
+            </li>
+            <li>
+              <a href="../index.html#why-us"
+                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                <i class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                <span data-es="Por qué elegirnos" data-en="Why Choose Us">Por qué elegirnos</span>
+              </a>
+            </li>
+            <li>
+              <a href="../index.html#process"
+                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                <i class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                <span data-es="Nuestro enfoque" data-en="Our Approach">Nuestro enfoque</span>
+              </a>
+            </li>
+            <li>
+              <a href="../index.html#success-cases"
+                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                <i class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                <span data-es="Casos de éxito" data-en="Success Cases">Casos de éxito</span>
+              </a>
+            </li>
+            <li>
+              <a href="../index.html#contact"
+                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                <i class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                <span data-es="Contacto" data-en="Contact">Contacto</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-section" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+          <h4 class="text-white text-xl font-bold mb-6" data-es="Recursos" data-en="Resources">
+            Recursos
+          </h4>
+          <ul class="space-y-4">
+            <li>
+              <a href="../index.html#portfolio"
+                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                <i class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                <span data-es="Productos" data-en="Products">Productos</span>
+              </a>
+            </li>
+            <li>
+              <a href="../index.html#blog"
+                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                <i class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                <span data-es="Blog" data-en="Blog">Blog</span>
+              </a>
+            </li>
+            <li>
+              <a href="../index.html#ebook"
+                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                <i class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                <span data-es="E-book Gratuito" data-en="Free E-book">E-book Gratuito</span>
+              </a>
+            </li>
+            <li>
+              <a href="../index.html#services"
+                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                <i class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                <span data-es="Enemigos del crecimiento" data-en="Growth Challenges">Enemigos del crecimiento</span>
+              </a>
+            </li>
+            <li>
+              <a href="../index.html#failed-attempts"
+                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                <i class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                <span data-es="Intentos sin resultados" data-en="Failed Attempts">Intentos sin resultados</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contacto footer -->
+        <div class="footer-section" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+          <h4 class="text-white text-xl font-bold mb-6" data-es="Contacto" data-en="Contact">
+            Contacto
+          </h4>
+          <div class="space-y-4">
+            <div class="flex items-start">
+              <i class="fas fa-envelope text-secondary dark:text-accent mt-1 mr-3"></i>
+              <div>
+                <p class="text-gray-400">ventas@kerbrumagency.com</p>
+                <p class="text-gray-500 text-sm" data-es="Email principal" data-en="Main email">
+                  Email principal
+                </p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <i class="fas fa-globe text-secondary dark:text-accent mt-1 mr-3"></i>
+              <div>
+                <p class="text-gray-400">https://kerbrumagency.com</p>
+                <p class="text-gray-500 text-sm" data-es="Sitio web oficial" data-en="Official website">
+                  Sitio web oficial
+                </p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <i class="fas fa-map-marker-alt text-secondary dark:text-accent mt-1 mr-3"></i>
+              <div>
+                <p class="text-gray-400" data-es="Latinoamérica" data-en="Latin America">
+                  Latinoamérica
+                </p>
+                <p class="text-gray-500 text-sm" data-es="Clientes globales" data-en="Global clients">
+                  Clientes globales
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-700 pt-8">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="text-center md:text-left mb-4 md:mb-0">
+            <p class="text-gray-400">
+              © <span id="current-year">2026</span> Kerbrum Agency.
+              <span data-es="Todos los derechos reservados." data-en="All rights reserved.">Todos los derechos
+                reservados.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="../js/component-loader.js"></script>
+  <script src="../js/navigation.js"></script>
+  <script src="../js/theme-switcher.js"></script>
+  <script src="../js/language-switcher.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (typeof AOS !== "undefined") {
+        AOS.init({
+          duration: 800,
+          once: true,
+          offset: 100,
+        });
       }
+    });
+  </script>
 
-      #scroll-to-top.visible {
-        opacity: 1 !important;
-        visibility: visible !important;
-        transform: translateY(0) !important;
-      }
+  <!-- Botón de Scroll to Top -->
+  <button id="scroll-to-top"
+    class="fixed bottom-8 right-8 w-14 h-14 bg-secondary hover:bg-accent text-white rounded-2xl shadow-2xl transition-all duration-500 opacity-100 visible hover:scale-110 hover:rotate-12 z-50 flex items-center justify-center group border-2 border-white/20">
+    <i class="fas fa-chevron-up text-xl group-hover:-translate-y-1 transition-transform duration-300"></i>
+  </button>
 
-      #scroll-to-top:not(.visible) {
-        opacity: 0 !important;
-        visibility: hidden !important;
-        transform: translateY(20px) !important;
-      }
+  <style>
+    #scroll-to-top {
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 25px rgba(26, 99, 227, 0.3);
+    }
 
-      #scroll-to-top:hover {
-        box-shadow: 0 12px 35px rgba(26, 99, 227, 0.5);
-        transform: scale(1.1) rotate(12deg) !important;
-      }
+    #scroll-to-top.visible {
+      opacity: 1 !important;
+      visibility: visible !important;
+      transform: translateY(0) !important;
+    }
 
-      #scroll-to-top {
-        z-index: 9999 !important;
-      }
-    </style>
-  </body>
+    #scroll-to-top:not(.visible) {
+      opacity: 0 !important;
+      visibility: hidden !important;
+      transform: translateY(20px) !important;
+    }
+
+    #scroll-to-top:hover {
+      box-shadow: 0 12px 35px rgba(26, 99, 227, 0.5);
+      transform: scale(1.1) rotate(12deg) !important;
+    }
+
+    #scroll-to-top {
+      z-index: 9999 !important;
+    }
+  </style>
+</body>
+
 </html>
