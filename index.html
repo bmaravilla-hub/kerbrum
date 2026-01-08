@@ -314,14 +314,6 @@
                                         qué elegirnos</span>
                                 </div>
                             </a>
-                            <a href="#process"
-                                class="block px-4 py-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200">
-                                <div class="flex items-center space-x-3">
-                                    <i class="fas fa-route text-secondary dark:text-accent"></i>
-                                    <span class="font-medium" data-en="Our Approach" data-es="Nuestro enfoque">Nuestro
-                                        enfoque</span>
-                                </div>
-                            </a>
                         </div>
                     </div>
                 </div>
@@ -506,10 +498,6 @@
                                 class="mobile-nav-link block px-4 py-2 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-300 text-sm">
                                 <span data-en="Why Choose Us" data-es="Por qué elegirnos">Por qué elegirnos</span>
                             </a>
-                            <a href="#process"
-                                class="mobile-nav-link block px-4 py-2 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-300 text-sm">
-                                <span data-en="Our Approach" data-es="Nuestro enfoque">Nuestro enfoque</span>
-                            </a>
                         </div>
                     </div>
 
@@ -684,7 +672,7 @@
 
     <!-- Sección de Enemigos del Crecimiento -->
     <section id="services"
-        class="py-32 bg-gradient-to-br from-[#0A1628] via-[#0F1F3D] to-[#0A1628] relative overflow-hidden">
+        class="py-20 bg-gradient-to-br from-[#0A1628] via-[#0F1F3D] to-[#0A1628] relative overflow-hidden">
         <!-- Efectos de fondo mejorados -->
         <div class="absolute inset-0 bg-grid-pattern bg-[size:50px_50px] opacity-10"></div>
 
@@ -710,7 +698,7 @@
 
         <div class="container mx-auto px-4 md:px-6 relative z-10">
             <!-- Título de la sección mejorado -->
-            <div class="text-center mb-20" data-aos="fade-up" data-aos-duration="800">
+            <div class="text-center mb-12" data-aos="fade-up" data-aos-duration="800">
                 <div class="inline-block mb-4">
                     <span
                         class="px-6 py-2 bg-red-500/10 border border-red-500/30 rounded-full text-red-400 text-sm font-bold uppercase tracking-wider backdrop-blur-sm">
@@ -883,7 +871,7 @@
             </div>
 
             <!-- CTA al final mejorado -->
-            <div class="text-center mt-20" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+            <div class="text-center mt-12" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
                 <a href="#contact"
                     class="group relative inline-flex items-center space-x-3 bg-gradient-to-r from-accent via-secondary to-accent bg-size-200 bg-pos-0 hover:bg-pos-100 text-white px-10 py-5 rounded-2xl font-bold text-lg transition-all duration-500 hover:scale-105 shadow-2xl hover:shadow-accent/50 overflow-hidden">
                     <div
@@ -954,7 +942,7 @@
 
             @media (max-width: 768px) {
                 .hexagon-container {
-                    min-height: 700px;
+                    min-height: auto;
                 }
 
                 .hexagon-item,
@@ -962,13 +950,18 @@
                     position: relative !important;
                     width: 100% !important;
                     margin-bottom: 1rem;
+                    top: auto !important;
+                    left: auto !important;
+                    right: auto !important;
+                    bottom: auto !important;
+                    transform: none !important;
                 }
             }
         </style>
     </section>
 
     <!-- Sección de Esfuerzo e intentos sin resultados -->
-    <section id="failed-attempts" class="py-32 bg-white dark:bg-dark relative overflow-hidden">
+    <section id="failed-attempts" class="py-20 bg-white dark:bg-dark relative overflow-hidden">
         <!-- Efectos de fondo -->
         <div class="absolute inset-0 bg-grid-pattern bg-[size:100px_100px] opacity-5"></div>
         <div class="absolute top-20 left-10 w-64 h-64 bg-secondary/5 rounded-full blur-3xl"></div>
@@ -976,7 +969,7 @@
 
         <div class="container mx-auto px-4 md:px-6 relative z-10">
             <!-- Título de la sección -->
-            <div class="text-center mb-16" data-aos="fade-up" data-aos-duration="800">
+            <div class="text-center mb-12" data-aos="fade-up" data-aos-duration="800">
                 <div class="inline-block mb-4">
                     <span
                         class="px-6 py-2 bg-red-500/10 border border-red-500/30 rounded-full text-red-500 dark:text-red-400 text-sm font-bold uppercase tracking-wider">
@@ -986,22 +979,15 @@
                 </div>
                 <h2
                     class="text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight text-gray-900 dark:text-white">
-                    <span data-es="Esfuerzo e intentos" data-en="Effort and attempts">Esfuerzo e intentos</span>
+                    <span data-es="Si ya fallaste," data-en="If you have already failed,">Si ya fallaste,</span>
                     <span class="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-accent">
-                        <span data-es="sin resultados" data-en="without results">sin resultados</span>
+                        <span data-es="aquí está el por qué" data-en="here is why">aquí está el por qué</span>
                     </span>
                 </h2>
-                <p
-                    class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed font-light">
-                    <span data-es="Ya lo intentaste todo. Aquí está la verdad de por qué no se tiene éxito"
-                        data-en="You've tried everything. Here's the truth about why you haven't succeeded">
-                        Ya lo intentaste todo. Aquí está la verdad de por qué no se tiene éxito
-                    </span>
-                </p>
             </div>
 
             <!-- Grid de comparación -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
                 <!-- Card 1: Software Estándar -->
                 <div class="group relative bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 rounded-3xl p-8 border-2 border-gray-200 dark:border-gray-700 hover:border-secondary/50 dark:hover:border-secondary/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-secondary/20 flex flex-col"
                     data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
@@ -1022,7 +1008,7 @@
                         <span data-es="Software estándar" data-en="Standard Software">Software estándar</span>
                     </h3>
                     <p class="text-sm text-gray-500 dark:text-gray-400 mb-6 font-semibold">
-                        <span data-es="(SAP, Odoo, etc.)" data-en="(SAP, Odoo, etc.)">(SAP, Odoo, etc.)</span>
+                        <span data-es="(Sistemas Heredados)" data-en="(Legacy Systems)">(Sistemas Heredados)</span>
                     </p>
 
                     <!-- Problemas -->
@@ -1272,7 +1258,7 @@
     </section>
 
     <!-- Sección de Nuestro Enfoque -->
-    <section class="py-32 bg-gradient-to-br from-primary via-dark to-primary relative overflow-hidden">
+    <section class="py-20 bg-gradient-to-br from-primary via-dark to-primary relative overflow-hidden">
         <!-- Efectos de fondo -->
         <div class="absolute inset-0 bg-grid-pattern bg-[size:50px_50px] opacity-10"></div>
         <div class="absolute top-20 left-10 w-64 h-64 bg-secondary/10 rounded-full blur-3xl animate-float"></div>
@@ -1281,7 +1267,7 @@
 
         <div class="container mx-auto px-4 md:px-6 relative z-10">
             <!-- Título de la sección -->
-            <div class="text-center mb-20" data-aos="fade-up" data-aos-duration="800">
+            <div class="text-center mb-12" data-aos="fade-up" data-aos-duration="800">
                 <div class="inline-block mb-4">
                     <span
                         class="px-6 py-2 bg-accent/10 border border-accent/30 rounded-full text-accent text-sm font-bold uppercase tracking-wider backdrop-blur-sm">
@@ -1485,7 +1471,7 @@
             </div>
 
             <!-- CTA final -->
-            <div class="text-center mt-16" data-aos="fade-up" data-aos-duration="800" data-aos-delay="700">
+            <div class="text-center mt-12" data-aos="fade-up" data-aos-duration="800" data-aos-delay="700">
                 <a href="#contact"
                     class="inline-flex items-center space-x-3 bg-gradient-to-r from-secondary to-accent hover:from-accent hover:to-secondary text-white px-10 py-5 rounded-2xl font-bold text-lg transition-all duration-500 hover:scale-105 shadow-2xl hover:shadow-accent/50">
                     <i class="fas fa-calendar-check"></i>
@@ -1692,85 +1678,6 @@
         </div>
     </section>
 
-    <!-- Sección de Proceso  -->
-    <section id="process" class="py-24 bg-white dark:bg-dark relative overflow-hidden">
-        <div
-            class="absolute inset-0 bg-gradient-to-br from-gray-50/50 to-white/50 dark:from-dark/50 dark:to-gray-900/50">
-        </div>
-
-        <div class="container mx-auto px-4 md:px-6 relative z-10">
-            <div class="text-center mb-20" data-aos="fade-up" data-aos-duration="800">
-                <h2 class="text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight">
-                    <span data-es="Proceso de" data-en="Transformation">Proceso de</span> <span
-                        class="text-gradient bg-gradient-to-r from-secondary to-accent dark:from-accent dark:to-secondary bg-clip-text text-transparent">
-                        <span data-es="Transformación" data-en="Process">Transformación</span>
-                    </span>
-                </h2>
-                <p
-                    class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed font-light">
-                    <span
-                        data-es="Trabajamos de forma metódica y colaborativa para garantizar el éxito de tu transformación digital"
-                        data-en="We work methodically and collaboratively to ensure the success of your digital transformation">Trabajamos
-                        de forma metódica y colaborativa para garantizar el éxito de tu transformación digital</span>
-                </p>
-            </div>
-            <div class="flex flex-col md:flex-row justify-between items-start relative">
-                <div
-                    class="hidden md:block absolute top-20 left-1/6 right-1/6 h-1 bg-gradient-to-r from-secondary to-accent rounded-full">
-                </div>
-                <div class="process-step flex flex-col items-center text-center mb-16 md:mb-0 md:w-1/3 px-6"
-                    data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
-                    <div
-                        class="step-number bg-gradient-to-br from-secondary to-accent w-24 h-24 rounded-3xl flex items-center justify-center mb-8 transform hover:scale-110 transition-transform duration-500 shadow-2xl">
-                        <span class="text-white text-3xl font-black">01</span>
-                    </div>
-                    <h3 class="text-2xl font-black text-dark dark:text-white mb-6" data-es="Descubrimiento y Estrategia"
-                        data-en="Discovery and Strategy">Descubrimiento y Estrategia</h3>
-                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-lg">
-                        <span
-                            data-es="Analizamos tu negocio en profundidad, identificamos oportunidades únicas y desarrollamos una estrategia personalizada que alinea tecnología con objetivos."
-                            data-en="We analyze your business in depth, identify unique opportunities and develop a customized strategy that aligns technology with objectives.">Analizamos
-                            tu negocio en profundidad, identificamos oportunidades únicas y desarrollamos una estrategia
-                            personalizada que alinea tecnología con objetivos.</span>
-                    </p>
-                </div>
-                <div class="process-step flex flex-col items-center text-center mb-16 md:mb-0 md:w-1/3 px-6"
-                    data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
-                    <div
-                        class="step-number bg-gradient-to-br from-accent to-secondary w-24 h-24 rounded-3xl flex items-center justify-center mb-8 transform hover:scale-110 transition-transform duration-500 shadow-2xl">
-                        <span class="text-white text-3xl font-black">02</span>
-                    </div>
-                    <h3 class="text-2xl font-black text-dark dark:text-white mb-6" data-es="Desarrollo e Implementación"
-                        data-en="Development and Implementation">Desarrollo e Implementación</h3>
-                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-lg">
-                        <span
-                            data-es="Creamos e implementamos las soluciones tecnológicas utilizando metodologías ágiles, asegurando calidad y entregando valor incremental."
-                            data-en="We create and implement technological solutions using agile methodologies, ensuring quality and delivering incremental value.">Creamos
-                            e implementamos las soluciones tecnológicas utilizando metodologías ágiles, asegurando
-                            calidad y entregando valor incremental.</span>
-                    </p>
-                </div>
-                <div class="process-step flex flex-col items-center text-center md:w-1/3 px-6" data-aos="fade-up"
-                    data-aos-duration="800" data-aos-delay="300">
-                    <div
-                        class="step-number bg-gradient-to-br from-secondary to-accent w-24 h-24 rounded-3xl flex items-center justify-center mb-8 transform hover:scale-110 transition-transform duration-500 shadow-2xl">
-                        <span class="text-white text-3xl font-black">03</span>
-                    </div>
-                    <h3 class="text-2xl font-black text-dark dark:text-white mb-6"
-                        data-es="Gestión del Cambio y Soporte" data-en="Change Management and Support">Gestión del
-                        Cambio y Soporte</h3>
-                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-lg">
-                        <span
-                            data-es="Aseguramos la adopción exitosa y proporcionamos soporte continuo para maximizar resultados y garantizar el crecimiento sostenible."
-                            data-en="We ensure successful adoption and provide continuous support to maximize results and guarantee sustainable growth.">Aseguramos
-                            la adopción exitosa y proporcionamos soporte continuo para maximizar resultados y garantizar
-                            el crecimiento sostenible.</span>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Sección de Por Qué Elegirnos  -->
     <section id="why-us"
         class="py-24 bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-dark relative overflow-hidden">
@@ -1800,9 +1707,9 @@
             </div>
 
             <!-- Grid de diferenciadores -->
-            <div class="max-w-6xl mx-auto space-y-6 mb-16">
+            <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
                 <!-- Item 1: Compromiso -->
-                <div class="group bg-white dark:bg-gray-800 rounded-3xl p-8 border-2 border-gray-200 dark:border-gray-700 hover:border-secondary dark:hover:border-accent transition-all duration-500 hover:shadow-2xl hover:shadow-secondary/20"
+                <div class="group bg-white dark:bg-gray-800 rounded-3xl p-8 border-2 border-gray-200 dark:border-gray-700 hover:border-secondary dark:hover:border-accent transition-all duration-500 hover:shadow-2xl hover:shadow-secondary/20 h-full"
                     data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
                     <div class="flex items-start space-x-6">
                         <div
@@ -1839,7 +1746,7 @@
                 </div>
 
                 <!-- Item 2: Acompañamiento -->
-                <div class="group bg-white dark:bg-gray-800 rounded-3xl p-8 border-2 border-gray-200 dark:border-gray-700 hover:border-secondary dark:hover:border-accent transition-all duration-500 hover:shadow-2xl hover:shadow-secondary/20"
+                <div class="group bg-white dark:bg-gray-800 rounded-3xl p-8 border-2 border-gray-200 dark:border-gray-700 hover:border-secondary dark:hover:border-accent transition-all duration-500 hover:shadow-2xl hover:shadow-secondary/20 h-full"
                     data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
                     <div class="flex items-start space-x-6">
                         <div
@@ -1876,7 +1783,7 @@
                 </div>
 
                 <!-- Item 3: Resultados -->
-                <div class="group bg-white dark:bg-gray-800 rounded-3xl p-8 border-2 border-gray-200 dark:border-gray-700 hover:border-secondary dark:hover:border-accent transition-all duration-500 hover:shadow-2xl hover:shadow-secondary/20"
+                <div class="group bg-white dark:bg-gray-800 rounded-3xl p-8 border-2 border-gray-200 dark:border-gray-700 hover:border-secondary dark:hover:border-accent transition-all duration-500 hover:shadow-2xl hover:shadow-secondary/20 h-full"
                     data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
                     <div class="flex items-start space-x-6">
                         <div
@@ -1913,7 +1820,7 @@
                 </div>
 
                 <!-- Item 4: Entregables con quick wins -->
-                <div class="group bg-white dark:bg-gray-800 rounded-3xl p-8 border-2 border-gray-200 dark:border-gray-700 hover:border-secondary dark:hover:border-accent transition-all duration-500 hover:shadow-2xl hover:shadow-secondary/20"
+                <div class="group bg-white dark:bg-gray-800 rounded-3xl p-8 border-2 border-gray-200 dark:border-gray-700 hover:border-secondary dark:hover:border-accent transition-all duration-500 hover:shadow-2xl hover:shadow-secondary/20 h-full"
                     data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
                     <div class="flex items-start space-x-6">
                         <div
@@ -1970,7 +1877,7 @@
                         <!-- Stat 1 -->
                         <div class="text-center group">
                             <div
-                                class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:border-accent/50 transition-all duration-500 hover:scale-105">
+                                class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:border-accent/50 transition-all duration-500 hover:scale-105 h-full flex flex-col justify-center">
                                 <div
                                     class="text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-accent to-secondary mb-3">
                                     +30
@@ -1989,7 +1896,7 @@
                         <!-- Stat 2 -->
                         <div class="text-center group">
                             <div
-                                class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:border-accent/50 transition-all duration-500 hover:scale-105">
+                                class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:border-accent/50 transition-all duration-500 hover:scale-105 h-full flex flex-col justify-center">
                                 <div
                                     class="text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-accent to-secondary mb-3">
                                     +150
@@ -2008,12 +1915,12 @@
                         <!-- Stat 3 -->
                         <div class="text-center group">
                             <div
-                                class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:border-accent/50 transition-all duration-500 hover:scale-105">
+                                class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:border-accent/50 transition-all duration-500 hover:scale-105 h-full flex flex-col justify-center">
                                 <div class="flex items-center justify-center mb-3">
                                     <i class="fas fa-check-circle text-5xl md:text-6xl text-accent"></i>
                                 </div>
                                 <p class="text-white font-semibold text-lg">
-                                    <span data-es="FRAMEWORK PROPIO" data-en="OWN FRAMEWORK">FRAMEWORK PROPIO</span>
+                                    <span data-es="MARCO DE TRABAJO PROPIO" data-en="OWN FRAMEWORK">MARCO DE TRABAJO PROPIO</span>
                                 </p>
                                 <p class="text-gray-300 text-sm mt-2">
                                     <span data-es="con entregas de alta calidad y en tiempo"
@@ -2970,7 +2877,7 @@
                             <!-- Nombre y cargo -->
                             <div class="text-center md:text-left">
                                 <h3 class="text-white font-black text-lg">José Cornejo</h3>
-                                <p class="text-secondary text-sm font-semibold">Owner</p>
+                                <p class="text-accent text-sm font-semibold">Owner</p>
                             </div>
                         </div>
 
@@ -3269,14 +3176,6 @@
                                 <i
                                     class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
                                 <span data-es="Por qué elegirnos" data-en="Why Choose Us">Por qué elegirnos</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#process"
-                                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
-                                <i
-                                    class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
-                                <span data-es="Nuestro enfoque" data-en="Our Approach">Nuestro enfoque</span>
                             </a>
                         </li>
                         <li>
@@ -3639,6 +3538,12 @@
     <!-- Scripts para el Ignition Meeting Popup -->
     <script src="js/areaCodes.js"></script>
     <script src="js/popup.js"></script>
+</body>
+
+</html>
+</body>
+
+</html>ript src="js/popup.js"></script>
 </body>
 
 </html>

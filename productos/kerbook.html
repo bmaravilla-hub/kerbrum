@@ -81,8 +81,290 @@
 <body class="bg-white dark:bg-dark text-gray-800 dark:text-gray-200 transition-colors duration-500">
   <!-- Barra de navegación -->
   <!-- Navegación -->
-  <div id="nav-container"></div>
+  <nav id="navbar"
+    class="fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-dark/90 backdrop-blur-xl border-b border-gray-200 dark:border-gray-800 transition-all duration-700">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+      <!-- Logo -->
+      <div class="flex items-center">
+        <a href="../index.html">
+          <img src="../img/logo-kerbrum.png" alt="Kerbrum Agency"
+            class="h-10 md:h-14 w-auto transition-all duration-500 hover:scale-110 hover:rotate-2">
+        </a>
+      </div>
 
+      <!-- Desktop Menu -->
+      <div class="hidden lg:flex items-center space-x-6">
+        <!-- Inicio -->
+        <a href="../index.html#home"
+          class="nav-link font-semibold hover:text-secondary dark:hover:text-accent transition-all duration-500 py-2 group">
+          <span class="relative">
+            <span data-en="Home" data-es="Inicio">Inicio</span>
+            <span
+              class="absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary dark:bg-accent group-hover:w-full transition-all duration-500"></span>
+          </span>
+        </a>
+
+        <!-- Nosotros (Dropdown) -->
+        <div class="relative group">
+          <button
+            class="nav-link font-semibold hover:text-secondary dark:hover:text-accent transition-all duration-500 py-2 flex items-center space-x-1">
+            <span class="relative">
+              <span data-en="About" data-es="Nosotros">Nosotros</span>
+              <span
+                class="absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary dark:bg-accent group-hover:w-full transition-all duration-500"></span>
+            </span>
+            <i class="fas fa-chevron-down text-xs transition-transform duration-300 group-hover:rotate-180"></i>
+          </button>
+          <div
+            class="absolute top-full left-0 mt-2 w-56 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 backdrop-blur-sm">
+            <div class="p-2 space-y-1">
+              <a href="../index.html#why-us"
+                class="block px-4 py-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200">
+                <div class="flex items-center space-x-3">
+                  <i class="fas fa-award text-secondary dark:text-accent"></i>
+                  <span class="font-medium" data-en="Why Choose Us" data-es="Por qué elegirnos">Por qué
+                    elegirnos</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Soluciones (Dropdown) -->
+        <div class="relative group">
+          <button
+            class="nav-link font-semibold hover:text-secondary dark:hover:text-accent transition-all duration-500 py-2 flex items-center space-x-1">
+            <span class="relative">
+              <span data-en="Solutions" data-es="Soluciones">Soluciones</span>
+              <span
+                class="absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary dark:bg-accent group-hover:w-full transition-all duration-500"></span>
+            </span>
+            <i class="fas fa-chevron-down text-xs transition-transform duration-300 group-hover:rotate-180"></i>
+          </button>
+          <div
+            class="absolute top-full left-0 mt-2 w-56 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 backdrop-blur-sm">
+            <div class="p-2 space-y-1">
+              <a href="../index.html#success-cases"
+                class="block px-4 py-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200">
+                <div class="flex items-center space-x-3">
+                  <i class="fas fa-trophy text-secondary dark:text-accent"></i>
+                  <span class="font-medium" data-en="Success Cases" data-es="Casos de éxito">Casos de
+                    éxito</span>
+                </div>
+              </a>
+              <a href="../index.html#portfolio"
+                class="block px-4 py-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200">
+                <div class="flex items-center space-x-3">
+                  <i class="fas fa-box-open text-secondary dark:text-accent"></i>
+                  <span class="font-medium" data-en="Products" data-es="Productos">Productos</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recursos (Dropdown) -->
+        <div class="relative group">
+          <button
+            class="nav-link font-semibold hover:text-secondary dark:hover:text-accent transition-all duration-500 py-2 flex items-center space-x-1">
+            <span class="relative">
+              <span data-en="Resources" data-es="Recursos">Recursos</span>
+              <span
+                class="absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary dark:bg-accent group-hover:w-full transition-all duration-500"></span>
+            </span>
+            <i class="fas fa-chevron-down text-xs transition-transform duration-300 group-hover:rotate-180"></i>
+          </button>
+          <div
+            class="absolute top-full left-0 mt-2 w-56 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 backdrop-blur-sm">
+            <div class="p-2 space-y-1">
+              <a href="../index.html#blog"
+                class="block px-4 py-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200">
+                <div class="flex items-center space-x-3">
+                  <i class="fas fa-blog text-secondary dark:text-accent"></i>
+                  <span class="font-medium" data-en="Blog" data-es="Blog">Blog</span>
+                </div>
+              </a>
+              <a href="../index.html#ebook"
+                class="block px-4 py-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200 bg-gradient-to-r from-gradientStart/10 to-gradientEnd/10">
+                <div class="flex items-center space-x-3">
+                  <i class="fas fa-gift text-gradientStart"></i>
+                  <span class="font-medium" data-en="Free E-book" data-es="E-book Gratuito">E-book
+                    Gratuito</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contacto -->
+        <a href="../index.html#contact"
+          class="nav-link font-semibold hover:text-secondary dark:hover:text-accent transition-all duration-500 py-2 group">
+          <span class="relative">
+            <span data-en="Contact" data-es="Contacto">Contacto</span>
+            <span
+              class="absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary dark:bg-accent group-hover:w-full transition-all duration-500"></span>
+          </span>
+        </a>
+
+        <!-- Language & Theme Toggles -->
+        <div class="flex items-center space-x-3 ml-4 pl-4 border-l border-gray-300 dark:border-gray-700">
+          <!-- Language Switcher -->
+          <div class="language-switcher relative group">
+            <button id="language-toggle"
+              class="p-2.5 rounded-xl bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300 border border-gray-200 dark:border-gray-700 flex items-center space-x-2">
+              <i class="fas fa-globe text-gray-600 dark:text-gray-300 text-sm"></i>
+              <span class="font-semibold text-sm language-label" data-en="EN" data-es="ES">ES</span>
+              <i
+                class="fas fa-chevron-down text-xs text-gray-500 transition-transform duration-300 group-hover:rotate-180"></i>
+            </button>
+
+            <div
+              class="language-dropdown absolute top-full right-0 mt-2 w-32 bg-white dark:bg-gray-800 rounded-xl shadow-2xl border border-gray-200 dark:border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 backdrop-blur-sm">
+              <div class="p-2 space-y-1">
+                <button
+                  class="language-option w-full text-left px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200 flex items-center space-x-2"
+                  data-lang="es">
+                  <span
+                    class="w-6 h-4 bg-gradient-to-r from-yellow-400 via-red-500 to-red-600 rounded-sm flex items-center justify-center text-white text-xs font-bold">ES</span>
+                  <span class="font-medium text-sm" data-es="Español" data-en="Spanish">Español</span>
+                </button>
+                <button
+                  class="language-option w-full text-left px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200 flex items-center space-x-2"
+                  data-lang="en">
+                  <span
+                    class="w-6 h-4 bg-gradient-to-r from-blue-700 via-white to-red-600 rounded-sm flex items-center justify-center text-blue-700 text-xs font-bold">EN</span>
+                  <span class="font-medium text-sm" data-es="Inglés" data-en="English">English</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Theme Toggle -->
+          <button id="theme-toggle"
+            class="p-2.5 rounded-xl bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300 border border-gray-200 dark:border-gray-700 group">
+            <i class="fas fa-moon text-gray-600 dark:text-yellow-400 group-hover:scale-110 transition-transform duration-300 text-sm"
+              id="theme-icon"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-button"
+        class="lg:hidden text-gray-600 dark:text-gray-300 text-2xl p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 relative z-50">
+        <i class="fas fa-bars" id="mobile-menu-icon"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu-overlay"
+      class="lg:hidden fixed inset-0 bg-black/50 backdrop-blur-sm opacity-0 invisible transition-all duration-500 z-40">
+    </div>
+
+    <!-- Mobile Menu Panel -->
+    <div id="mobile-menu"
+      class="lg:hidden fixed top-0 right-0 bottom-0 w-80 bg-white dark:bg-dark shadow-2xl transform translate-x-full transition-transform duration-500 z-40 overflow-y-auto">
+      <div class="p-6 space-y-6">
+        <!-- Mobile Menu Header -->
+        <div class="flex items-center justify-between pb-4 border-b border-gray-200 dark:border-gray-700">
+          <img src="../img/logo-kerbrum.png" alt="Kerbrum" class="h-10">
+          <button id="mobile-menu-close"
+            class="text-gray-600 dark:text-gray-300 text-2xl p-2 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+
+        <!-- Mobile Menu Links -->
+        <div class="space-y-2">
+          <a href="../index.html#home"
+            class="mobile-nav-link block px-4 py-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 font-semibold">
+            <span data-en="Home" data-es="Inicio">Inicio</span>
+          </a>
+
+          <!-- Nosotros Accordion -->
+          <div class="mobile-dropdown">
+            <button
+              class="mobile-dropdown-toggle w-full flex items-center justify-between px-4 py-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 font-semibold">
+              <span data-en="About" data-es="Nosotros">Nosotros</span>
+              <i class="fas fa-chevron-down text-sm transition-transform duration-300"></i>
+            </button>
+            <div class="mobile-dropdown-content hidden pl-4 mt-2 space-y-2">
+              <a href="../index.html#why-us"
+                class="mobile-nav-link block px-4 py-2 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-300 text-sm">
+                <span data-en="Why Choose Us" data-es="Por qué elegirnos">Por qué elegirnos</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Soluciones Accordion -->
+          <div class="mobile-dropdown">
+            <button
+              class="mobile-dropdown-toggle w-full flex items-center justify-between px-4 py-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 font-semibold">
+              <span data-en="Solutions" data-es="Soluciones">Soluciones</span>
+              <i class="fas fa-chevron-down text-sm transition-transform duration-300"></i>
+            </button>
+            <div class="mobile-dropdown-content hidden pl-4 mt-2 space-y-2">
+              <a href="../index.html#success-cases"
+                class="mobile-nav-link block px-4 py-2 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-300 text-sm">
+                <span data-en="Success Cases" data-es="Casos de éxito">Casos de éxito</span>
+              </a>
+              <a href="../index.html#portfolio"
+                class="mobile-nav-link block px-4 py-2 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-300 text-sm">
+                <span data-en="Products" data-es="Productos">Productos</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Recursos Accordion -->
+          <div class="mobile-dropdown">
+            <button
+              class="mobile-dropdown-toggle w-full flex items-center justify-between px-4 py-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 font-semibold">
+              <span data-en="Resources" data-es="Recursos">Recursos</span>
+              <i class="fas fa-chevron-down text-sm transition-transform duration-300"></i>
+            </button>
+            <div class="mobile-dropdown-content hidden pl-4 mt-2 space-y-2">
+              <a href="../index.html#blog"
+                class="mobile-nav-link block px-4 py-2 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-300 text-sm">
+                <span data-en="Blog" data-es="Blog">Blog</span>
+              </a>
+              <a href="../index.html#ebook"
+                class="mobile-nav-link block px-4 py-2 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-300 text-sm bg-gradient-to-r from-gradientStart/10 to-gradientEnd/10">
+                <span data-en="Free E-book" data-es="E-book Gratuito">E-book Gratuito</span>
+              </a>
+            </div>
+          </div>
+
+          <a href="../index.html#contact"
+            class="mobile-nav-link block px-4 py-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 font-semibold">
+            <span data-en="Contact" data-es="Contacto">Contacto</span>
+          </a>
+        </div>
+
+        <!-- Mobile Language & Theme -->
+        <div class="pt-4 border-t border-gray-200 dark:border-gray-700 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-sm font-semibold text-gray-600 dark:text-gray-400" data-en="Language"
+              data-es="Idioma">Idioma</span>
+            <div class="flex space-x-2">
+              <button
+                class="language-option px-3 py-1.5 rounded-lg bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-sm font-medium hover:bg-secondary hover:text-white dark:hover:bg-accent transition-all duration-300"
+                data-lang="es">ES</button>
+              <button
+                class="language-option px-3 py-1.5 rounded-lg bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-sm font-medium hover:bg-secondary hover:text-white dark:hover:bg-accent transition-all duration-300"
+                data-lang="en">EN</button>
+            </div>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="text-sm font-semibold text-gray-600 dark:text-gray-400" data-en="Theme"
+              data-es="Tema">Tema</span>
+            <button id="theme-toggle-mobile"
+              class="px-4 py-2 rounded-lg bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300">
+              <i class="fas fa-moon text-gray-600 dark:text-yellow-400" id="theme-icon-mobile"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
   <!-- Hero Section KERBOOK -->
   <section
     class="pt-32 pb-20 bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-dark relative overflow-hidden">
@@ -93,7 +375,7 @@
 
     <div class="container mx-auto px-4 md:px-6">
       <div class="max-w-6xl mx-auto">
-        <a href="../index.html#portfolio"
+        <a href="#" onclick="history.back(); return false;"
           class="inline-flex items-center text-secondary dark:text-accent font-semibold mb-6 hover:underline transition-all duration-300 group">
           <i class="fas fa-arrow-left mr-2 group-hover:-translate-x-1 transition-transform"></i>
           <span data-es="Volver a productos" data-en="Back to products">Volver a productos</span>
@@ -700,7 +982,6 @@
 
   <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="../js/component-loader.js"></script>
   <script src="../js/navigation.js"></script>
   <script src="../js/theme-switcher.js"></script>
   <script src="../js/language-switcher.js"></script>
