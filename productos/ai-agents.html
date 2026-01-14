@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-es="AI AGENTS - Automatización Inteligente | Kerbrum Agency"
+        data-en="AI AGENTS - Intelligent Automation | Kerbrum Agency">AI AGENTS - Automatización Inteligente | Kerbrum Agency</title>
+    <meta name="description"
+        data-es="AI AGENTS: Agentes de IA autónomos que trabajan 24/7 para automatizar tareas, atención al cliente y procesos operativos."
+        data-en="AI AGENTS: Autonomous AI agents working 24/7 to automate tasks, customer service and operational processes.">
+    <link rel="icon" href="../img/logo.png">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3VZCJWC1Q2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-3VZCJWC1Q2');
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#00142F",
+                        secondary: "#1A63E3",
+                        accent: "#C4C7F2",
+                        light: "#F7F8FC",
+                        dark: "#0A142F",
+                        gradientStart: "#667eea",
+                        gradientEnd: "#764ba2",
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fade-in-up 0.8s ease-out',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    backgroundImage: {
+                        'grid-pattern': 'linear-gradient(to right, #80808012 1px, transparent 1px), linear-gradient(to bottom, #80808012 1px, transparent 1px)',
+                    }
+                },
+            },
+        }
+    </script>
+
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/light-theme.css" id="theme-stylesheet">
+    <link rel="stylesheet" href="../styles/responsive.css">
+</head>
+
+<body class="bg-white dark:bg-dark text-gray-800 dark:text-gray-200 transition-colors duration-500">
+
+    <nav id="navbar"
+        class="fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-dark/90 backdrop-blur-xl border-b border-gray-200 dark:border-gray-800 transition-all duration-700">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center">
+                <a href="../index.html">
+                    <img src="../img/logo-kerbrum.png" alt="Kerbrum Agency"
+                        class="h-12 md:h-16 w-auto transition-all duration-500 hover:scale-110 hover:rotate-2">
+                </a>
+            </div>
+
+            <div class="hidden lg:flex items-center space-x-6">
+                <a href="../index.html#home"
+                    class="nav-link font-semibold hover:text-secondary dark:hover:text-accent transition-all duration-500 py-2 group">
+                    <span class="relative">
+                        <span data-en="Home" data-es="Inicio">Inicio</span>
+                        <span
+                            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary dark:bg-accent group-hover:w-full transition-all duration-500"></span>
+                    </span>
+                </a>
+
+                <div class="relative group">
+                    <button
+                        class="nav-link font-semibold hover:text-secondary dark:hover:text-accent transition-all duration-500 py-2 flex items-center space-x-1">
+                        <span class="relative">
+                            <span data-en="About" data-es="Nosotros">Nosotros</span>
+                            <span
+                                class="absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary dark:bg-accent group-hover:w-full transition-all duration-500"></span>
+                        </span>
+                        <i
+                            class="fas fa-chevron-down text-xs transition-transform duration-300 group-hover:rotate-180"></i>
+                    </button>
+                    <div
+                        class="absolute top-full left-0 mt-2 w-56 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 backdrop-blur-sm">
+                        <div class="p-2 space-y-1">
+                            <a href="../index.html#why-us"
+                                class="block px-4 py-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200">
+                                <div class="flex items-center space-x-3">
+                                    <i class="fas fa-award text-secondary dark:text-accent"></i>
+                                    <span class="font-medium" data-en="Why Choose Us" data-es="Por qué elegirnos">Por qué
+                                        elegirnos</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative group">
+                    <button
+                        class="nav-link font-semibold hover:text-secondary dark:hover:text-accent transition-all duration-500 py-2 flex items-center space-x-1">
+                        <span class="relative">
+                            <span data-en="Solutions" data-es="Soluciones">Soluciones</span>
+                            <span
+                                class="absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary dark:bg-accent group-hover:w-full transition-all duration-500"></span>
+                        </span>
+                        <i
+                            class="fas fa-chevron-down text-xs transition-transform duration-300 group-hover:rotate-180"></i>
+                    </button>
+                    <div
+                        class="absolute top-full left-0 mt-2 w-56 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 backdrop-blur-sm">
+                        <div class="p-2 space-y-1">
+                            <a href="../index.html#success-cases"
+                                class="block px-4 py-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200">
+                                <div class="flex items-center space-x-3">
+                                    <i class="fas fa-trophy text-secondary dark:text-accent"></i>
+                                    <span class="font-medium" data-en="Success Cases" data-es="Casos de éxito">Casos de
+                                        éxito</span>
+                                </div>
+                            </a>
+                            <a href="../index.html#portfolio"
+                                class="block px-4 py-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200">
+                                <div class="flex items-center space-x-3">
+                                    <i class="fas fa-box-open text-secondary dark:text-accent"></i>
+                                    <span class="font-medium" data-en="Products" data-es="Productos">Productos</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative group">
+                    <button
+                        class="nav-link font-semibold hover:text-secondary dark:hover:text-accent transition-all duration-500 py-2 flex items-center space-x-1">
+                        <span class="relative">
+                            <span data-en="Resources" data-es="Recursos">Recursos</span>
+                            <span
+                                class="absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary dark:bg-accent group-hover:w-full transition-all duration-500"></span>
+                        </span>
+                        <i
+                            class="fas fa-chevron-down text-xs transition-transform duration-300 group-hover:rotate-180"></i>
+                    </button>
+                    <div
+                        class="absolute top-full left-0 mt-2 w-56 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 backdrop-blur-sm">
+                        <div class="p-2 space-y-1">
+                            <a href="../index.html#blog"
+                                class="block px-4 py-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200">
+                                <div class="flex items-center space-x-3">
+                                    <i class="fas fa-blog text-secondary dark:text-accent"></i>
+                                    <span class="font-medium" data-en="Blog" data-es="Blog">Blog</span>
+                                </div>
+                            </a>
+                            <a href="../index.html#ebook"
+                                class="block px-4 py-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200 bg-gradient-to-r from-gradientStart/10 to-gradientEnd/10">
+                                <div class="flex items-center space-x-3">
+                                    <i class="fas fa-gift text-gradientStart"></i>
+                                    <span class="font-medium" data-en="Free E-book" data-es="E-book Gratuito">E-book
+                                        Gratuito</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="../index.html#contact"
+                    class="nav-link font-semibold hover:text-secondary dark:hover:text-accent transition-all duration-500 py-2 group">
+                    <span class="relative">
+                        <span data-en="Contact" data-es="Contacto">Contacto</span>
+                        <span
+                            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary dark:bg-accent group-hover:w-full transition-all duration-500"></span>
+                    </span>
+                </a>
+
+                <div class="flex items-center space-x-3 ml-4 pl-4 border-l border-gray-300 dark:border-gray-700">
+                    <div class="language-switcher relative group">
+                        <button id="language-toggle"
+                            class="p-2.5 rounded-xl bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300 border border-gray-200 dark:border-gray-700 flex items-center space-x-2">
+                            <i class="fas fa-globe text-gray-600 dark:text-gray-300 text-sm"></i>
+                            <span class="font-semibold text-sm language-label" data-en="EN" data-es="ES">ES</span>
+                            <i
+                                class="fas fa-chevron-down text-xs text-gray-500 transition-transform duration-300 group-hover:rotate-180"></i>
+                        </button>
+
+                        <div
+                            class="language-dropdown absolute top-full right-0 mt-2 w-32 bg-white dark:bg-gray-800 rounded-xl shadow-2xl border border-gray-200 dark:border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 backdrop-blur-sm">
+                            <div class="p-2 space-y-1">
+                                <button
+                                    class="language-option w-full text-left px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200 flex items-center space-x-2"
+                                    data-lang="es">
+                                    <span
+                                        class="w-6 h-4 bg-gradient-to-r from-yellow-400 via-red-500 to-red-600 rounded-sm flex items-center justify-center text-white text-xs font-bold">ES</span>
+                                    <span class="font-medium text-sm" data-es="Español" data-en="Spanish">Español</span>
+                                </button>
+                                <button
+                                    class="language-option w-full text-left px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200 flex items-center space-x-2"
+                                    data-lang="en">
+                                    <span
+                                        class="w-6 h-4 bg-gradient-to-r from-blue-700 via-white to-red-600 rounded-sm flex items-center justify-center text-blue-700 text-xs font-bold">EN</span>
+                                    <span class="font-medium text-sm" data-es="Inglés" data-en="English">English</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button id="theme-toggle"
+                        class="p-2.5 rounded-xl bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300 border border-gray-200 dark:border-gray-700 group">
+                        <i class="fas fa-moon text-gray-600 dark:text-yellow-400 group-hover:scale-110 transition-transform duration-300 text-sm"
+                            id="theme-icon"></i>
+                    </button>
+                </div>
+            </div>
+
+            <button id="mobile-menu-button"
+                class="lg:hidden text-gray-600 dark:text-gray-300 text-2xl p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 relative z-50">
+                <i class="fas fa-bars" id="mobile-menu-icon"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu-overlay"
+            class="lg:hidden fixed inset-0 bg-black/50 backdrop-blur-sm opacity-0 invisible transition-all duration-500 z-40">
+        </div>
+
+        <div id="mobile-menu"
+            class="lg:hidden fixed top-0 right-0 bottom-0 w-80 bg-white dark:bg-dark shadow-2xl transform translate-x-full transition-transform duration-500 z-40 overflow-y-auto">
+            <div class="p-6 space-y-6">
+                <div class="flex items-center justify-between pb-4 border-b border-gray-200 dark:border-gray-700">
+                    <img src="../img/logo-kerbrum.png" alt="Kerbrum" class="h-10">
+                    <button id="mobile-menu-close"
+                        class="text-gray-600 dark:text-gray-300 text-2xl p-2 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+
+                <div class="space-y-2">
+                    <a href="../index.html#home"
+                        class="mobile-nav-link block px-4 py-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 font-semibold">
+                        <span data-en="Home" data-es="Inicio">Inicio</span>
+                    </a>
+
+                    <div class="mobile-dropdown">
+                        <button
+                            class="mobile-dropdown-toggle w-full flex items-center justify-between px-4 py-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 font-semibold">
+                            <span data-en="About" data-es="Nosotros">Nosotros</span>
+                            <i class="fas fa-chevron-down text-sm transition-transform duration-300"></i>
+                        </button>
+                        <div class="mobile-dropdown-content hidden pl-4 mt-2 space-y-2">
+                            <a href="../index.html#why-us"
+                                class="mobile-nav-link block px-4 py-2 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-300 text-sm">
+                                <span data-en="Why Choose Us" data-es="Por qué elegirnos">Por qué elegirnos</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="mobile-dropdown">
+                        <button
+                            class="mobile-dropdown-toggle w-full flex items-center justify-between px-4 py-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 font-semibold">
+                            <span data-en="Solutions" data-es="Soluciones">Soluciones</span>
+                            <i class="fas fa-chevron-down text-sm transition-transform duration-300"></i>
+                        </button>
+                        <div class="mobile-dropdown-content hidden pl-4 mt-2 space-y-2">
+                            <a href="../index.html#success-cases"
+                                class="mobile-nav-link block px-4 py-2 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-300 text-sm">
+                                <span data-en="Success Cases" data-es="Casos de éxito">Casos de éxito</span>
+                            </a>
+                            <a href="../index.html#portfolio"
+                                class="mobile-nav-link block px-4 py-2 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-300 text-sm">
+                                <span data-en="Products" data-es="Productos">Productos</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="mobile-dropdown">
+                        <button
+                            class="mobile-dropdown-toggle w-full flex items-center justify-between px-4 py-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 font-semibold">
+                            <span data-en="Resources" data-es="Recursos">Recursos</span>
+                            <i class="fas fa-chevron-down text-sm transition-transform duration-300"></i>
+                        </button>
+                        <div class="mobile-dropdown-content hidden pl-4 mt-2 space-y-2">
+                            <a href="../index.html#blog"
+                                class="mobile-nav-link block px-4 py-2 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-300 text-sm">
+                                <span data-en="Blog" data-es="Blog">Blog</span>
+                            </a>
+                            <a href="../index.html#ebook"
+                                class="mobile-nav-link block px-4 py-2 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-300 text-sm bg-gradient-to-r from-gradientStart/10 to-gradientEnd/10">
+                                <span data-en="Free E-book" data-es="E-book Gratuito">E-book Gratuito</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <a href="../index.html#contact"
+                        class="mobile-nav-link block px-4 py-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 font-semibold">
+                        <span data-en="Contact" data-es="Contacto">Contacto</span>
+                    </a>
+                </div>
+
+                <div class="pt-4 border-t border-gray-200 dark:border-gray-700 space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm font-semibold text-gray-600 dark:text-gray-400" data-en="Language"
+                            data-es="Idioma">Idioma</span>
+                        <div class="flex space-x-2">
+                            <button
+                                class="language-option px-3 py-1.5 rounded-lg bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-sm font-medium hover:bg-secondary hover:text-white dark:hover:bg-accent transition-all duration-300"
+                                data-lang="es">ES</button>
+                            <button
+                                class="language-option px-3 py-1.5 rounded-lg bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-sm font-medium hover:bg-secondary hover:text-white dark:hover:bg-accent transition-all duration-300"
+                                data-lang="en">EN</button>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm font-semibold text-gray-600 dark:text-gray-400" data-en="Theme"
+                            data-es="Tema">Tema</span>
+                        <button id="theme-toggle-mobile"
+                            class="px-4 py-2 rounded-lg bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300">
+                            <i class="fas fa-moon text-gray-600 dark:text-yellow-400" id="theme-icon-mobile"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section
+        class="pt-32 pb-20 bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-dark relative overflow-hidden">
+        <div class="absolute inset-0 bg-grid-pattern bg-[size:100px_100px] opacity-5"></div>
+        <div class="absolute top-20 right-10 w-16 h-16 bg-secondary/10 rounded-full animate-float"></div>
+        <div class="absolute bottom-32 left-20 w-12 h-12 bg-accent/10 rounded-full animate-float"
+            style="animation-delay: 2s"></div>
+
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="max-w-6xl mx-auto">
+                <a href="../index.html#portfolio"
+                    class="inline-flex items-center text-secondary dark:text-accent font-semibold mb-6 hover:underline transition-all duration-300 group">
+                    <i class="fas fa-arrow-left mr-2 group-hover:-translate-x-1 transition-transform"></i>
+                    <span data-es="Volver a productos" data-en="Back to products">Volver a productos</span>
+                </a>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div data-aos="fade-right" data-aos-duration="800">
+                        <div
+                            class="inline-flex items-center space-x-3 bg-secondary/10 dark:bg-accent/20 text-secondary dark:text-accent px-6 py-3 rounded-2xl text-base font-semibold mb-6 border border-secondary/20 dark:border-accent/20 backdrop-blur-sm">
+                            <i class="fas fa-robot"></i>
+                            <span data-es="Inteligencia Artificial" data-en="Artificial Intelligence">Inteligencia Artificial</span>
+                        </div>
+
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight">
+                            <span class="text-dark dark:text-white block mb-4">AI AGENTS</span>
+                            <span
+                                class="text-gradient bg-gradient-to-r from-secondary to-accent dark:from-accent dark:to-secondary bg-clip-text text-transparent">
+                                <span data-es="Fuerza Laboral Digital" data-en="Digital Workforce">Fuerza Laboral Digital</span>
+                            </span>
+                        </h1>
+
+                        <p class="text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed font-light">
+                            <span
+                                data-es="Agentes de IA autónomos que trabajan 24/7 para automatizar tareas, atención al cliente y procesos operativos. Escala tu negocio sin aumentar costos fijos."
+                                data-en="Autonomous AI agents working 24/7 to automate tasks, customer service and operational processes. Scale your business without increasing fixed costs.">
+                                Agentes de IA autónomos que trabajan 24/7 para automatizar tareas, atención al cliente y procesos operativos. Escala tu negocio sin aumentar costos fijos.
+                            </span>
+                        </p>
+
+                        <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
+                            <a href="#contact"
+                                class="bg-secondary hover:bg-primary dark:bg-accent dark:hover:bg-secondary text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-500 hover:scale-105 hover:shadow-2xl flex items-center justify-center space-x-3 shadow-lg">
+                                <i class="fas fa-calendar-check"></i>
+                                <span data-es="Solicitar Demo" data-en="Request Demo">Solicitar Demo</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white dark:bg-dark relative overflow-hidden">
+        <div class="absolute inset-0 bg-grid-pattern bg-[size:100px_100px] opacity-5"></div>
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16" data-aos="fade-up" data-aos-duration="800">
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-black mb-6 leading-tight">
+                        <span data-es="Características" data-en="Key">Características</span> <span
+                            class="text-secondary dark:text-accent" data-es="Principales"
+                            data-en="Features">Principales</span>
+                    </h2>
+                    <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed">
+                        <span data-es="Descubre cómo los AI AGENTS revolucionan tu operación"
+                            data-en="Discover how AI AGENTS revolutionize your operation">
+                            Descubre cómo los AI AGENTS revolucionan tu operación
+                        </span>
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="feature-card bg-gray-50 dark:bg-gray-800 rounded-3xl p-8 border border-gray-200 dark:border-gray-700 transform hover:scale-105 transition-all duration-500"
+                        data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                        <div
+                            class="bg-secondary dark:bg-accent w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
+                            <i class="fas fa-headset text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-black text-dark dark:text-white mb-4" data-es="Atención 24/7"
+                            data-en="24/7 Support">Atención 24/7</h3>
+                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                            <span
+                                data-es="Tus clientes reciben respuestas instantáneas y precisas en cualquier momento, sin tiempos de espera."
+                                data-en="Your customers receive instant and accurate responses at any time, without waiting times.">
+                                Tus clientes reciben respuestas instantáneas y precisas en cualquier momento, sin tiempos de espera.
+                            </span>
+                        </p>
+                    </div>
+
+                    <div class="feature-card bg-gray-50 dark:bg-gray-800 rounded-3xl p-8 border border-gray-200 dark:border-gray-700 transform hover:scale-105 transition-all duration-500"
+                        data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                        <div
+                            class="bg-secondary dark:bg-accent w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
+                            <i class="fas fa-brain text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-black text-dark dark:text-white mb-4"
+                            data-es="Aprendizaje Continuo" data-en="Continuous Learning">Aprendizaje Continuo</h3>
+                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                            <span
+                                data-es="Los agentes aprenden de cada interacción, mejorando constantemente su precisión y capacidad de resolución."
+                                data-en="Agents learn from every interaction, constantly improving their accuracy and resolution capability.">
+                                Los agentes aprenden de cada interacción, mejorando constantemente su precisión y capacidad de resolución.
+                            </span>
+                        </p>
+                    </div>
+
+                    <div class="feature-card bg-gray-50 dark:bg-gray-800 rounded-3xl p-8 border border-gray-200 dark:border-gray-700 transform hover:scale-105 transition-all duration-500"
+                        data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                        <div
+                            class="bg-secondary dark:bg-accent w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
+                            <i class="fas fa-network-wired text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-black text-dark dark:text-white mb-4"
+                            data-es="Integración Multicanal" data-en="Multichannel Integration">Integración Multicanal</h3>
+                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                            <span data-es="Despliega tus agentes en WhatsApp, Web, Email y Redes Sociales de forma simultánea."
+                                data-en="Deploy your agents on WhatsApp, Web, Email and Social Media simultaneously.">
+                                Despliega tus agentes en WhatsApp, Web, Email y Redes Sociales de forma simultánea.
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mt-20" data-aos="fade-up" data-aos-duration="800">
+                    <div class="bg-white dark:bg-gray-800 rounded-3xl p-4 shadow-2xl border border-gray-200 dark:border-gray-700">
+                        <img src="../img/evochat.png" alt="AI AGENTS Interface" class="w-full h-auto rounded-2xl object-contain max-h-[500px]">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-gray-50 dark:bg-gray-900 relative overflow-hidden">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-16" data-aos="fade-up" data-aos-duration="800">
+                <h2 class="text-3xl md:text-4xl font-black mb-6 leading-tight">
+                    <span data-es="Impacto en tu" data-en="Impact on Your">Impacto en tu</span> <span
+                        class="text-secondary dark:text-accent" data-es="Negocio" data-en="Business">Negocio</span>
+                </h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed">
+                    <span data-es="Transforma la eficiencia operativa y la satisfacción del cliente simultáneamente."
+                        data-en="Transform operational efficiency and customer satisfaction simultaneously.">
+                        Transforma la eficiencia operativa y la satisfacción del cliente simultáneamente.
+                    </span>
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-3xl shadow-lg border border-gray-100 dark:border-gray-700 text-center group hover:scale-105 transition-transform duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-red-500 group-hover:text-white transition-colors duration-300 text-red-600 dark:text-red-400">
+                        <i class="fas fa-chart-line text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-dark dark:text-white" data-es="Reducción de Costos" data-en="Cost Reduction">Reducción de Costos</h3>
+                    <p class="text-gray-600 dark:text-gray-300" data-es="Disminuye significativamente los costos operativos al automatizar hasta el 80% de las consultas repetitivas." data-en="Significantly decrease operational costs by automating up to 80% of repetitive inquiries.">
+                        Disminuye significativamente los costos operativos al automatizar hasta el 80% de las consultas repetitivas.
+                    </p>
+                </div>
+
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-3xl shadow-lg border border-gray-100 dark:border-gray-700 text-center group hover:scale-105 transition-transform duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-secondary group-hover:text-white transition-colors duration-300 text-secondary dark:text-blue-400">
+                        <i class="fas fa-expand-arrows-alt text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-dark dark:text-white" data-es="Escalabilidad Inmediata" data-en="Immediate Scalability">Escalabilidad Inmediata</h3>
+                    <p class="text-gray-600 dark:text-gray-300" data-es="Maneja picos de demanda sin necesidad de contratar personal adicional. Tus agentes IA escalan contigo." data-en="Handle demand spikes without hiring additional staff. Your AI agents scale with you.">
+                        Maneja picos de demanda sin necesidad de contratar personal adicional. Tus agentes IA escalan contigo.
+                    </p>
+                </div>
+
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-3xl shadow-lg border border-gray-100 dark:border-gray-700 text-center group hover:scale-105 transition-transform duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-yellow-100 dark:bg-yellow-900/30 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-yellow-500 group-hover:text-white transition-colors duration-300 text-yellow-600 dark:text-yellow-400">
+                        <i class="fas fa-smile text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-dark dark:text-white" data-es="Clientes Más Felices" data-en="Happier Customers">Clientes Más Felices</h3>
+                    <p class="text-gray-600 dark:text-gray-300" data-es="Elimina los tiempos de espera. Ofrece respuestas instantáneas y precisas que mejoran la lealtad del cliente." data-en="Eliminate wait times. Offer instant and accurate responses that improve customer loyalty.">
+                        Elimina los tiempos de espera. Ofrece respuestas instantáneas y precisas que mejoran la lealtad del cliente.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-white dark:bg-dark relative overflow-hidden">
+        <div class="absolute inset-0 bg-grid-pattern bg-[size:100px_100px] opacity-5"></div>
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <div data-aos="fade-up" data-aos-duration="800">
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-black mb-6 leading-tight">
+                        <span data-es="¿Listo para" data-en="Ready to">¿Listo para</span> <span
+                            class="text-secondary dark:text-accent" data-es="Automatizar"
+                            data-en="Automate">Automatizar</span>?
+                    </h2>
+                    <p class="text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
+                        <span
+                            data-es="Agenda una demostración personalizada y descubre cómo los AI AGENTS pueden transformar tu negocio."
+                            data-en="Schedule a personalized demonstration and discover how AI AGENTS can transform your business.">
+                            Agenda una demostración personalizada y descubre cómo los AI AGENTS pueden transformar tu negocio.
+                        </span>
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                        <a href="../index.html#contact"
+                            class="bg-secondary hover:bg-primary dark:bg-accent dark:hover:bg-secondary text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-500 hover:scale-105 hover:shadow-2xl flex items-center justify-center space-x-3 shadow-lg">
+                            <i class="fas fa-calendar-check"></i>
+                            <span data-es="Agendar Demo" data-en="Schedule Demo">Agendar Demo</span>
+                        </a>
+                        <a href="https://wa.me/50233022019"
+                            class="border-2 border-green-500 text-green-600 dark:text-green-400 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-green-500 hover:text-white transition-all duration-500 hover:scale-105 hover:shadow-2xl flex items-center justify-center space-x-3 shadow-lg">
+                            <i class="fab fa-whatsapp"></i>
+                            <span data-es="Chat WhatsApp" data-en="WhatsApp Chat">Chat WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-primary dark:bg-dark py-20 text-gray-300 relative overflow-hidden"
+        style="background-color: #00142f">
+        <div class="absolute inset-0 bg-grid-pattern bg-[size:100px_100px] opacity-5"></div>
+        <div class="absolute top-10 left-10 w-20 h-20 bg-secondary/10 rounded-full animate-float"></div>
+        <div class="absolute bottom-20 right-20 w-16 h-16 bg-accent/10 rounded-full animate-float"
+            style="animation-delay: 2s"></div>
+
+        <div class="container mx-auto px-4 md:px-6 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div class="footer-section" data-aos="fade-up" data-aos-duration="800">
+                    <a href="../index.html">
+                        <img src="../img/logo-kerbrum.png" alt="Kerbrum Agency"
+                            class="h-14 w-auto mb-6 opacity-90 hover:opacity-100 transition-opacity duration-500" />
+                    </a>
+                    <p class="text-gray-400 mb-6 leading-relaxed max-w-xs">
+                        <span
+                            data-es="Transformamos tu negocio con tecnología inteligente e innovación disruptiva. Creamos soluciones digitales que impulsan el crecimiento exponencial."
+                            data-en="We transform your business with intelligent technology and disruptive innovation. We create digital solutions that drive exponential growth.">Transformamos
+                            tu negocio con tecnología inteligente e
+                            innovación disruptiva. Creamos soluciones digitales que impulsan
+                            el crecimiento exponencial.</span>
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/share/1Fue25EhbS/"
+                            class="social-footer w-10 h-10 bg-gray-700 hover:bg-secondary rounded-xl flex items-center justify-center transition-all duration-500 transform hover:scale-110 hover:rotate-12 group">
+                            <i
+                                class="fab fa-facebook-f text-white text-sm group-hover:scale-110 transition-transform"></i>
+                        </a>
+                        <a href="https://www.instagram.com/kerbrumagency?igsh=Y3E4ejk5dXVjZHlz"
+                            class="social-footer w-10 h-10 bg-gray-700 hover:bg-secondary rounded-xl flex items-center justify-center transition-all duration-500 transform hover:scale-110 hover:rotate-12 group">
+                            <i
+                                class="fab fa-instagram text-white text-sm group-hover:scale-110 transition-transform"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/kerbrum-agency/"
+                            class="social-footer w-10 h-10 bg-gray-700 hover:bg-secondary rounded-xl flex items-center justify-center transition-all duration-500 transform hover:scale-110 hover:rotate-12 group">
+                            <i
+                                class="fab fa-linkedin-in text-white text-sm group-hover:scale-110 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-section" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                    <h4 class="text-white text-xl font-bold mb-6" data-es="Navegación" data-en="Navigation">
+                        Navegación
+                    </h4>
+                    <ul class="space-y-4">
+                        <li>
+                            <a href="../index.html#home"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                                <span data-es="Inicio" data-en="Home">Inicio</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../index.html#why-us"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                                <span data-es="Por qué elegirnos" data-en="Why Choose Us">Por qué elegirnos</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../index.html#success-cases"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                                <span data-es="Casos de éxito" data-en="Success Cases">Casos de éxito</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../index.html#contact"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                                <span data-es="Contacto" data-en="Contact">Contacto</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-section" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                    <h4 class="text-white text-xl font-bold mb-6" data-es="Recursos" data-en="Resources">
+                        Recursos
+                    </h4>
+                    <ul class="space-y-4">
+                        <li>
+                            <a href="../index.html#portfolio"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                                <span data-es="Productos" data-en="Products">Productos</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../index.html#blog"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                                <span data-es="Blog" data-en="Blog">Blog</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../index.html#ebook"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                                <span data-es="E-book Gratuito" data-en="Free E-book">E-book Gratuito</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../index.html#services"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                                <span data-es="Enemigos del crecimiento" data-en="Growth Challenges">Enemigos del
+                                    crecimiento</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../index.html#failed-attempts"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform"></i>
+                                <span data-es="Intentos sin resultados" data-en="Failed Attempts">Intentos sin
+                                    resultados</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-section" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                    <h4 class="text-white text-xl font-bold mb-6" data-es="Contacto" data-en="Contact">
+                        Contacto
+                    </h4>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-envelope text-secondary dark:text-accent mt-1 mr-3"></i>
+                            <div>
+                                <p class="text-gray-400">ventas@kerbrumagency.com</p>
+                                <p class="text-gray-500 text-sm" data-es="Email principal" data-en="Main email">
+                                    Email principal
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-globe text-secondary dark:text-accent mt-1 mr-3"></i>
+                            <div>
+                                <p class="text-gray-400">https://kerbrumagency.com</p>
+                                <p class="text-gray-500 text-sm" data-es="Sitio web oficial" data-en="Official website">
+                                    Sitio web oficial
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-secondary dark:text-accent mt-1 mr-3"></i>
+                            <div>
+                                <p class="text-gray-400" data-es="Latinoamérica" data-en="Latin America">
+                                    Latinoamérica
+                                </p>
+                                <p class="text-gray-500 text-sm" data-es="Clientes globales" data-en="Global clients">
+                                    Clientes globales
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="text-center md:text-left mb-4 md:mb-0">
+                        <p class="text-gray-400">
+                            © <span id="current-year">2026</span> Kerbrum Agency.
+                            <span data-es="Todos los derechos reservados." data-en="All rights reserved.">Todos los derechos
+                                reservados.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../js/navigation.js"></script>
+    <script src="../js/language-switcher.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            if (typeof AOS !== 'undefined') {
+                AOS.init({
+                    duration: 800,
+                    once: true,
+                    offset: 100
+                });
+            }
+
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            if (window.reloadTranslations) {
+                window.reloadTranslations();
+            }
+        });
+    </script>
+
+    <button id="scroll-to-top"
+        class="fixed bottom-8 right-8 w-14 h-14 bg-secondary hover:bg-accent text-white rounded-2xl shadow-2xl transition-all duration-500 opacity-100 visible hover:scale-110 hover:rotate-12 z-50 flex items-center justify-center group border-2 border-white/20">
+        <i class="fas fa-chevron-up text-xl group-hover:-translate-y-1 transition-transform duration-300"></i>
+    </button>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const scrollToTopBtn = document.getElementById("scroll-to-top");
+            scrollToTopBtn.classList.add("opacity-0", "invisible");
+
+            function toggleScrollButton() {
+                if (window.scrollY > 300) {
+                    scrollToTopBtn.classList.remove("opacity-0", "invisible");
+                    scrollToTopBtn.classList.add("opacity-100", "visible");
+                } else {
+                    scrollToTopBtn.classList.remove("opacity-100", "visible");
+                    scrollToTopBtn.classList.add("opacity-0", "invisible");
+                }
+            }
+
+            window.addEventListener("scroll", toggleScrollButton);
+            scrollToTopBtn.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth",
+                });
+            });
+
+            toggleScrollButton();
+        });
+    </script>
+
+    <style>
+        #scroll-to-top {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 25px rgba(26, 99, 227, 0.3);
+        }
+
+        #scroll-to-top.visible {
+            opacity: 1 !important;
+            visibility: visible !important;
+            transform: translateY(0) !important;
+        }
+
+        #scroll-to-top:not(.visible) {
+            opacity: 0 !important;
+            visibility: hidden !important;
+            transform: translateY(20px) !important;
+        }
+
+        #scroll-to-top:hover {
+            box-shadow: 0 12px 35px rgba(26, 99, 227, 0.5);
+            transform: scale(1.1) rotate(12deg) !important;
+        }
+
+        #scroll-to-top {
+            z-index: 9999 !important;
+        }
+    </style>
+</body>
+</html>

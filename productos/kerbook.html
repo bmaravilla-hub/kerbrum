@@ -79,12 +79,9 @@
 </head>
 
 <body class="bg-white dark:bg-dark text-gray-800 dark:text-gray-200 transition-colors duration-500">
-  <!-- Barra de navegación -->
-  <!-- Navegación -->
   <nav id="navbar"
     class="fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-dark/90 backdrop-blur-xl border-b border-gray-200 dark:border-gray-800 transition-all duration-700">
     <div class="container mx-auto px-4 py-3 flex items-center justify-between">
-      <!-- Logo -->
       <div class="flex items-center">
         <a href="../index.html">
           <img src="../img/logo-kerbrum.png" alt="Kerbrum Agency"
@@ -92,9 +89,7 @@
         </a>
       </div>
 
-      <!-- Desktop Menu -->
       <div class="hidden lg:flex items-center space-x-6">
-        <!-- Inicio -->
         <a href="../index.html#home"
           class="nav-link font-semibold hover:text-secondary dark:hover:text-accent transition-all duration-500 py-2 group">
           <span class="relative">
@@ -104,7 +99,6 @@
           </span>
         </a>
 
-        <!-- Nosotros (Dropdown) -->
         <div class="relative group">
           <button
             class="nav-link font-semibold hover:text-secondary dark:hover:text-accent transition-all duration-500 py-2 flex items-center space-x-1">
@@ -130,7 +124,6 @@
           </div>
         </div>
 
-        <!-- Soluciones (Dropdown) -->
         <div class="relative group">
           <button
             class="nav-link font-semibold hover:text-secondary dark:hover:text-accent transition-all duration-500 py-2 flex items-center space-x-1">
@@ -163,7 +156,6 @@
           </div>
         </div>
 
-        <!-- Recursos (Dropdown) -->
         <div class="relative group">
           <button
             class="nav-link font-semibold hover:text-secondary dark:hover:text-accent transition-all duration-500 py-2 flex items-center space-x-1">
@@ -196,7 +188,6 @@
           </div>
         </div>
 
-        <!-- Contacto -->
         <a href="../index.html#contact"
           class="nav-link font-semibold hover:text-secondary dark:hover:text-accent transition-all duration-500 py-2 group">
           <span class="relative">
@@ -206,9 +197,7 @@
           </span>
         </a>
 
-        <!-- Language & Theme Toggles -->
         <div class="flex items-center space-x-3 ml-4 pl-4 border-l border-gray-300 dark:border-gray-700">
-          <!-- Language Switcher -->
           <div class="language-switcher relative group">
             <button id="language-toggle"
               class="p-2.5 rounded-xl bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300 border border-gray-200 dark:border-gray-700 flex items-center space-x-2">
@@ -239,7 +228,6 @@
             </div>
           </div>
 
-          <!-- Theme Toggle -->
           <button id="theme-toggle"
             class="p-2.5 rounded-xl bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300 border border-gray-200 dark:border-gray-700 group">
             <i class="fas fa-moon text-gray-600 dark:text-yellow-400 group-hover:scale-110 transition-transform duration-300 text-sm"
@@ -248,23 +236,19 @@
         </div>
       </div>
 
-      <!-- Mobile Menu Button -->
       <button id="mobile-menu-button"
         class="lg:hidden text-gray-600 dark:text-gray-300 text-2xl p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 relative z-50">
         <i class="fas fa-bars" id="mobile-menu-icon"></i>
       </button>
     </div>
 
-    <!-- Mobile Menu Overlay -->
     <div id="mobile-menu-overlay"
       class="lg:hidden fixed inset-0 bg-black/50 backdrop-blur-sm opacity-0 invisible transition-all duration-500 z-40">
     </div>
 
-    <!-- Mobile Menu Panel -->
     <div id="mobile-menu"
       class="lg:hidden fixed top-0 right-0 bottom-0 w-80 bg-white dark:bg-dark shadow-2xl transform translate-x-full transition-transform duration-500 z-40 overflow-y-auto">
       <div class="p-6 space-y-6">
-        <!-- Mobile Menu Header -->
         <div class="flex items-center justify-between pb-4 border-b border-gray-200 dark:border-gray-700">
           <img src="../img/logo-kerbrum.png" alt="Kerbrum" class="h-10">
           <button id="mobile-menu-close"
@@ -273,14 +257,12 @@
           </button>
         </div>
 
-        <!-- Mobile Menu Links -->
         <div class="space-y-2">
           <a href="../index.html#home"
             class="mobile-nav-link block px-4 py-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 font-semibold">
             <span data-en="Home" data-es="Inicio">Inicio</span>
           </a>
 
-          <!-- Nosotros Accordion -->
           <div class="mobile-dropdown">
             <button
               class="mobile-dropdown-toggle w-full flex items-center justify-between px-4 py-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 font-semibold">
@@ -295,7 +277,6 @@
             </div>
           </div>
 
-          <!-- Soluciones Accordion -->
           <div class="mobile-dropdown">
             <button
               class="mobile-dropdown-toggle w-full flex items-center justify-between px-4 py-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 font-semibold">
@@ -314,7 +295,6 @@
             </div>
           </div>
 
-          <!-- Recursos Accordion -->
           <div class="mobile-dropdown">
             <button
               class="mobile-dropdown-toggle w-full flex items-center justify-between px-4 py-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 font-semibold">
@@ -339,7 +319,6 @@
           </a>
         </div>
 
-        <!-- Mobile Language & Theme -->
         <div class="pt-4 border-t border-gray-200 dark:border-gray-700 space-y-3">
           <div class="flex items-center justify-between">
             <span class="text-sm font-semibold text-gray-600 dark:text-gray-400" data-en="Language"
@@ -365,7 +344,6 @@
       </div>
     </div>
   </nav>
-  <!-- Hero Section KERBOOK -->
   <section
     class="pt-32 pb-20 bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-dark relative overflow-hidden">
     <div class="absolute inset-0 bg-grid-pattern bg-[size:100px_100px] opacity-5"></div>
@@ -429,11 +407,11 @@
                   <img src="../img/kerbook-logo.png" alt="KERBOOK" />
                 </div>
                 <div class="absolute -top-4 -right-4 bg-accent text-white p-4 rounded-2xl shadow-2xl animate-float">
-                  <i class="fas fa-clock text-xl"></i>
+                  <i class="fas fa-calendar-check text-xl"></i>
                 </div>
                 <div class="absolute -bottom-4 -left-4 bg-secondary text-white p-4 rounded-2xl shadow-2xl animate-float"
                   style="animation-delay: 1s">
-                  <i class="fas fa-mobile-alt text-xl"></i>
+                  <i class="fas fa-clock text-xl"></i>
                 </div>
               </div>
             </div>
@@ -443,7 +421,6 @@
     </div>
   </section>
 
-  <!-- Características Principales -->
   <section class="py-20 bg-white dark:bg-dark relative overflow-hidden">
     <div class="absolute inset-0 bg-grid-pattern bg-[size:100px_100px] opacity-5"></div>
     <div class="container mx-auto px-4 md:px-6">
@@ -521,7 +498,6 @@
           </div>
         </div>
 
-        <!-- Características adicionales -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
           <div class="bg-gradient-to-br from-secondary to-accent rounded-3xl p-8 text-white" data-aos="fade-right"
             data-aos-duration="800">
@@ -596,7 +572,6 @@
     </div>
   </section>
 
-  <!-- Demo Section -->
   <section id="demo"
     class="py-20 bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-dark relative overflow-hidden">
     <div class="absolute inset-0 bg-grid-pattern bg-[size:100px_100px] opacity-5"></div>
@@ -634,7 +609,6 @@
           </div>
         </div>
 
-        <!-- Mini características de la demo -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
           <div class="text-center" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
             <div
@@ -680,7 +654,6 @@
     </div>
   </section>
 
-  <!-- CTA Section -->
   <section id="contact" class="py-20 bg-white dark:bg-dark relative overflow-hidden">
     <div class="absolute inset-0 bg-grid-pattern bg-[size:100px_100px] opacity-5"></div>
     <div class="container mx-auto px-4 md:px-6">
@@ -746,9 +719,6 @@
     </div>
   </section>
 
-  <!-- Footer -->
-  <!-- Footer -->
-  <!-- Footer -->
   <style>
     footer * {
       color: #d1d5db !important;
@@ -928,7 +898,6 @@
           </ul>
         </div>
 
-        <!-- Contacto footer -->
         <div class="footer-section" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
           <h4 class="text-white text-xl font-bold mb-6" data-es="Contacto" data-en="Contact">
             Contacto
@@ -980,7 +949,6 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="../js/navigation.js"></script>
   <script src="../js/theme-switcher.js"></script>
@@ -997,7 +965,6 @@
     });
   </script>
 
-  <!-- Botón de Scroll to Top -->
   <button id="scroll-to-top"
     class="fixed bottom-8 right-8 w-14 h-14 bg-secondary hover:bg-accent text-white rounded-2xl shadow-2xl transition-all duration-500 opacity-100 visible hover:scale-110 hover:rotate-12 z-50 flex items-center justify-center group border-2 border-white/20">
     <i class="fas fa-chevron-up text-xl group-hover:-translate-y-1 transition-transform duration-300"></i>

@@ -72,50 +72,33 @@
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const counterElements = document.querySelectorAll('.counter-value');
-            let countersAnimated = false;
-
-            function animateCounters() {
-                if (countersAnimated) return;
-
-                counterElements.forEach(counter => {
-                    const target = parseInt(counter.getAttribute('data-target'));
-                    let current = 0;
-                    const increment = target / 50;
-                    const duration = 2000;
-                    const stepTime = duration / 50;
-
-                    const timer = setInterval(() => {
-                        current += increment;
-                        if (current >= target) {
-                            current = target;
-                            clearInterval(timer);
-                        }
-                        counter.textContent = Math.floor(current);
-                    }, stepTime);
-                });
-
-                countersAnimated = true;
-            }
-
-            const heroSection = document.querySelector('.hero-section');
-            const observer = new IntersectionObserver((entries) => {
+            
+            const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        animateCounters();
+                        const counter = entry.target;
+                        const target = parseInt(counter.getAttribute('data-target'));
+                        const duration = 2000; // 2 segundos
+                        const step = target / (duration / 16); // 60 FPS
+                        let current = 0;
+
+                        const timer = setInterval(() => {
+                            current += step;
+                            if (current >= target) {
+                                counter.textContent = target;
+                                clearInterval(timer);
+                            } else {
+                                counter.textContent = Math.floor(current);
+                            }
+                        }, 16);
+
+                        observer.unobserve(counter);
                     }
                 });
-            }, { threshold: 0.3 });
+            }, { threshold: 0.5 });
 
-            if (heroSection) {
-                observer.observe(heroSection);
-            }
-            window.addEventListener('scroll', function () {
-                const sectionPosition = heroSection.getBoundingClientRect().top;
-                const screenPosition = window.innerHeight / 1.3;
-
-                if (sectionPosition < screenPosition && !countersAnimated) {
-                    animateCounters();
-                }
+            counterElements.forEach(counter => {
+                observer.observe(counter);
             });
         });
     </script>
@@ -125,7 +108,6 @@
     <link rel="stylesheet" href="styles/responsive.css">
 
 
-    <!-- cdn de emailjs -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
     <script type="text/javascript">
@@ -266,22 +248,17 @@
 
 <body class="bg-white dark:bg-dark text-gray-800 dark:text-gray-200 transition-colors duration-500">
 
-    <!-- Barra de navegación -->
-    <!-- Navegación -->
     <nav id="navbar"
         class="fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-dark/90 backdrop-blur-xl border-b border-gray-200 dark:border-gray-800 transition-all duration-700">
         <div class="container mx-auto px-4 py-3 flex items-center justify-between">
-            <!-- Logo -->
             <div class="flex items-center">
                 <a href="index.html">
                     <img src="img/logo-kerbrum.png" alt="Kerbrum Agency"
-                        class="h-10 md:h-14 w-auto transition-all duration-500 hover:scale-110 hover:rotate-2">
+                        class="h-14 md:h-20 w-auto transition-all duration-500 hover:scale-110 hover:rotate-2">
                 </a>
             </div>
 
-            <!-- Desktop Menu -->
             <div class="hidden lg:flex items-center space-x-6">
-                <!-- Inicio -->
                 <a href="#home"
                     class="nav-link font-semibold hover:text-secondary dark:hover:text-accent transition-all duration-500 py-2 group">
                     <span class="relative">
@@ -291,7 +268,6 @@
                     </span>
                 </a>
 
-                <!-- Nosotros (Dropdown) -->
                 <div class="relative group">
                     <button
                         class="nav-link font-semibold hover:text-secondary dark:hover:text-accent transition-all duration-500 py-2 flex items-center space-x-1">
@@ -318,7 +294,6 @@
                     </div>
                 </div>
 
-                <!-- Soluciones (Dropdown) -->
                 <div class="relative group">
                     <button
                         class="nav-link font-semibold hover:text-secondary dark:hover:text-accent transition-all duration-500 py-2 flex items-center space-x-1">
@@ -368,7 +343,6 @@
                     </div>
                 </div>
 
-                <!-- Recursos (Dropdown) -->
                 <div class="relative group">
                     <button
                         class="nav-link font-semibold hover:text-secondary dark:hover:text-accent transition-all duration-500 py-2 flex items-center space-x-1">
@@ -402,7 +376,6 @@
                     </div>
                 </div>
 
-                <!-- Contacto -->
                 <a href="#contact"
                     class="nav-link font-semibold hover:text-secondary dark:hover:text-accent transition-all duration-500 py-2 group">
                     <span class="relative">
@@ -412,9 +385,7 @@
                     </span>
                 </a>
 
-                <!-- Language & Theme Toggles -->
                 <div class="flex items-center space-x-3 ml-4 pl-4 border-l border-gray-300 dark:border-gray-700">
-                    <!-- Language Switcher -->
                     <div class="language-switcher relative group">
                         <button id="language-toggle"
                             class="p-2.5 rounded-xl bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300 border border-gray-200 dark:border-gray-700 flex items-center space-x-2">
@@ -445,7 +416,6 @@
                         </div>
                     </div>
 
-                    <!-- Theme Toggle -->
                     <button id="theme-toggle"
                         class="p-2.5 rounded-xl bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300 border border-gray-200 dark:border-gray-700 group">
                         <i class="fas fa-moon text-gray-600 dark:text-yellow-400 group-hover:scale-110 transition-transform duration-300 text-sm"
@@ -454,23 +424,19 @@
                 </div>
             </div>
 
-            <!-- Mobile Menu Button -->
             <button id="mobile-menu-button"
                 class="lg:hidden text-gray-600 dark:text-gray-300 text-2xl p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 relative z-50">
                 <i class="fas fa-bars" id="mobile-menu-icon"></i>
             </button>
         </div>
 
-        <!-- Mobile Menu Overlay -->
         <div id="mobile-menu-overlay"
             class="lg:hidden fixed inset-0 bg-black/50 backdrop-blur-sm opacity-0 invisible transition-all duration-500 z-40">
         </div>
 
-        <!-- Mobile Menu Panel -->
         <div id="mobile-menu"
             class="lg:hidden fixed top-0 right-0 bottom-0 w-80 bg-white dark:bg-dark shadow-2xl transform translate-x-full transition-transform duration-500 z-40 overflow-y-auto">
             <div class="p-6 space-y-6">
-                <!-- Mobile Menu Header -->
                 <div class="flex items-center justify-between pb-4 border-b border-gray-200 dark:border-gray-700">
                     <img src="img/logo-kerbrum.png" alt="Kerbrum" class="h-10">
                     <button id="mobile-menu-close"
@@ -479,14 +445,12 @@
                     </button>
                 </div>
 
-                <!-- Mobile Menu Links -->
                 <div class="space-y-2">
                     <a href="#home"
                         class="mobile-nav-link block px-4 py-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 font-semibold">
                         <span data-en="Home" data-es="Inicio">Inicio</span>
                     </a>
 
-                    <!-- Nosotros Accordion -->
                     <div class="mobile-dropdown">
                         <button
                             class="mobile-dropdown-toggle w-full flex items-center justify-between px-4 py-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 font-semibold">
@@ -501,7 +465,6 @@
                         </div>
                     </div>
 
-                    <!-- Soluciones Accordion -->
                     <div class="mobile-dropdown">
                         <button
                             class="mobile-dropdown-toggle w-full flex items-center justify-between px-4 py-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 font-semibold">
@@ -530,7 +493,6 @@
                         </div>
                     </div>
 
-                    <!-- Recursos Accordion -->
                     <div class="mobile-dropdown">
                         <button
                             class="mobile-dropdown-toggle w-full flex items-center justify-between px-4 py-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 font-semibold">
@@ -555,7 +517,6 @@
                     </a>
                 </div>
 
-                <!-- Mobile Language & Theme -->
                 <div class="pt-4 border-t border-gray-200 dark:border-gray-700 space-y-3">
                     <div class="flex items-center justify-between">
                         <span class="text-sm font-semibold text-gray-600 dark:text-gray-400" data-en="Language"
@@ -582,7 +543,6 @@
         </div>
     </nav>
 
-    <!-- Hero Section con scroll correcto -->
     <section id="home" class="hero-section min-h-screen flex items-center pt-20 pb-20 relative overflow-hidden">
         <div class="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
             style="background-image: url('img/tech-innovation-showcase.jpg');">
@@ -604,7 +564,6 @@
             <div class="particle particle-5"></div>
         </div>
 
-        <!-- Contenido principal -->
         <div class="container mx-auto px-4 md:px-6 flex flex-col md:flex-row items-center relative z-50">
             <div class="md:w-1/2 mb-16 md:mb-0" data-aos="fade-right" data-aos-duration="1000">
                 <h1 class="text-5xl md:text-6xl lg:text-7xl font-black mb-8 leading-tight">
@@ -670,13 +629,10 @@
     </section>
 
 
-    <!-- Sección de Enemigos del Crecimiento -->
     <section id="services"
         class="py-20 bg-gradient-to-br from-[#0A1628] via-[#0F1F3D] to-[#0A1628] relative overflow-hidden">
-        <!-- Efectos de fondo mejorados -->
         <div class="absolute inset-0 bg-grid-pattern bg-[size:50px_50px] opacity-10"></div>
 
-        <!-- Partículas flotantes animadas mejoradas -->
         <div class="absolute top-10 left-[10%] w-3 h-3 bg-accent rounded-full animate-pulse shadow-lg shadow-accent/50">
         </div>
         <div
@@ -689,7 +645,6 @@
         <div class="absolute top-1/2 left-[5%] w-3 h-3 bg-accent/60 rounded-full animate-pulse shadow-lg shadow-accent/30"
             style="animation-delay: 1.5s"></div>
 
-        <!-- Círculos decorativos con glow mejorados -->
         <div class="absolute top-20 left-10 w-40 h-40 bg-accent/10 rounded-full blur-3xl animate-float"></div>
         <div class="absolute bottom-32 right-20 w-56 h-56 bg-secondary/10 rounded-full blur-3xl animate-float"
             style="animation-delay: 2s"></div>
@@ -697,7 +652,6 @@
             style="animation-delay: 3s"></div>
 
         <div class="container mx-auto px-4 md:px-6 relative z-10">
-            <!-- Título de la sección mejorado -->
             <div class="text-center mb-12" data-aos="fade-up" data-aos-duration="800">
                 <div class="inline-block mb-4">
                     <span
@@ -706,7 +660,7 @@
                         <span data-es="Alerta de Crecimiento" data-en="Growth Alert">Alerta de Crecimiento</span>
                     </span>
                 </div>
-                <h2 class="text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight">
+                <h2 class="text-3xl md:text-4xl font-black mb-6 leading-tight">
                     <span
                         class="text-transparent bg-clip-text bg-gradient-to-r from-white via-accent to-white animate-gradient"
                         data-es="Enemigos del crecimiento de las empresas" data-en="Enemies of Business Growth">Enemigos
@@ -715,9 +669,7 @@
                 <div class="w-24 h-1 bg-gradient-to-r from-transparent via-accent to-transparent mx-auto"></div>
             </div>
 
-            <!-- Contenido principal -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <!-- Columna izquierda - Texto mejorado -->
                 <div class="text-white space-y-8" data-aos="fade-right" data-aos-duration="800">
                     <div
                         class="space-y-6 backdrop-blur-md bg-white/5 p-10 rounded-3xl border border-white/20 shadow-2xl hover:shadow-accent/20 transition-all duration-500 hover:scale-[1.02]">
@@ -755,10 +707,8 @@
                     </div>
                 </div>
 
-                <!-- Columna derecha - Diagrama hexagonal mejorado -->
                 <div class="relative" data-aos="fade-left" data-aos-duration="800">
                     <div class="hexagon-container relative w-full max-w-lg mx-auto">
-                        <!-- Hexágono superior izquierdo - Visibilidad -->
                         <div class="hexagon-item absolute top-0 left-0 bg-gradient-to-br from-[#1a2942] to-[#0d1829] border-2 border-accent/40 rounded-2xl p-6 transform hover:scale-110 hover:border-accent/80 transition-all duration-500 shadow-2xl hover:shadow-accent/30 backdrop-blur-md group"
                             style="width: 45%; z-index: 2;">
                             <div
@@ -780,7 +730,6 @@
                             </p>
                         </div>
 
-                        <!-- Hexágono superior derecho - Errores -->
                         <div class="hexagon-item absolute top-0 right-0 bg-gradient-to-br from-[#1a2942] to-[#0d1829] border-2 border-accent/40 rounded-2xl p-6 transform hover:scale-110 hover:border-accent/80 transition-all duration-500 shadow-2xl hover:shadow-accent/30 backdrop-blur-md group"
                             style="width: 45%; z-index: 2;">
                             <div
@@ -802,7 +751,6 @@
                             </p>
                         </div>
 
-                        <!-- Centro - Tiempo (destacado con glow mejorado) -->
                         <div class="hexagon-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-br from-red-500 via-red-600 to-red-700 rounded-2xl p-8 shadow-2xl z-10 animate-pulse-glow hover:scale-110 transition-transform duration-500 cursor-pointer group"
                             style="width: 35%; box-shadow: 0 0 40px rgba(239, 68, 68, 0.5), 0 0 80px rgba(239, 68, 68, 0.3);">
                             <div class="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-2xl">
@@ -823,7 +771,6 @@
                             </div>
                         </div>
 
-                        <!-- Hexágono inferior izquierdo - Decisiones -->
                         <div class="hexagon-item absolute bottom-0 left-0 bg-gradient-to-br from-[#1a2942] to-[#0d1829] border-2 border-accent/40 rounded-2xl p-6 transform hover:scale-110 hover:border-accent/80 transition-all duration-500 shadow-2xl hover:shadow-accent/30 backdrop-blur-md group"
                             style="width: 45%; z-index: 2;">
                             <div
@@ -845,7 +792,6 @@
                             </p>
                         </div>
 
-                        <!-- Hexágono inferior derecho - Desagregación -->
                         <div class="hexagon-item absolute bottom-0 right-0 bg-gradient-to-br from-[#1a2942] to-[#0d1829] border-2 border-accent/40 rounded-2xl p-6 transform hover:scale-110 hover:border-accent/80 transition-all duration-500 shadow-2xl hover:shadow-accent/30 backdrop-blur-md group"
                             style="width: 45%; z-index: 2;">
                             <div
@@ -870,7 +816,6 @@
                 </div>
             </div>
 
-            <!-- CTA al final mejorado -->
             <div class="text-center mt-12" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
                 <a href="#contact"
                     class="group relative inline-flex items-center space-x-3 bg-gradient-to-r from-accent via-secondary to-accent bg-size-200 bg-pos-0 hover:bg-pos-100 text-white px-10 py-5 rounded-2xl font-bold text-lg transition-all duration-500 hover:scale-105 shadow-2xl hover:shadow-accent/50 overflow-hidden">
@@ -888,7 +833,6 @@
             </div>
         </div>
 
-        <!-- Estilos adicionales para el diseño hexagonal mejorado -->
         <style>
             .hexagon-container {
                 position: relative;
@@ -960,15 +904,12 @@
         </style>
     </section>
 
-    <!-- Sección de Esfuerzo e intentos sin resultados -->
     <section id="failed-attempts" class="py-20 bg-white dark:bg-dark relative overflow-hidden">
-        <!-- Efectos de fondo -->
         <div class="absolute inset-0 bg-grid-pattern bg-[size:100px_100px] opacity-5"></div>
         <div class="absolute top-20 left-10 w-64 h-64 bg-secondary/5 rounded-full blur-3xl"></div>
         <div class="absolute bottom-20 right-10 w-80 h-80 bg-accent/5 rounded-full blur-3xl"></div>
 
         <div class="container mx-auto px-4 md:px-6 relative z-10">
-            <!-- Título de la sección -->
             <div class="text-center mb-12" data-aos="fade-up" data-aos-duration="800">
                 <div class="inline-block mb-4">
                     <span
@@ -978,7 +919,7 @@
                     </span>
                 </div>
                 <h2
-                    class="text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight text-gray-900 dark:text-white">
+                    class="text-3xl md:text-4xl font-black mb-6 leading-tight text-gray-900 dark:text-white">
                     <span data-es="Si ya fallaste," data-en="If you have already failed,">Si ya fallaste,</span>
                     <span class="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-accent">
                         <span data-es="aquí está el por qué" data-en="here is why">aquí está el por qué</span>
@@ -986,12 +927,9 @@
                 </h2>
             </div>
 
-            <!-- Grid de comparación -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-                <!-- Card 1: Software Estándar -->
                 <div class="group relative bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 rounded-3xl p-8 border-2 border-gray-200 dark:border-gray-700 hover:border-secondary/50 dark:hover:border-secondary/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-secondary/20 flex flex-col"
                     data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
-                    <!-- Icono animado -->
                     <div class="relative mb-6">
                         <div
                             class="absolute inset-0 bg-gradient-to-br from-secondary to-accent rounded-2xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-500">
@@ -1002,7 +940,6 @@
                         </div>
                     </div>
 
-                    <!-- Título -->
                     <h3
                         class="text-2xl font-black text-gray-900 dark:text-white mb-4 group-hover:text-secondary dark:group-hover:text-accent transition-colors duration-300">
                         <span data-es="Software estándar" data-en="Standard Software">Software estándar</span>
@@ -1011,7 +948,6 @@
                         <span data-es="(Sistemas Heredados)" data-en="(Legacy Systems)">(Sistemas Heredados)</span>
                     </p>
 
-                    <!-- Problemas -->
                     <div class="space-y-4 mb-6">
                         <div class="flex items-start space-x-3 group/item">
                             <div
@@ -1051,7 +987,6 @@
                         </div>
                     </div>
 
-                    <!-- Costo Real -->
                     <div class="mt-auto pt-6 border-t-2 border-gray-200 dark:border-gray-700">
                         <p class="text-sm font-bold text-gray-500 dark:text-gray-400 mb-2 uppercase tracking-wider">
                             <span data-es="Costo Real:" data-en="Real Cost:">Costo Real:</span>
@@ -1069,10 +1004,8 @@
                     </div>
                 </div>
 
-                <!-- Card 2: Desarrollo Inhouse -->
                 <div class="group relative bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 rounded-3xl p-8 border-2 border-gray-200 dark:border-gray-700 hover:border-secondary/50 dark:hover:border-secondary/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-secondary/20 flex flex-col"
                     data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
-                    <!-- Icono animado -->
                     <div class="relative mb-6">
                         <div
                             class="absolute inset-0 bg-gradient-to-br from-gradientStart to-gradientEnd rounded-2xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-500">
@@ -1083,7 +1016,6 @@
                         </div>
                     </div>
 
-                    <!-- Título -->
                     <h3
                         class="text-2xl font-black text-gray-900 dark:text-white mb-4 group-hover:text-secondary dark:group-hover:text-accent transition-colors duration-300">
                         <span data-es="Desarrollo Inhouse" data-en="In-house Development">Desarrollo Inhouse</span>
@@ -1092,7 +1024,6 @@
                         <span data-es="(Equipo interno)" data-en="(Internal team)">(Equipo interno)</span>
                     </p>
 
-                    <!-- Problemas -->
                     <div class="space-y-4 mb-6">
                         <div class="flex items-start space-x-3 group/item">
                             <div
@@ -1131,7 +1062,6 @@
                         </div>
                     </div>
 
-                    <!-- Costo Real -->
                     <div class="mt-auto pt-6 border-t-2 border-gray-200 dark:border-gray-700">
                         <p class="text-xs font-bold text-gray-500 dark:text-gray-400 mb-2 uppercase tracking-wider">
                             <span data-es="Costo Real:" data-en="Real Cost:">Costo Real:</span>
@@ -1149,10 +1079,8 @@
                     </div>
                 </div>
 
-                <!-- Card 3: Otras Agencias -->
                 <div class="group relative bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 rounded-3xl p-8 border-2 border-gray-200 dark:border-gray-700 hover:border-secondary/50 dark:hover:border-secondary/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-secondary/20 flex flex-col"
                     data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
-                    <!-- Icono animado -->
                     <div class="relative mb-6">
                         <div
                             class="absolute inset-0 bg-gradient-to-br from-accent to-secondary rounded-2xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-500">
@@ -1163,7 +1091,6 @@
                         </div>
                     </div>
 
-                    <!-- Título -->
                     <h3
                         class="text-2xl font-black text-gray-900 dark:text-white mb-4 group-hover:text-secondary dark:group-hover:text-accent transition-colors duration-300">
                         <span data-es="Otras agencias" data-en="Other Agencies">Otras agencias</span>
@@ -1173,7 +1100,6 @@
                             externo)</span>
                     </p>
 
-                    <!-- Problemas -->
                     <div class="space-y-4 mb-6">
                         <div class="flex items-start space-x-3 group/item">
                             <div
@@ -1211,7 +1137,6 @@
                         </div>
                     </div>
 
-                    <!-- Costo Real -->
                     <div class="mt-auto pt-6 border-t-2 border-gray-200 dark:border-gray-700">
                         <p class="text-xs font-bold text-gray-500 dark:text-gray-400 mb-2 uppercase tracking-wider">
                             <span data-es="Costo Real:" data-en="Real Cost:">Costo Real:</span>
@@ -1229,7 +1154,6 @@
                 </div>
             </div>
 
-            <!-- CTA final -->
             <div class="text-center" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
                 <div
                     class="inline-block bg-gradient-to-r from-gray-50 to-accent/10 dark:from-gray-800 dark:to-accent/10 rounded-2xl p-8 border-2 border-gray-200 dark:border-gray-700">
@@ -1257,16 +1181,13 @@
         </div>
     </section>
 
-    <!-- Sección de Nuestro Enfoque -->
     <section class="py-20 bg-gradient-to-br from-primary via-dark to-primary relative overflow-hidden">
-        <!-- Efectos de fondo -->
         <div class="absolute inset-0 bg-grid-pattern bg-[size:50px_50px] opacity-10"></div>
         <div class="absolute top-20 left-10 w-64 h-64 bg-secondary/10 rounded-full blur-3xl animate-float"></div>
         <div class="absolute bottom-20 right-10 w-80 h-80 bg-accent/10 rounded-full blur-3xl animate-float"
             style="animation-delay: 2s"></div>
 
         <div class="container mx-auto px-4 md:px-6 relative z-10">
-            <!-- Título de la sección -->
             <div class="text-center mb-12" data-aos="fade-up" data-aos-duration="800">
                 <div class="inline-block mb-4">
                     <span
@@ -1275,7 +1196,7 @@
                         <span data-es="Metodología Probada" data-en="Proven Methodology">Metodología Probada</span>
                     </span>
                 </div>
-                <h2 class="text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight">
+                <h2 class="text-3xl md:text-4xl font-black mb-6 leading-tight">
                     <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-accent to-white">
                         <span data-es="Nuestro enfoque" data-en="Our Approach">Nuestro enfoque</span>
                     </span>
@@ -1288,27 +1209,20 @@
                 </p>
             </div>
 
-            <!-- Timeline horizontal -->
             <div class="relative max-w-6xl mx-auto" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
-                <!-- Línea conectora (oculta en móvil) -->
                 <div class="hidden md:block absolute top-24 left-0 right-0 h-1 bg-gradient-to-r from-secondary via-accent to-secondary"
                     style="top: 80px;"></div>
 
-                <!-- Grid de pasos -->
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-4">
-                    <!-- Paso 1: Diagnóstico -->
                     <div class="group relative flex flex-col" data-aos="fade-up" data-aos-duration="800"
                         data-aos-delay="300">
-                        <!-- Número del paso -->
                         <div
                             class="absolute -top-4 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-gradient-to-br from-secondary to-accent rounded-full flex items-center justify-center font-black text-white text-xl shadow-lg z-10 group-hover:scale-110 transition-transform duration-300">
                             1
                         </div>
 
-                        <!-- Card del paso -->
                         <div
                             class="bg-white/5 backdrop-blur-md rounded-2xl p-6 pt-10 border-2 border-white/10 hover:border-accent/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-accent/20 mt-8 flex-1 flex flex-col">
-                            <!-- Icono -->
                             <div class="flex justify-center mb-4">
                                 <div class="relative">
                                     <div
@@ -1321,13 +1235,11 @@
                                 </div>
                             </div>
 
-                            <!-- Título -->
                             <h3
                                 class="text-xl font-black text-white mb-3 text-center group-hover:text-accent transition-colors duration-300">
                                 <span data-es="Diagnóstico" data-en="Diagnosis">Diagnóstico</span>
                             </h3>
 
-                            <!-- Descripción -->
                             <p class="text-sm text-gray-300 leading-relaxed text-center mb-4">
                                 <span data-es="Identificamos el proceso crítico que frena su crecimiento"
                                     data-en="We identify the critical process that slows your growth">
@@ -1335,7 +1247,6 @@
                                 </span>
                             </p>
 
-                            <!-- Badge -->
                             <div class="flex justify-center">
                                 <span
                                     class="px-3 py-1 bg-green-500/20 border border-green-500/30 rounded-full text-green-400 text-sm font-bold">
@@ -1345,19 +1256,15 @@
                         </div>
                     </div>
 
-                    <!-- Paso 2: Diseño -->
                     <div class="group relative flex flex-col" data-aos="fade-up" data-aos-duration="800"
                         data-aos-delay="400">
-                        <!-- Número del paso -->
                         <div
                             class="absolute -top-4 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-gradient-to-br from-secondary to-accent rounded-full flex items-center justify-center font-black text-white text-xl shadow-lg z-10 group-hover:scale-110 transition-transform duration-300">
                             2
                         </div>
 
-                        <!-- Card del paso -->
                         <div
                             class="bg-white/5 backdrop-blur-md rounded-2xl p-6 pt-10 border-2 border-white/10 hover:border-accent/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-accent/20 mt-8 flex-1 flex flex-col">
-                            <!-- Icono -->
                             <div class="flex justify-center mb-4">
                                 <div class="relative">
                                     <div
@@ -1370,13 +1277,11 @@
                                 </div>
                             </div>
 
-                            <!-- Título -->
                             <h3
                                 class="text-xl font-black text-white mb-3 text-center group-hover:text-accent transition-colors duration-300">
                                 <span data-es="Diseño" data-en="Design">Diseño</span>
                             </h3>
 
-                            <!-- Descripción -->
                             <p class="text-sm text-gray-300 leading-relaxed text-center">
                                 <span data-es="Co-creamos la solución CON su equipo que conoce mejor sus procesos"
                                     data-en="We co-create the solution WITH your team that knows your processes best">
@@ -1386,19 +1291,15 @@
                         </div>
                     </div>
 
-                    <!-- Paso 3: Desarrollo -->
                     <div class="group relative flex flex-col" data-aos="fade-up" data-aos-duration="800"
                         data-aos-delay="500">
-                        <!-- Número del paso -->
                         <div
                             class="absolute -top-4 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-gradient-to-br from-secondary to-accent rounded-full flex items-center justify-center font-black text-white text-xl shadow-lg z-10 group-hover:scale-110 transition-transform duration-300">
                             3
                         </div>
 
-                        <!-- Card del paso -->
                         <div
                             class="bg-white/5 backdrop-blur-md rounded-2xl p-6 pt-10 border-2 border-white/10 hover:border-accent/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-accent/20 mt-8 flex-1 flex flex-col">
-                            <!-- Icono -->
                             <div class="flex justify-center mb-4">
                                 <div class="relative">
                                     <div
@@ -1411,13 +1312,11 @@
                                 </div>
                             </div>
 
-                            <!-- Título -->
                             <h3
                                 class="text-xl font-black text-white mb-3 text-center group-hover:text-accent transition-colors duration-300">
                                 <span data-es="Desarrollo" data-en="Development">Desarrollo</span>
                             </h3>
 
-                            <!-- Descripción -->
                             <p class="text-sm text-gray-300 leading-relaxed text-center mb-4">
                                 <span data-es="Nuestro framework Complete Clarity genera avances semanales"
                                     data-en="Our Complete Clarity framework generates weekly progress">
@@ -1427,19 +1326,15 @@
                         </div>
                     </div>
 
-                    <!-- Paso 4: Post-Live -->
                     <div class="group relative flex flex-col" data-aos="fade-up" data-aos-duration="800"
                         data-aos-delay="600">
-                        <!-- Número del paso -->
                         <div
                             class="absolute -top-4 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-gradient-to-br from-secondary to-accent rounded-full flex items-center justify-center font-black text-white text-xl shadow-lg z-10 group-hover:scale-110 transition-transform duration-300">
                             4
                         </div>
 
-                        <!-- Card del paso -->
                         <div
                             class="bg-white/5 backdrop-blur-md rounded-2xl p-6 pt-10 border-2 border-white/10 hover:border-accent/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-accent/20 mt-8 flex-1 flex flex-col">
-                            <!-- Icono -->
                             <div class="flex justify-center mb-4">
                                 <div class="relative">
                                     <div
@@ -1452,13 +1347,11 @@
                                 </div>
                             </div>
 
-                            <!-- Título -->
                             <h3
                                 class="text-xl font-black text-white mb-3 text-center group-hover:text-accent transition-colors duration-300">
                                 <span data-es="Post-Live" data-en="Post-Live">Post-Live</span>
                             </h3>
 
-                            <!-- Descripción -->
                             <p class="text-sm text-gray-300 leading-relaxed text-center">
                                 <span data-es="Acompañamos desde la adopción hasta el change management"
                                     data-en="We accompany from adoption to change management">
@@ -1470,7 +1363,6 @@
                 </div>
             </div>
 
-            <!-- CTA final -->
             <div class="text-center mt-12" data-aos="fade-up" data-aos-duration="800" data-aos-delay="700">
                 <a href="#contact"
                     class="inline-flex items-center space-x-3 bg-gradient-to-r from-secondary to-accent hover:from-accent hover:to-secondary text-white px-10 py-5 rounded-2xl font-bold text-lg transition-all duration-500 hover:scale-105 shadow-2xl hover:shadow-accent/50">
@@ -1483,7 +1375,6 @@
         </div>
     </section>
 
-    <!-- Sección de Casos de Éxito -->
     <section id="success-cases" class="py-24 bg-white dark:bg-dark relative overflow-hidden">
         <div class="absolute inset-0 bg-grid-pattern bg-[size:100px_100px] opacity-5"></div>
         <div class="absolute top-20 right-10 w-16 h-16 bg-accent/10 rounded-full animate-float"></div>
@@ -1492,7 +1383,7 @@
 
         <div class="container mx-auto px-4 md:px-6 relative z-10">
             <div class="text-center mb-20" data-aos="fade-up" data-aos-duration="800">
-                <h2 class="text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight">
+                <h2 class="text-3xl md:text-4xl font-black mb-6 leading-tight">
                     <span data-es="Casos de" data-en="Success">Casos de</span> <span
                         class="text-gradient bg-gradient-to-r from-secondary to-accent dark:from-accent dark:to-secondary bg-clip-text text-transparent">
                         <span data-es="Éxito" data-en="Cases">Éxito</span>
@@ -1509,7 +1400,6 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Success Case 1 - Financial Sector -->
                 <div class="success-case-card group bg-gray-50 dark:bg-gray-800 rounded-3xl p-8 shadow-xl border border-gray-200 dark:border-gray-700 transform hover:scale-105 transition-all duration-500 backdrop-blur-sm relative overflow-hidden flex flex-col"
                     data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
                     <div
@@ -1561,7 +1451,6 @@
                     </div>
                 </div>
 
-                <!-- Success Case 2 - Retail Sector -->
                 <div class="success-case-card group bg-gray-50 dark:bg-gray-800 rounded-3xl p-8 shadow-xl border border-gray-200 dark:border-gray-700 transform hover:scale-105 transition-all duration-500 backdrop-blur-sm relative overflow-hidden flex flex-col"
                     data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
                     <div
@@ -1613,7 +1502,6 @@
                     </div>
                 </div>
 
-                <!-- Success Case 3 - Energy Sector -->
                 <div class="success-case-card group bg-gray-50 dark:bg-gray-800 rounded-3xl p-8 shadow-xl border border-gray-200 dark:border-gray-700 transform hover:scale-105 transition-all duration-500 backdrop-blur-sm relative overflow-hidden flex flex-col"
                     data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
                     <div
@@ -1666,7 +1554,6 @@
                 </div>
             </div>
 
-            <!-- CTA al final de casos de éxito -->
             <div class="text-center mt-16" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
                 <a href="#contact"
                     class="cta-button bg-secondary hover:bg-primary dark:bg-accent dark:hover:bg-secondary text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-500 hover:scale-105 hover:shadow-2xl inline-flex items-center space-x-3 shadow-lg">
@@ -1678,7 +1565,6 @@
         </div>
     </section>
 
-    <!-- Sección de Por Qué Elegirnos  -->
     <section id="why-us"
         class="py-24 bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-dark relative overflow-hidden">
         <div class="absolute top-20 right-10 w-16 h-16 bg-secondary/10 rounded-full animate-float"></div>
@@ -1692,7 +1578,7 @@
                     <span data-es="Nuestra Ventaja Competitiva" data-en="Our Competitive Advantage">Nuestra Ventaja
                         Competitiva</span>
                 </div>
-                <h2 class="text-3xl md:text-4xl lg:text-5xl font-black mb-6 leading-tight">
+                <h2 class="text-3xl md:text-4xl font-black mb-6 leading-tight">
                     <span data-es="¿Por Qué" data-en="Why">¿Por Qué</span> <span
                         class="text-gradient bg-gradient-to-r from-secondary to-accent dark:from-accent dark:to-secondary bg-clip-text text-transparent">
                         <span data-es="Elegirnos" data-en="Choose Us">Elegirnos</span>?
@@ -1706,9 +1592,7 @@
                 </p>
             </div>
 
-            <!-- Grid de diferenciadores -->
             <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-                <!-- Item 1: Compromiso -->
                 <div class="group bg-white dark:bg-gray-800 rounded-3xl p-8 border-2 border-gray-200 dark:border-gray-700 hover:border-secondary dark:hover:border-accent transition-all duration-500 hover:shadow-2xl hover:shadow-secondary/20 h-full"
                     data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
                     <div class="flex items-start space-x-6">
@@ -1745,7 +1629,6 @@
                     </div>
                 </div>
 
-                <!-- Item 2: Acompañamiento -->
                 <div class="group bg-white dark:bg-gray-800 rounded-3xl p-8 border-2 border-gray-200 dark:border-gray-700 hover:border-secondary dark:hover:border-accent transition-all duration-500 hover:shadow-2xl hover:shadow-secondary/20 h-full"
                     data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
                     <div class="flex items-start space-x-6">
@@ -1782,7 +1665,6 @@
                     </div>
                 </div>
 
-                <!-- Item 3: Resultados -->
                 <div class="group bg-white dark:bg-gray-800 rounded-3xl p-8 border-2 border-gray-200 dark:border-gray-700 hover:border-secondary dark:hover:border-accent transition-all duration-500 hover:shadow-2xl hover:shadow-secondary/20 h-full"
                     data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
                     <div class="flex items-start space-x-6">
@@ -1819,7 +1701,6 @@
                     </div>
                 </div>
 
-                <!-- Item 4: Entregables con quick wins -->
                 <div class="group bg-white dark:bg-gray-800 rounded-3xl p-8 border-2 border-gray-200 dark:border-gray-700 hover:border-secondary dark:hover:border-accent transition-all duration-500 hover:shadow-2xl hover:shadow-secondary/20 h-full"
                     data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
                     <div class="flex items-start space-x-6">
@@ -1855,7 +1736,6 @@
                 </div>
             </div>
 
-            <!-- Sección de Nuestro Equipo -->
             <div class="max-w-6xl mx-auto" data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
                 <div
                     class="bg-gradient-to-br from-primary via-dark to-primary rounded-3xl p-10 md:p-12 border-2 border-secondary/30 shadow-2xl">
@@ -1872,15 +1752,13 @@
                         </h3>
                     </div>
 
-                    <!-- Grid de estadísticas -->
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
-                        <!-- Stat 1 -->
                         <div class="text-center group">
                             <div
                                 class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:border-accent/50 transition-all duration-500 hover:scale-105 h-full flex flex-col justify-center">
                                 <div
                                     class="text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-accent to-secondary mb-3">
-                                    +30
+                                    +<span class="counter-value" data-target="30">0</span>
                                 </div>
                                 <p class="text-white font-semibold text-lg">
                                     <span data-es="AÑOS" data-en="YEARS">AÑOS</span>
@@ -1893,13 +1771,12 @@
                             </div>
                         </div>
 
-                        <!-- Stat 2 -->
                         <div class="text-center group">
                             <div
                                 class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:border-accent/50 transition-all duration-500 hover:scale-105 h-full flex flex-col justify-center">
                                 <div
                                     class="text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-accent to-secondary mb-3">
-                                    +150
+                                    +<span class="counter-value" data-target="150">0</span>
                                 </div>
                                 <p class="text-white font-semibold text-lg">
                                     <span data-es="PROYECTOS" data-en="PROJECTS">PROYECTOS</span>
@@ -1912,7 +1789,6 @@
                             </div>
                         </div>
 
-                        <!-- Stat 3 -->
                         <div class="text-center group">
                             <div
                                 class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:border-accent/50 transition-all duration-500 hover:scale-105 h-full flex flex-col justify-center">
@@ -1931,7 +1807,6 @@
                         </div>
                     </div>
 
-                    <!-- Soporte técnico -->
                     <div class="text-center bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
                         <div class="flex items-center justify-center space-x-3 mb-3">
                             <i class="fas fa-headset text-3xl text-accent"></i>
@@ -1951,7 +1826,6 @@
         </div>
     </section>
 
-    <!-- Sección de Productos  -->
     <section id="portfolio" class="py-24 bg-white dark:bg-dark relative overflow-hidden">
         <div class="absolute inset-0 bg-grid-pattern bg-[size:100px_100px] opacity-5"></div>
         <div class="absolute top-20 left-10 w-16 h-16 bg-secondary/10 rounded-full animate-float"></div>
@@ -1959,7 +1833,7 @@
             style="animation-delay: 2s"></div>
         <div class="container mx-auto px-4 md:px-6 relative z-10">
             <div class="text-center mb-20" data-aos="fade-up" data-aos-duration="800">
-                <h2 class="text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight">
+                <h2 class="text-3xl md:text-4xl font-black mb-6 leading-tight">
                     <span data-es="Nuestro" data-en="Our">Nuestro</span> <span
                         class="text-gradient bg-gradient-to-r from-secondary to-accent dark:from-accent dark:to-secondary bg-clip-text text-transparent">
                         <span data-es="Ecosistema" data-en="Ecosystem">Ecosistema</span>
@@ -1974,12 +1848,11 @@
                         empresa</span>
                 </p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Producto 1 - KLOCKIN -->
-                <div class="portfolio-card group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl border border-gray-200 dark:border-gray-700 group-hover:border-secondary dark:group-hover:border-accent transform hover:scale-105 transition-all duration-500 backdrop-blur-sm relative overflow-hidden flex flex-col"
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="portfolio-card group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl border border-gray-200 dark:border-gray-700 group-hover:border-secondary dark:group-hover:border-accent transform hover:scale-105 transition-all duration-500 backdrop-blur-sm relative overflow-hidden flex flex-col max-w-xs mx-auto"
                     data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
                     <div
-                        class="portfolio-image h-48 bg-white rounded-2xl mb-3 relative overflow-hidden flex items-center justify-center border border-gray-100 dark:bg-white">
+                        class="portfolio-image h-48 rounded-2xl mb-3 relative overflow-hidden flex items-center justify-center">
                         <div class="text-center p-6 w-full h-full flex items-center justify-center">
                             <img src="img/klockin.png" alt="KLOCKIN" class="max-w-full max-h-28 object-contain">
                         </div>
@@ -2020,11 +1893,10 @@
                     </div>
                 </div>
 
-                <!-- Producto 2 - KERBILL -->
-                <div class="portfolio-card group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl border border-gray-200 dark:border-gray-700 group-hover:border-secondary dark:group-hover:border-accent transform hover:scale-105 transition-all duration-500 backdrop-blur-sm relative overflow-hidden flex flex-col"
+                <div class="portfolio-card group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl border border-gray-200 dark:border-gray-700 group-hover:border-secondary dark:group-hover:border-accent transform hover:scale-105 transition-all duration-500 backdrop-blur-sm relative overflow-hidden flex flex-col max-w-xs mx-auto"
                     data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
                     <div
-                        class="portfolio-image h-48 bg-white rounded-2xl mb-3 relative overflow-hidden flex items-center justify-center border border-gray-200 dark:bg-white">
+                        class="portfolio-image h-48 rounded-2xl mb-3 relative overflow-hidden flex items-center justify-center">
                         <div class="text-center p-6 w-full h-full flex items-center justify-center">
                             <img src="img/kerbill.png" alt="KERBILL" class="max-w-full max-h-28 object-contain">
                         </div>
@@ -2064,11 +1936,10 @@
                     </div>
                 </div>
 
-                <!-- Producto 3 - KERBOOK -->
-                <div class="portfolio-card group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl border border-gray-200 dark:border-gray-700 group-hover:border-secondary dark:group-hover:border-accent transform hover:scale-105 transition-all duration-500 backdrop-blur-sm relative overflow-hidden flex flex-col"
+                <div class="portfolio-card group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl border border-gray-200 dark:border-gray-700 group-hover:border-secondary dark:group-hover:border-accent transform hover:scale-105 transition-all duration-500 backdrop-blur-sm relative overflow-hidden flex flex-col max-w-xs mx-auto"
                     data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
                     <div
-                        class="portfolio-image h-48 bg-white rounded-2xl mb-6 relative overflow-hidden flex items-center justify-center border border-gray-200 dark:bg-white">
+                        class="portfolio-image h-48 rounded-2xl mb-6 relative overflow-hidden flex items-center justify-center">
                         <div class="text-center p-6 w-full h-full flex items-center justify-center">
                             <img src="img/kerbook-logo.png" alt="KERBOOK" class="max-w-full max-h-28 object-contain">
                         </div>
@@ -2108,9 +1979,95 @@
                     </div>
                 </div>
 
-                <!-- Producto 4 - Por definir -->
-                <div class="portfolio-card group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl border border-gray-200 dark:border-gray-700 group-hover:border-secondary dark:group-hover:border-accent transform hover:scale-105 transition-all duration-500 backdrop-blur-sm relative overflow-hidden flex flex-col"
+                <div class="portfolio-card group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl border border-gray-200 dark:border-gray-700 group-hover:border-secondary dark:group-hover:border-accent transform hover:scale-105 transition-all duration-500 backdrop-blur-sm relative overflow-hidden flex flex-col max-w-xs mx-auto"
                     data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+                    <div
+                        class="portfolio-image h-48 rounded-2xl mb-3 relative overflow-hidden flex items-center justify-center">
+                        <div class="text-center p-6 w-full h-full flex items-center justify-center">
+                            <img src="img/CRM.png" alt="KERSALES" class="max-w-full max-h-40 scale-150 object-contain">
+                        </div>
+                        <div
+                            class="absolute top-4 left-4 bg-secondary text-white px-4 py-2 rounded-full text-sm font-semibold">
+                            <span data-es="CRM" data-en="CRM">CRM</span>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-content flex flex-col flex-grow">
+                        <h3
+                            class="text-2xl font-black text-dark dark:text-white mb-4 group-hover:text-secondary dark:group-hover:text-accent transition-colors duration-300">
+                            KERSALES
+                        </h3>
+
+                        <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed flex-grow min-h-[100px]">
+                            <span
+                                data-es="CRM especializado para potenciar tus ventas, gestionar clientes y automatizar el seguimiento comercial."
+                                data-en="Specialized CRM to boost your sales, manage clients and automate commercial follow-up.">CRM
+                                especializado para potenciar tus ventas, gestionar clientes y automatizar el seguimiento
+                                comercial.</span>
+                        </p>
+
+                        <div class="flex items-center justify-between">
+                            <div class="text-sm text-gray-500 dark:text-gray-400 whitespace-nowrap">
+                                <i class="fas fa-chart-line mr-1"></i>
+                                <span data-es="Gestión de Ventas" data-en="Sales Management">Gestión de Ventas</span>
+                            </div>
+
+                            <a href="productos/kersales.html"
+                                class="text-secondary dark:text-accent font-bold flex items-center group-hover:space-x-3 transition-all duration-300 whitespace-nowrap">
+                                <span data-es="Ver más" data-en="See more">Ver más</span>
+                                <i
+                                    class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform duration-300"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl border border-gray-200 dark:border-gray-700 group-hover:border-secondary dark:group-hover:border-accent transform hover:scale-105 transition-all duration-500 backdrop-blur-sm relative overflow-hidden flex flex-col max-w-xs mx-auto"
+                    data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
+                    <div
+                        class="portfolio-image h-48 rounded-2xl mb-3 relative overflow-hidden flex items-center justify-center">
+                        <div class="text-center p-6 w-full h-full flex items-center justify-center">
+                            <img src="img/evochat.png" alt="AI AGENTS" class="max-w-full max-h-28 object-contain">
+                        </div>
+                        <div
+                            class="absolute top-4 left-4 bg-secondary text-white px-4 py-2 rounded-full text-sm font-semibold">
+                            <span data-es="Inteligencia Artificial" data-en="Artificial Intelligence">Inteligencia
+                                Artificial</span>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-content flex flex-col flex-grow">
+                        <h3
+                            class="text-2xl font-black text-dark dark:text-white mb-4 group-hover:text-secondary dark:group-hover:text-accent transition-colors duration-300">
+                            AI AGENTS
+                        </h3>
+
+                        <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed flex-grow min-h-[100px]">
+                            <span
+                                data-es="Agentes de IA autónomos que trabajan 24/7 para automatizar tareas, atención al cliente y procesos operativos."
+                                data-en="Autonomous AI agents working 24/7 to automate tasks, customer service and operational processes.">Agentes
+                                de IA autónomos que trabajan 24/7 para automatizar tareas, atención al cliente y
+                                procesos operativos.</span>
+                        </p>
+
+                        <div class="flex items-center justify-between">
+                            <div class="text-sm text-gray-500 dark:text-gray-400 whitespace-nowrap">
+                                <i class="fas fa-robot mr-1"></i>
+                                <span data-es="Automatización" data-en="Automation">Automatización</span>
+                            </div>
+
+                            <a href="productos/ai-agents.html"
+                                class="text-secondary dark:text-accent font-bold flex items-center group-hover:space-x-3 transition-all duration-300 whitespace-nowrap">
+                                <span data-es="Ver más" data-en="See more">Ver más</span>
+                                <i
+                                    class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform duration-300"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl border border-gray-200 dark:border-gray-700 group-hover:border-secondary dark:group-hover:border-accent transform hover:scale-105 transition-all duration-500 backdrop-blur-sm relative overflow-hidden flex flex-col max-w-xs mx-auto"
+                    data-aos="fade-up" data-aos-duration="800" data-aos-delay="600">
                     <div
                         class="portfolio-image h-48 rounded-2xl mb-3 relative overflow-hidden flex items-center justify-center">
                         <div class="text-center p-6 w-full h-full flex flex-col items-center justify-center">
@@ -2144,12 +2101,10 @@
                                 <span data-es="En Desarrollo" data-en="In Development">En Desarrollo</span>
                             </div>
 
-                            <a href="#contact"
-                                class="text-secondary dark:text-accent font-bold flex items-center group-hover:space-x-3 transition-all duration-300 whitespace-nowrap">
-                                <span data-es="Más info" data-en="More info">Más info</span>
-                                <i
-                                    class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform duration-300"></i>
-                            </a>
+                            <span
+                                class="text-gray-400 font-bold flex items-center cursor-not-allowed whitespace-nowrap">
+                                <span data-es="Próximamente" data-en="Coming Soon">Próximamente</span>
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -2159,7 +2114,6 @@
 
 
 
-    <!-- Sección de E-books -->
     <section id="ebook" class="py-16 bg-gradient-to-br from-gradientStart to-gradientEnd relative overflow-hidden">
         <div class="container mx-auto px-4 md:px-6 relative z-10">
             <div class="text-center mb-12" data-aos="fade-up">
@@ -2178,7 +2132,6 @@
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start max-w-6xl mx-auto">
-                <!-- Ebook 1: Transformación Digital -->
                 <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-6 text-white border border-white/20"
                     data-aos="fade-right" data-aos-duration="800">
                     <div class="flex flex-col sm:flex-row gap-4 items-center mb-4">
@@ -2215,7 +2168,6 @@
                     </form>
                 </div>
 
-                <!-- Ebook 2: Nuevo Ebook -->
                 <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-6 text-white border border-white/20"
                     data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
                     <div class="flex flex-col sm:flex-row gap-4 items-center mb-4">
@@ -2256,7 +2208,6 @@
     </section>
 
 
-    <!-- Sección de Blog  -->
     <section id="blog" class="py-24 bg-white dark:bg-dark relative overflow-hidden">
         <div class="absolute inset-0 bg-grid-pattern bg-[size:100px_100px] opacity-5 z-0"></div>
         <div class="absolute top-20 left-10 w-16 h-16 bg-secondary/10 rounded-full animate-float"></div>
@@ -2271,7 +2222,7 @@
                         Tendencias</span>
                 </div>
 
-                <h2 class="text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight">
+                <h2 class="text-3xl md:text-4xl font-black mb-6 leading-tight">
                     <span data-es="Últimos" data-en="Latest">Últimos</span> <span
                         class="text-gradient bg-gradient-to-r from-secondary to-accent dark:from-accent dark:to-secondary bg-clip-text text-transparent">
                         <span data-es="Artículos" data-en="Articles">Artículos</span>
@@ -2289,7 +2240,6 @@
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-                <!-- Artículo 1 - Digitalización -->
                 <div class="blog-card group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl border border-gray-200 dark:border-gray-700 transform hover:scale-105 transition-all duration-500 backdrop-blur-sm relative overflow-hidden"
                     data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
                     <div
@@ -2346,7 +2296,6 @@
                     </div>
                 </div>
 
-                <!-- Artículo 2 - Fintech -->
                 <div class="blog-card group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl border border-gray-200 dark:border-gray-700 transform hover:scale-105 transition-all duration-500 backdrop-blur-sm relative overflow-hidden"
                     data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
                     <div
@@ -2404,7 +2353,6 @@
                     </div>
                 </div>
 
-                <!-- Artículo 3 - Redes Sociales -->
                 <div class="blog-card group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl border border-gray-200 dark:border-gray-700 transform hover:scale-105 transition-all duration-500 backdrop-blur-sm relative overflow-hidden"
                     data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
                     <div
@@ -2461,7 +2409,6 @@
                 </div>
             </div>
 
-            <!-- CTA al final del blog - Landing para ver todos los artículos -->
             <div class="text-center mt-16" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
                 <a href="blogs.html"
                     class="border-2 border-secondary dark:border-accent text-secondary dark:text-accent px-8 py-4 rounded-2xl font-bold text-lg hover:bg-secondary dark:hover:bg-accent hover:text-white transition-all duration-500 hover:scale-105 hover:shadow-2xl inline-flex items-center space-x-3 shadow-lg group">
@@ -2473,12 +2420,11 @@
     </section>
 
 
-    <!-- Sección de Clientes MODIFICADA -->
     <section class="py-12 bg-white dark:bg-gray-900 relative overflow-hidden">
         <div class="absolute inset-0 bg-grid-pattern bg-[size:100px_100px] opacity-5"></div>
         <div class="container mx-auto px-4 md:px-6 relative z-10">
             <div class="text-center mb-8" data-aos="fade-up" data-aos-duration="800">
-                <h2 class="text-3xl md:text-4xl lg:text-5xl font-black mb-6 leading-tight">
+                <h2 class="text-3xl md:text-4xl font-black mb-6 leading-tight">
                     <span data-es="Nuestros" data-en="Our">Nuestros</span> <span
                         class="text-gradient bg-gradient-to-r from-secondary to-accent dark:from-accent dark:to-secondary bg-clip-text text-transparent">
                         <span data-es="Clientes" data-en="Clients">Clientes</span>
@@ -2616,7 +2562,6 @@
                             </div>
                         </div>
 
-                        <!-- SEGUNDA FILA DUPLICADA (para efecto infinito) -->
                         <div class="flex space-x-16 flex-none">
                             <div class="client-logo group">
                                 <img src="img/cosami.png" alt="Logo de cosami"
@@ -2752,12 +2697,9 @@
     </section>
 
 
-    <!-- Sección de Testimonios -->
     <section class="py-24 bg-gradient-to-br from-[#0A1628] via-[#0F1F3D] to-[#0A1628] relative overflow-hidden">
-        <!-- Efectos de fondo -->
         <div class="absolute inset-0 bg-grid-pattern bg-[size:50px_50px] opacity-10"></div>
 
-        <!-- Partículas flotantes -->
         <div class="absolute top-20 left-[15%] w-3 h-3 bg-accent/40 rounded-full animate-float"></div>
         <div class="absolute top-40 right-[20%] w-2 h-2 bg-secondary/30 rounded-full animate-pulse"></div>
         <div class="absolute bottom-32 left-[25%] w-2 h-2 bg-accent/50 rounded-full animate-float"
@@ -2765,43 +2707,35 @@
         <div class="absolute bottom-20 right-[15%] w-3 h-3 bg-secondary/40 rounded-full animate-pulse"
             style="animation-delay: 2s"></div>
 
-        <!-- Círculos decorativos con glow -->
         <div class="absolute top-10 right-20 w-40 h-40 bg-accent/5 rounded-full blur-3xl animate-float"></div>
         <div class="absolute bottom-20 left-20 w-48 h-48 bg-secondary/5 rounded-full blur-3xl animate-float"
             style="animation-delay: 2s"></div>
 
         <div class="container mx-auto px-4 md:px-6 relative z-10">
-            <!-- Título de la sección -->
             <div class="text-center mb-16" data-aos="fade-up" data-aos-duration="800">
                 <div
                     class="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-5 py-2 rounded-2xl text-sm font-semibold mb-6 border border-white/20">
                     <i class="fas fa-quote-left text-accent text-sm"></i>
                     <span class="text-white" data-es="TESTIMONIOS" data-en="TESTIMONIALS">TESTIMONIOS</span>
                 </div>
-                <h2 class="text-3xl md:text-4xl lg:text-5xl font-black mb-4 leading-tight">
+                <h2 class="text-3xl md:text-4xl font-black mb-4 leading-tight">
                     <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-accent to-white"
                         data-es="Lo que dicen nuestros clientes" data-en="What our clients say">Lo que dicen nuestros
                         clientes</span>
                 </h2>
             </div>
 
-            <!-- Grid de testimonios -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-                <!-- Testimonio 1 - Juan Bedoya (COSPORT) -->
                 <div class="testimonial-card group bg-white/5 backdrop-blur-lg rounded-3xl p-8 border border-white/10 hover:border-accent/50 transition-all duration-500 hover:transform hover:scale-105 relative overflow-hidden"
                     data-aos="fade-right" data-aos-duration="800">
-                    <!-- Efecto de brillo al hover -->
                     <div
                         class="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                     </div>
 
-                    <!-- Icono de comillas decorativo -->
                     <div class="absolute top-6 right-6 text-6xl text-accent/10 font-serif">"</div>
 
                     <div class="relative z-10 flex flex-col md:flex-row gap-6">
-                        <!-- Columna izquierda: Foto, logo y nombre -->
                         <div class="flex-shrink-0">
-                            <!-- Foto del cliente -->
                             <div class="relative mb-4">
                                 <div
                                     class="w-24 h-24 md:w-32 md:h-32 rounded-full bg-gradient-to-br from-accent to-secondary p-1">
@@ -2811,21 +2745,18 @@
                                             class="w-full h-full object-cover" style="object-position: center 30%;">
                                     </div>
                                 </div>
-                                <!-- Logo de la empresa (pequeño, superpuesto) -->
                                 <div
                                     class="absolute -bottom-1 -right-1 w-10 h-10 bg-white rounded-full p-1.5 shadow-lg">
                                     <img src="img/cosport.png" alt="COSPORT" class="w-full h-full object-contain">
                                 </div>
                             </div>
 
-                            <!-- Nombre y cargo -->
                             <div class="text-center md:text-left">
                                 <h3 class="text-white font-black text-lg">Juan Bedoya</h3>
                                 <p class="text-accent text-sm font-semibold">CEO</p>
                             </div>
                         </div>
 
-                        <!-- Columna derecha: Testimonio -->
                         <div class="flex-1 flex items-center">
                             <div class="relative">
                                 <p class="text-gray-200 leading-relaxed text-base italic">
@@ -2843,21 +2774,16 @@
                     </div>
                 </div>
 
-                <!-- Testimonio 2 - José Cornejo (COMAR) -->
                 <div class="testimonial-card group bg-white/5 backdrop-blur-lg rounded-3xl p-8 border border-white/10 hover:border-secondary/50 transition-all duration-500 hover:transform hover:scale-105 relative overflow-hidden"
                     data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
-                    <!-- Efecto de brillo al hover -->
                     <div
                         class="absolute inset-0 bg-gradient-to-br from-secondary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                     </div>
 
-                    <!-- Icono de comillas decorativo -->
                     <div class="absolute top-6 right-6 text-6xl text-secondary/10 font-serif">"</div>
 
                     <div class="relative z-10 flex flex-col md:flex-row gap-6">
-                        <!-- Columna izquierda: Foto, logo y nombre -->
                         <div class="flex-shrink-0">
-                            <!-- Foto del cliente -->
                             <div class="relative mb-4">
                                 <div
                                     class="w-24 h-24 md:w-32 md:h-32 rounded-full bg-gradient-to-br from-secondary to-accent p-1">
@@ -2867,21 +2793,18 @@
                                             class="w-full h-full object-cover" style="object-position: center 15%;">
                                     </div>
                                 </div>
-                                <!-- Logo de la empresa (pequeño, superpuesto) -->
                                 <div
                                     class="absolute -bottom-1 -right-1 w-10 h-10 bg-white rounded-full p-1.5 shadow-lg">
                                     <img src="img/comar.png" alt="COMAR" class="w-full h-full object-contain">
                                 </div>
                             </div>
 
-                            <!-- Nombre y cargo -->
                             <div class="text-center md:text-left">
                                 <h3 class="text-white font-black text-lg">José Cornejo</h3>
                                 <p class="text-accent text-sm font-semibold">Owner</p>
                             </div>
                         </div>
 
-                        <!-- Columna derecha: Testimonio -->
                         <div class="flex-1 flex items-center">
                             <div class="relative">
                                 <p class="text-gray-200 leading-relaxed text-base italic">
@@ -2903,7 +2826,6 @@
     </section>
 
 
-    <!-- Sección de Contacto  -->
     <section id="contact" class="py-24 bg-gray-50 dark:bg-gray-900 relative overflow-hidden">
         <div class="absolute inset-0 bg-grid-pattern bg-[size:100px_100px] opacity-5"></div>
         <div class="absolute top-20 right-10 w-16 h-16 bg-secondary/10 rounded-full animate-float"></div>
@@ -2918,7 +2840,7 @@
                         Proyecto</span>
                 </div>
 
-                <h2 class="text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight">
+                <h2 class="text-3xl md:text-4xl font-black mb-6 leading-tight">
                     <span data-es="¿Listo para" data-en="Ready to">¿Listo para</span> <span
                         class="text-gradient bg-gradient-to-r from-secondary to-accent dark:from-accent dark:to-secondary bg-clip-text text-transparent">
                         <span data-es="Transformar" data-en="Transform">Transformar</span>
@@ -2937,7 +2859,6 @@
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
 
-                <!-- Información de contacto -->
                 <div data-aos="fade-right" data-aos-duration="800">
                     <h3 class="text-3xl font-black mb-8 text-dark dark:text-white">
                         <span data-es="Pongámonos en" data-en="Let's Get in">Pongámonos en</span> <span
@@ -3028,7 +2949,6 @@
 
 
 
-                <!-- Formulario de contacto CORREGIDO para S3 -->
                 <div data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
                     <form action="https://formsubmit.co/ventas@kerbrumagency.com" method="POST"
                         class="contact-form bg-white dark:bg-gray-800 rounded-3xl p-10 shadow-2xl border border-gray-200 dark:border-gray-700 transform hover:scale-105 transition-all duration-500 backdrop-blur-sm relative overflow-hidden">
@@ -3037,7 +2957,6 @@
                             class="absolute inset-0 bg-gradient-to-br from-secondary/5 to-accent/5 opacity-0 hover:opacity-100 transition-opacity duration-500">
                         </div>
 
-                        <!-- Campos OCULTOS para S3/PRODUCCIÓN -->
                         <input type="hidden" name="_subject" value="🚀 Nuevo Contacto - Kerbrum Agency">
                         <input type="hidden" name="_template" value="table">
                         <input type="hidden" name="_captcha" value="false">
@@ -3118,7 +3037,6 @@
         </div>
     </section>
 
-    <!-- Footer  -->
     <footer class="bg-primary dark:bg-dark py-20 text-gray-300 relative overflow-hidden">
         <div class="absolute inset-0 bg-grid-pattern bg-[size:100px_100px] opacity-5"></div>
         <div class="absolute top-10 left-10 w-20 h-20 bg-secondary/10 rounded-full animate-float"></div>
@@ -3245,7 +3163,6 @@
                     </ul>
                 </div>
 
-                <!-- Contacto footer -->
                 <div class="footer-section" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
                     <h4 class="text-white text-xl font-bold mb-6" data-es="Contacto" data-en="Contact">Contacto</h4>
                     <div class="space-y-4">
@@ -3319,7 +3236,6 @@
         });
     </script>
 
-    <!-- Vapi Chatbot -->
     <vapi-widget public-key="339f9c71-2978-4262-8849-ba744d9fc1d1" assistant-id="f8c905d0-39dc-4d0c-a22e-00272a389a97"
         mode="chat" theme="light" base-bg-color="#ffffff" accent-color="#374de5" cta-button-color="#ffffff"
         cta-button-text-color="#000000" border-radius="large" size="compact" position="bottom-left"
@@ -3332,7 +3248,6 @@
         type="text/javascript"></script>
 
 
-    <!-- Botón de Scroll to Top -->
     <button id="scroll-to-top"
         class="fixed bottom-8 right-8 w-14 h-14 bg-secondary hover:bg-accent text-white rounded-2xl shadow-2xl transition-all duration-500 opacity-100 visible hover:scale-110 hover:rotate-12 z-50 flex items-center justify-center group border-2 border-white/20">
         <i class="fas fa-chevron-up text-xl group-hover:-translate-y-1 transition-transform duration-300"></i>
@@ -3395,7 +3310,6 @@
     </style>
 
 
-    <!-- Popup Ignition Meeting  -->
     <div id="welcome-popup" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 hidden"
         style="z-index: 9999999;">
         <div class="bg-black/45 w-full max-w-6xl max-h-[95vh] rounded-2xl relative flex flex-col" style="width: 95vw;">
@@ -3448,13 +3362,11 @@
                         </div>
                     </div>
 
-                    <!-- Columna derecha con formulario CORREGIDO -->
                     <div class="md:w-1/2 w-full">
                         <form action="https://formsubmit.co/ventas@kerbrumagency.com" method="POST"
                             class="bg-black/30 backdrop-blur-md p-6 md:p-8 rounded-2xl space-y-4 border border-white/20"
                             id="popupform">
 
-                            <!-- Campos OCULTOS para formsubmit.co -->
                             <input type="hidden" name="_subject" value="🚀 Nuevo Lead - Ignition Meeting">
                             <input type="hidden" name="_template" value="table">
                             <input type="hidden" name="_captcha" value="false">
@@ -3462,7 +3374,6 @@
                                 value="¡Gracias por agendar tu Ignition Meeting! Hemos recibido tus datos y te contactaremos pronto para confirmar.">
                             <input type="hidden" name="_next" value="https://kerbrumagency.com/gracias.html">
 
-                            <!-- Nombre -->
                             <div class="relative">
                                 <i class="fas fa-user absolute left-4 top-1/2 -translate-y-1/2 text-white/70 z-10"></i>
                                 <input type="text" name="nombre" id="nombre" placeholder="Nombre Completo" required
@@ -3471,7 +3382,6 @@
                                     onblur="validateField(this)" onfocus="clearError(this)">
                             </div>
 
-                            <!-- Email -->
                             <div class="relative">
                                 <i
                                     class="fas fa-envelope absolute left-4 top-1/2 -translate-y-1/2 text-white/70 z-10"></i>
@@ -3481,7 +3391,6 @@
                                     onfocus="clearError(this)">
                             </div>
 
-                            <!-- Teléfono -->
                             <div class="flex gap-2">
                                 <div class="relative w-1/3">
                                     <i class="fas fa-globe text-white/70 pointer-events-none"
@@ -3500,7 +3409,6 @@
                                         style="position: absolute; right: 16px; top: 50%; transform: translateY(-50%); z-index: 20;"></i>
                                 </div>
 
-                                <!-- Campo de teléfono -->
                                 <div class="relative w-2/3">
                                     <i
                                         class="fas fa-phone absolute left-4 top-1/2 -translate-y-1/2 text-white/70 z-10 pointer-events-none"></i>
@@ -3511,7 +3419,6 @@
                                 </div>
                             </div>
 
-                            <!-- Cargo -->
                             <div class="relative">
                                 <i
                                     class="fas fa-briefcase absolute left-4 top-1/2 -translate-y-1/2 text-white/70 z-10"></i>
@@ -3521,7 +3428,6 @@
                                     onblur="validateField(this)" onfocus="clearError(this)">
                             </div>
 
-                            <!-- Botón Enviar -->
                             <button id="envbutt"
                                 class="w-full bg-secondary text-white py-3 rounded-lg font-bold text-lg transition-all duration-500 hover:bg-primary hover:scale-105 hover:shadow-2xl shadow-lg flex items-center justify-center space-x-3 group">
                                 <span>Agendar mi consultoría</span>
@@ -3535,7 +3441,6 @@
         </div>
     </div>
 
-    <!-- Scripts para el Ignition Meeting Popup -->
     <script src="js/areaCodes.js"></script>
     <script src="js/popup.js"></script>
 </body>
