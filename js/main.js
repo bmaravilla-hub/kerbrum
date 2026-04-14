@@ -15,7 +15,7 @@ class MainApp {
   setupAnimations() {
     // Inicializar animaciones cuando sean necesarias
     console.log("Animaciones inicializadas");
-    
+
     // Esperar a que GSAP esté listo
     if (typeof gsap !== "undefined") {
       this.setupGSAPAnimations();
@@ -36,7 +36,7 @@ class MainApp {
 
   setupClientsCarousel() {
     const carousels = document.querySelectorAll(".clients-carousel");
-    
+
     if (carousels.length === 0) {
       console.log("No se encontraron carruseles de clientes");
       return;
@@ -44,13 +44,13 @@ class MainApp {
 
     carousels.forEach((carousel) => {
       const scrollContent = carousel.querySelector(".animate-scroll-left");
-      
+
       if (!scrollContent) {
         console.log("No se encontró contenido de carrusel");
         return;
       }
 
-      scrollContent.style.animationDuration = "30s";
+      scrollContent.style.animationDuration = "40s";
 
       // Pausar animación al hover
       carousel.addEventListener("mouseenter", () => {
@@ -61,8 +61,8 @@ class MainApp {
         scrollContent.style.animationPlayState = "running";
       });
 
-      const items = scrollContent.querySelectorAll('.client-logo');
-      if (items.length <= 21) { 
+      const items = scrollContent.querySelectorAll(".client-logo");
+      if (items.length <= 21) {
         console.log("Duplicando contenido del carrusel para efecto infinito");
         const originalContent = scrollContent.innerHTML;
         scrollContent.innerHTML += originalContent;
@@ -218,7 +218,7 @@ class MainApp {
 
     if (allFieldsValid) {
       // Para formularios que usan FormSubmit.co, permitir el envío normal
-      if (form.action.includes('formsubmit.co')) {
+      if (form.action.includes("formsubmit.co")) {
         form.submit();
       } else {
         this.showSuccessMessage("¡Formulario enviado correctamente!");
